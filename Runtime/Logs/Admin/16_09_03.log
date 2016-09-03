@@ -1,0 +1,2042 @@
+[ 2016-09-03T07:53:03+08:00 ] 192.168.3.1 /admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009223s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010455s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003112s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003174s ]
+
+[ 2016-09-03T07:53:03+08:00 ] 192.168.3.1 /admin.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.005198s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005329s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000707s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000775s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000133s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.085941s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.086006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002093s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002136s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002714s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002757s ]
+
+[ 2016-09-03T07:53:04+08:00 ] 192.168.3.1 /admin.php?s=/Public/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.007579s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007739s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000806s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000878s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001188s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001259s ]
+
+[ 2016-09-03T07:53:11+08:00 ] 192.168.3.1 /admin.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000082s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.027014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.029898s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002332s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002402s ]
+NOTIC: [8] Undefined index: lite /home/vagrant/Code/omo/ThinkPHP/Library/Think/Db.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `xh_member` [ RunTime:0.0028s ]
+SQL: SELECT `uid`,`nickname`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `xh_member` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `xh_action` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `xh_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xh_action_log` [ RunTime:0.0029s ]
+SQL: INSERT INTO `xh_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('1','1','3232236289','member','1','1472860391','admin在2016-09-03 07:53登录了后台') [ RunTime:0.0032s ]
+SQL: SELECT * FROM `xh_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 1 /home/vagrant/Code/omo/Application/Common/Common/function.php 第 679 行.
+NOTIC: [2] array_key_exists() expects parameter 2 to be array, null given /home/vagrant/Code/omo/Application/Common/Common/function.php 第 679 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_action_log` WHERE `action_id` = 1 AND `user_id` = 1 AND `create_time` > 1472773991 LIMIT 1   [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `xh_member` [ RunTime:0.0005s ]
+SQL: UPDATE `xh_member` SET `score`=score+10 WHERE ( uid=1 AND status>-1 ) [ RunTime:0.0002s ]
+SQL: UPDATE `xh_member` SET `login`=`login`+1,`last_login_time`='1472860391',`last_login_ip`='3232236289' WHERE `uid` = 1 [ RunTime:0.0001s ]
+
+[ 2016-09-03T07:53:12+08:00 ] 192.168.3.1 /admin.php?s=/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.005547s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005704s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001753s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002561s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0024s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0013s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%Index/index%' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000125s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000171s ]
+INFO: [ AdminIndex ] --START--
+SQL: SHOW COLUMNS FROM `xh_addons` [ RunTime:0.0029s ]
+SQL: SELECT `config` FROM `xh_addons` WHERE `name` = 'SiteStat' AND `status` = 1 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `xh_member` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_member` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xh_action_log` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_action_log` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xh_document` [ RunTime:0.0025s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_document` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xh_category` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_category` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xh_model` [ RunTime:0.0021s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_model` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.128739s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021443s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021516s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003686s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003749s ]
+INFO: Run Addons\SiteStat\SiteStatAddon [ RunTime:0.078178s ]
+SQL: SELECT `config` FROM `xh_addons` WHERE `name` = 'SystemInfo' AND `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.233426s ]
+SQL: select version() as v; [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028278s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.083750s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000017s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.108329s ]
+INFO: Run Addons\SystemInfo\SystemInfoAddon [ RunTime:0.108356s ]
+SQL: SELECT `config` FROM `xh_addons` WHERE `name` = 'DevTeam' AND `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.277551s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019729s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.128908s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.144968s ]
+INFO: Run Addons\DevTeam\DevTeamAddon [ RunTime:0.036621s ]
+INFO: [ AdminIndex ] --END-- [ RunTime:0.223230s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019919s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.128908s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000008s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.145123s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003547s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003601s ]
+
+[ 2016-09-03T07:53:41+08:00 ] 192.168.3.1 /admin.php?s=/SEO/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000066s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.033575s ]
+INFO: [ app_init ] --END-- [ RunTime:0.039049s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006588s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0016s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0009s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%SEO/index%' ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `xh_menu` WHERE `id` = 124 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT DISTINCT  `group` FROM `xh_menu` WHERE `group` <> '' AND `pid` = 124  [ RunTime:0.0008s ]
+SQL: SELECT `id`,`url` FROM `xh_menu` WHERE `pid` = 124 AND `hide` = 0  [ RunTime:0.0006s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `xh_menu` WHERE `group` = 'SEO管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `xh_menu` WHERE `group` = '广告管理' AND `pid` = 124 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `xh_seo_rule` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `xh_seo_rule` WHERE `status` >= 0 ORDER BY sort asc LIMIT 0,20   [ RunTime:0.0024s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_seo_rule` WHERE `status` >= 0 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Declaration of Admin\Builder\AdminListBuilder::display() should be compatible with Admin\Builder\AdminBuilder::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 11 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000082s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022811s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022878s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002747s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002791s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000196s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.080106s ]
+NOTIC: [8] Undefined variable: show /home/vagrant/Code/omo/Runtime/Cache/Admin/d3740882504eb10f252b7cc3981c17a1.php 第 103 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.175960s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.032202s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.205423s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002738s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002794s ]
+
+[ 2016-09-03T07:53:45+08:00 ] 192.168.3.1 /admin.php?s=/Datacenter/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009304s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010550s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001670s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001735s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%Datacenter/index%' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xh_menu` WHERE `id` = 131 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT DISTINCT  `group` FROM `xh_menu` WHERE `group` <> '' AND `pid` = 131  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`url` FROM `xh_menu` WHERE `pid` = 131 AND `hide` = 0  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `xh_menu` WHERE `group` = '信息管理' AND `pid` = 131 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `xh_menu` WHERE `group` = '楼宇管理' AND `pid` = 131 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `xh_trading_area` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `xh_trading_area` WHERE `status` >= 0 ORDER BY id asc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_trading_area` WHERE `status` >= 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] Declaration of Admin\Builder\AdminListBuilder::display() should be compatible with Admin\Builder\AdminBuilder::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 11 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009150s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009236s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001501s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001564s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012171s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.001754s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000017s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.012446s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012301s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.014202s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.025009s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011140s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.026746s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000018s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.036406s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009938s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.038219s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.046664s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011891s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.048448s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.058837s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010784s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.060574s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.069852s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010758s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.071599s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.080851s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009782s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.082584s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000014s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.090859s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010591s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.092595s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000015s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.101739s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014518s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.103483s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000015s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.116530s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010504s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.118289s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.127320s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010843s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.129053s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.138392s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010393s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.140142s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000014s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.149034s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011694s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.150771s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.160972s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009504s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.162725s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.170727s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009887s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.172499s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.180890s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009277s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.182623s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.190396s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009607s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.192141s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.200249s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010395s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.201996s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.210890s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000207s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000255s ]
+NOTIC: [8] Undefined variable: show /home/vagrant/Code/omo/Runtime/Cache/Admin/d3740882504eb10f252b7cc3981c17a1.php 第 103 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.162222s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.217755s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000011s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.378467s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002483s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002533s ]
+
+[ 2016-09-03T07:53:47+08:00 ] 192.168.3.1 /admin.php?s=/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.026249s ]
+INFO: [ app_init ] --END-- [ RunTime:0.027328s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003321s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0007s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%Demo/index%' ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xh_menu` WHERE `id` = 131 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT DISTINCT  `group` FROM `xh_menu` WHERE `group` <> '' AND `pid` = 131  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`url` FROM `xh_menu` WHERE `pid` = 131 AND `hide` = 0  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `xh_menu` WHERE `group` = '信息管理' AND `pid` = 131 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `xh_menu` WHERE `group` = '楼宇管理' AND `pid` = 131 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `xh_resources` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xh_resources` WHERE `status` >= 0 ORDER BY create_time desc LIMIT 0,20   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources` WHERE `status` >= 0 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] Declaration of Admin\Builder\AdminListBuilder::display() should be compatible with Admin\Builder\AdminBuilder::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 11 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012387s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012481s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000931s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000997s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011903s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.001190s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000019s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.012177s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014464s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.013435s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000019s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.026977s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013941s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.028225s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000019s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.041240s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014083s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.042555s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000018s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.055713s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014812s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.056959s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000018s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.070846s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014205s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.072129s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000018s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.085411s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017302s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.086656s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000080s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.103035s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014207s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.104357s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000044s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.117644s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013738s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.118922s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000016s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.131724s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010997s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.132945s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.142987s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010765s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.144160s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.153970s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.155148s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.164196s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010114s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.165369s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.174522s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009976s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.175701s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.184722s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010293s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.185897s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.195233s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011065s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.196417s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.206530s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010028s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.207704s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.216789s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000211s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000259s ]
+NOTIC: [8] Undefined variable: show /home/vagrant/Code/omo/Runtime/Cache/Admin/d3740882504eb10f252b7cc3981c17a1.php 第 103 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.161382s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.220474s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000011s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.380903s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001372s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001415s ]
+
+[ 2016-09-03T07:53:50+08:00 ] 192.168.3.1 /admin.php?s=/Demo/detail/rid/10096.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004290s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004813s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002177s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002235s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%Demo/detail%' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `xh_resources_position` [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: page /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 45 行.
+NOTIC: [8] Undefined variable: r /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 45 行.
+NOTIC: [8] Undefined index: limit /home/vagrant/Code/omo/ThinkPHP/Library/Think/Db/Driver.class.php 第 923 行.
+SQL: SELECT * FROM `xh_resources_position` WHERE `rid` = '10096' ORDER BY create_time desc LIMIT 0,20   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = '10096' LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 48 行.
+NOTIC: [2] Declaration of Admin\Builder\AdminListBuilder::display() should be compatible with Admin\Builder\AdminBuilder::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 11 行.
+NOTIC: [8] Undefined variable: r /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000228s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000282s ]
+NOTIC: [8] Undefined variable: show /home/vagrant/Code/omo/Runtime/Cache/Admin/d3740882504eb10f252b7cc3981c17a1.php 第 103 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.153522s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.153582s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002775s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002821s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002146s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002193s ]
+
+[ 2016-09-03T07:57:42+08:00 ] 192.168.3.1 /admin.php?s=/Demo/detail/rid/10082.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.029423s ]
+INFO: [ app_init ] --END-- [ RunTime:0.032513s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003126s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003192s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%Demo/detail%' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `xh_resources_position` [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: page /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 45 行.
+NOTIC: [8] Undefined variable: r /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 45 行.
+NOTIC: [8] Undefined index: limit /home/vagrant/Code/omo/ThinkPHP/Library/Think/Db/Driver.class.php 第 923 行.
+SQL: SELECT * FROM `xh_resources_position` WHERE `rid` = '10082' ORDER BY create_time desc LIMIT 0,20   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = '10082' LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [2] Declaration of Admin\Builder\AdminListBuilder::display() should be compatible with Admin\Builder\AdminBuilder::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 11 行.
+NOTIC: [8] Undefined variable: r /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 66 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000089s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022354s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022414s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002948s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002989s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000028s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.018358s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015770s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.003101s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.015956s ]
+NOTIC: [2] Division by zero /home/vagrant/Code/omo/ThinkPHP/Library/Think/Page.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000195s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.055638s ]
+NOTIC: [8] Undefined variable: show /home/vagrant/Code/omo/Runtime/Cache/Admin/d3740882504eb10f252b7cc3981c17a1.php 第 103 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.151149s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.024489s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000010s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.172695s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001653s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001694s ]
+
+[ 2016-09-03T08:01:16+08:00 ] 192.168.3.1 /admin.php?s=/Demo/detail/rid/10082.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.027857s ]
+INFO: [ app_init ] --END-- [ RunTime:0.030996s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005963s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006188s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0008s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0005s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%Demo/detail%' ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `xh_resources_position` [ RunTime:0.0007s ]
+NOTIC: [8] Undefined variable: page /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 45 行.
+NOTIC: [8] Undefined variable: r /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 45 行.
+NOTIC: [8] Undefined index: limit /home/vagrant/Code/omo/ThinkPHP/Library/Think/Db/Driver.class.php 第 923 行.
+SQL: SELECT * FROM `xh_resources_position` WHERE `rid` = '10082' AND `status` = '10082' ORDER BY create_time desc LIMIT 0,20   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = '10082' AND `status` = '10082' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 48 行.
+NOTIC: [2] Declaration of Admin\Builder\AdminListBuilder::display() should be compatible with Admin\Builder\AdminBuilder::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 11 行.
+NOTIC: [8] Undefined variable: r /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000431s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000534s ]
+NOTIC: [8] Undefined variable: show /home/vagrant/Code/omo/Runtime/Cache/Admin/d3740882504eb10f252b7cc3981c17a1.php 第 103 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.242212s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.242295s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002909s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002991s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003052s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003216s ]
+
+[ 2016-09-03T08:01:49+08:00 ] 192.168.3.1 /admin.php?s=/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.060400s ]
+INFO: [ app_init ] --END-- [ RunTime:0.068022s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007104s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007286s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0022s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0009s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%Demo/index%' ) LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT * FROM `xh_menu` WHERE `id` = 131 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT DISTINCT  `group` FROM `xh_menu` WHERE `group` <> '' AND `pid` = 131  [ RunTime:0.0005s ]
+SQL: SELECT `id`,`url` FROM `xh_menu` WHERE `pid` = 131 AND `hide` = 0  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `xh_menu` WHERE `group` = '信息管理' AND `pid` = 131 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `xh_menu` WHERE `group` = '楼宇管理' AND `pid` = 131 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `xh_resources` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `xh_resources` WHERE `status` >= 0 ORDER BY create_time desc LIMIT 0,20   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources` WHERE `status` >= 0 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] Declaration of Admin\Builder\AdminListBuilder::display() should be compatible with Admin\Builder\AdminBuilder::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 11 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008251s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008385s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005752s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005902s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005901s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.006168s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.006272s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005587s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.012485s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000020s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.012257s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006111s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.018438s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.018746s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005874s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.024983s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000020s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.025064s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005829s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.031253s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000031s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.031389s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005489s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.037717s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.037415s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004779s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.043605s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000019s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.042568s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005142s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.048789s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.048274s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004943s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.054551s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.053696s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003755s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.059896s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.057846s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003464s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.064041s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.061695s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004337s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.067977s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000032s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.066557s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004411s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.072923s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.071594s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003536s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.077917s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.075649s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003807s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.081865s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.079893s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003639s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.086129s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.083988s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003327s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.090171s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000020s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.087686s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000394s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000481s ]
+NOTIC: [8] Undefined variable: show /home/vagrant/Code/omo/Runtime/Cache/Admin/d3740882504eb10f252b7cc3981c17a1.php 第 103 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.209668s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.101638s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000011s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.305457s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003621s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003671s ]
+
+[ 2016-09-03T08:01:55+08:00 ] 192.168.3.1 /admin.php?s=/Demo/detail/rid/10080.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009295s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001031s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001090s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%Demo/detail%' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `xh_resources_position` [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: page /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 45 行.
+NOTIC: [8] Undefined variable: r /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 45 行.
+NOTIC: [8] Undefined index: limit /home/vagrant/Code/omo/ThinkPHP/Library/Think/Db/Driver.class.php 第 923 行.
+SQL: SELECT * FROM `xh_resources_position` WHERE `rid` = '10080' AND `status` >= 0 ORDER BY create_time desc LIMIT 0,20   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = '10080' AND `status` >= 0 LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [2] Declaration of Admin\Builder\AdminListBuilder::display() should be compatible with Admin\Builder\AdminBuilder::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 11 行.
+NOTIC: [8] Undefined variable: r /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 66 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000080s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021992s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022068s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002109s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002155s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.017198s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016692s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.002291s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.016885s ]
+NOTIC: [2] Division by zero /home/vagrant/Code/omo/ThinkPHP/Library/Think/Page.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000212s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.048833s ]
+NOTIC: [8] Undefined variable: show /home/vagrant/Code/omo/Runtime/Cache/Admin/d3740882504eb10f252b7cc3981c17a1.php 第 103 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.145680s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.022579s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.166167s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001750s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001796s ]
+
+[ 2016-09-03T08:02:00+08:00 ] 192.168.3.1 /admin.php?s=/Demo/detail/rid/10082.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000065s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.056982s ]
+INFO: [ app_init ] --END-- [ RunTime:0.062123s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002752s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002870s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0024s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0008s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%Demo/detail%' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `xh_resources_position` [ RunTime:0.0013s ]
+NOTIC: [8] Undefined variable: page /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 45 行.
+NOTIC: [8] Undefined variable: r /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 45 行.
+NOTIC: [8] Undefined index: limit /home/vagrant/Code/omo/ThinkPHP/Library/Think/Db/Driver.class.php 第 923 行.
+SQL: SELECT * FROM `xh_resources_position` WHERE `rid` = '10082' AND `status` >= 0 ORDER BY create_time desc LIMIT 0,20   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = '10082' AND `status` >= 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] Declaration of Admin\Builder\AdminListBuilder::display() should be compatible with Admin\Builder\AdminBuilder::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 11 行.
+NOTIC: [8] Undefined variable: r /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 66 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005361s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005459s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002855s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002924s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006275s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.003086s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000015s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.006509s ]
+NOTIC: [2] Division by zero /home/vagrant/Code/omo/ThinkPHP/Library/Think/Page.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000287s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000370s ]
+NOTIC: [8] Undefined variable: show /home/vagrant/Code/omo/Runtime/Cache/Admin/d3740882504eb10f252b7cc3981c17a1.php 第 103 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.175829s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.014179s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000011s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.187131s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002236s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002281s ]
+
+[ 2016-09-03T08:02:02+08:00 ] 192.168.3.1 /admin.php?s=/Demo/detail/id/10158.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004401s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005113s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001343s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0004s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%Demo/detail%' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `xh_resources_position` [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: page /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 45 行.
+NOTIC: [8] Undefined variable: r /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 45 行.
+NOTIC: [8] Undefined index: limit /home/vagrant/Code/omo/ThinkPHP/Library/Think/Db/Driver.class.php 第 923 行.
+SQL: SELECT * FROM `xh_resources_position` WHERE `rid` = 0 AND `status` >= 0 ORDER BY create_time desc LIMIT 0,20   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = 0 AND `status` >= 0 LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 48 行.
+NOTIC: [2] Declaration of Admin\Builder\AdminListBuilder::display() should be compatible with Admin\Builder\AdminBuilder::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 11 行.
+NOTIC: [8] Undefined variable: r /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 425 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000207s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000258s ]
+NOTIC: [8] Undefined variable: show /home/vagrant/Code/omo/Runtime/Cache/Admin/d3740882504eb10f252b7cc3981c17a1.php 第 103 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.145207s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.145270s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002334s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002385s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002873s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002923s ]
+
+[ 2016-09-03T08:04:18+08:00 ] 192.168.3.1 /admin.php?s=/Demo/detail/rid/10082.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.033591s ]
+INFO: [ app_init ] --END-- [ RunTime:0.037176s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005124s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005256s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0016s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%Demo/detail%' ) LIMIT 1   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `xh_resources_position` [ RunTime:0.0011s ]
+NOTIC: [8] Undefined variable: page /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 45 行.
+NOTIC: [8] Undefined variable: r /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 45 行.
+NOTIC: [8] Undefined index: limit /home/vagrant/Code/omo/ThinkPHP/Library/Think/Db/Driver.class.php 第 923 行.
+SQL: SELECT * FROM `xh_resources_position` WHERE `rid` = '10082' AND `status` >= 0 ORDER BY create_time desc LIMIT 0,20   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = '10082' AND `status` >= 0 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] Declaration of Admin\Builder\AdminListBuilder::display() should be compatible with Admin\Builder\AdminBuilder::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 11 行.
+NOTIC: [8] Undefined variable: r /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 66 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008701s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008827s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.006479s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006584s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000160s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.051246s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.006827s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.051633s ]
+NOTIC: [2] Division by zero /home/vagrant/Code/omo/ThinkPHP/Library/Think/Page.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000551s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.067738s ]
+NOTIC: [8] Undefined variable: show /home/vagrant/Code/omo/Runtime/Cache/Admin/d3740882504eb10f252b7cc3981c17a1.php 第 103 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.205185s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.066674s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.265327s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003242s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003297s ]
+
+[ 2016-09-03T08:07:54+08:00 ] 192.168.3.1 /admin.php?s=/Demo/detail/rid/10082.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000107s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.059137s ]
+INFO: [ app_init ] --END-- [ RunTime:0.065278s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010645s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0015s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0009s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%Demo/detail%' ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `xh_resources_position` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: page /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 45 行.
+NOTIC: [8] Undefined variable: r /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 45 行.
+NOTIC: [8] Undefined index: limit /home/vagrant/Code/omo/ThinkPHP/Library/Think/Db/Driver.class.php 第 923 行.
+SQL: SELECT * FROM `xh_resources_position` WHERE `rid` = '10082' AND `status` >= 0 ORDER BY create_time desc LIMIT 0,20   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = '10082' AND `status` >= 0 LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [2] Declaration of Admin\Builder\AdminListBuilder::display() should be compatible with Admin\Builder\AdminBuilder::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 11 行.
+NOTIC: [8] Undefined variable: r /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 66 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020421s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020642s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.013981s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.014154s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018225s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.014667s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000057s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.019001s ]
+NOTIC: [2] Division by zero /home/vagrant/Code/omo/ThinkPHP/Library/Think/Page.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000730s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000881s ]
+NOTIC: [8] Undefined variable: show /home/vagrant/Code/omo/Runtime/Cache/Admin/d3740882504eb10f252b7cc3981c17a1.php 第 103 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.336336s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.050624s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000054s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.372928s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003827s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003980s ]
+
+[ 2016-09-03T08:07:55+08:00 ] 192.168.3.1 /admin.php?s=/Demo/showDetail/id/10158.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004318s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004440s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000941s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001077s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%Demo/showDetail%' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `xh_resources_position` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xh_resources_position` WHERE `id` = 10158 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] Declaration of Admin\Builder\AdminConfigBuilder::display() should be compatible with Admin\Builder\AdminBuilder::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') /home/vagrant/Code/omo/Application/Admin/Builder/AdminConfigBuilder.class.php 第 11 行.
+NOTIC: [8] Undefined variable: isEdit /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 75 行.
+NOTIC: [8] Undefined variable: arr /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 80 行.
+NOTIC: [8] Undefined variable: area /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 81 行.
+NOTIC: [8] Undefined index: address /home/vagrant/Code/omo/Application/Admin/Builder/AdminConfigBuilder.class.php 第 181 行.
+NOTIC: [8] Undefined index: build_time /home/vagrant/Code/omo/Application/Admin/Builder/AdminConfigBuilder.class.php 第 181 行.
+NOTIC: [8] Undefined index: city /home/vagrant/Code/omo/Application/Admin/Builder/AdminConfigBuilder.class.php 第 181 行.
+NOTIC: [8] Undefined index: trading_area /home/vagrant/Code/omo/Application/Admin/Builder/AdminConfigBuilder.class.php 第 181 行.
+NOTIC: [8] Undefined index: desc /home/vagrant/Code/omo/Application/Admin/Builder/AdminConfigBuilder.class.php 第 181 行.
+NOTIC: [8] Undefined index: more_desc /home/vagrant/Code/omo/Application/Admin/Builder/AdminConfigBuilder.class.php 第 181 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000273s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000325s ]
+NOTIC: [8] Undefined variable: importCheckBox /home/vagrant/Code/omo/Runtime/Cache/Admin/7a15e393305d98ddd2ff264cea51db6a.php 第 341 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.283196s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.283247s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000692s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000734s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000931s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000979s ]
+
+[ 2016-09-03T08:09:04+08:00 ] 192.168.3.1 /admin.php?s=/Demo/showDetail/id/10158.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031191s ]
+INFO: [ app_init ] --END-- [ RunTime:0.034561s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004913s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005038s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0009s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0006s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%Demo/showDetail%' ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `xh_resources_position` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `xh_resources_position` WHERE `id` = 10158 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] Declaration of Admin\Builder\AdminConfigBuilder::display() should be compatible with Admin\Builder\AdminBuilder::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') /home/vagrant/Code/omo/Application/Admin/Builder/AdminConfigBuilder.class.php 第 11 行.
+NOTIC: [8] Undefined variable: isEdit /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 75 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000678s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000788s ]
+NOTIC: [8] Undefined variable: importDatetimePicker /home/vagrant/Code/omo/Runtime/Cache/Admin/7a15e393305d98ddd2ff264cea51db6a.php 第 318 行.
+NOTIC: [8] Undefined variable: importCheckBox /home/vagrant/Code/omo/Runtime/Cache/Admin/7a15e393305d98ddd2ff264cea51db6a.php 第 341 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.262882s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.262954s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003417s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003470s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003526s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003579s ]
+
+[ 2016-09-03T08:18:09+08:00 ] 192.168.3.1 /admin.php?s=/Demo/showDetail/id/10158.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.038390s ]
+INFO: [ app_init ] --END-- [ RunTime:0.042571s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006184s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006536s ]
+ERR: syntax error, unexpected '；' (T_STRING)
+
+[ 2016-09-03T08:18:27+08:00 ] 192.168.3.1 /admin.php?s=/Demo/showDetail/id/10158.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.029209s ]
+INFO: [ app_init ] --END-- [ RunTime:0.032299s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004498s ]
+ERR: syntax error, unexpected '；' (T_STRING)
+
+[ 2016-09-03T08:18:44+08:00 ] 192.168.3.1 /admin.php?s=/Demo/showDetail/id/10158.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.072209s ]
+INFO: [ app_init ] --END-- [ RunTime:0.081978s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010464s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010630s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0012s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0006s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%Demo/showDetail%' ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `xh_resources_position` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `xh_resources_position` WHERE `id` = 10158 LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [2] Declaration of Admin\Builder\AdminConfigBuilder::display() should be compatible with Admin\Builder\AdminBuilder::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') /home/vagrant/Code/omo/Application/Admin/Builder/AdminConfigBuilder.class.php 第 11 行.
+NOTIC: [8] Undefined variable: isEdit /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 89 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000859s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000995s ]
+NOTIC: [8] Undefined variable: importDatetimePicker /home/vagrant/Code/omo/Runtime/Cache/Admin/7a15e393305d98ddd2ff264cea51db6a.php 第 318 行.
+NOTIC: [8] Undefined variable: importCheckBox /home/vagrant/Code/omo/Runtime/Cache/Admin/7a15e393305d98ddd2ff264cea51db6a.php 第 341 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.294178s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.294271s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003128s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003170s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003199s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003258s ]
+
+[ 2016-09-03T08:19:08+08:00 ] 192.168.3.1 /admin.php?s=/Demo/showDetail/id/10158.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.026830s ]
+INFO: [ app_init ] --END-- [ RunTime:0.029549s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004707s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0006s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%Demo/showDetail%' ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `xh_resources_position` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `xh_resources_position` WHERE `id` = 10158 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Declaration of Admin\Builder\AdminConfigBuilder::display() should be compatible with Admin\Builder\AdminBuilder::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') /home/vagrant/Code/omo/Application/Admin/Builder/AdminConfigBuilder.class.php 第 11 行.
+NOTIC: [8] Undefined variable: isEdit /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 89 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000472s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000559s ]
+NOTIC: [8] Undefined variable: importDatetimePicker /home/vagrant/Code/omo/Runtime/Cache/Admin/7a15e393305d98ddd2ff264cea51db6a.php 第 318 行.
+NOTIC: [8] Undefined variable: importCheckBox /home/vagrant/Code/omo/Runtime/Cache/Admin/7a15e393305d98ddd2ff264cea51db6a.php 第 341 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.290161s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.290260s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002710s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002755s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002960s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003034s ]
+
+[ 2016-09-03T09:15:52+08:00 ] 192.168.233.1 /admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010114s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011325s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001814s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001891s ]
+
+[ 2016-09-03T09:15:52+08:00 ] 192.168.233.1 /admin.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008919s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009055s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001631s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001817s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000135s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.065363s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.065426s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002094s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002135s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002364s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002418s ]
+
+[ 2016-09-03T09:15:52+08:00 ] 192.168.233.1 /admin.php?s=/Public/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.006798s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006981s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000926s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001033s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000568s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000629s ]
+
+[ 2016-09-03T09:15:55+08:00 ] 192.168.233.1 /admin.php?s=/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016366s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016866s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003098s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003340s ]
+NOTIC: [8] Undefined index: lite /home/vagrant/Code/omo/ThinkPHP/Library/Think/Db.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `xh_member` [ RunTime:0.0028s ]
+SQL: SELECT `uid`,`nickname`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `xh_member` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xh_action` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `xh_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `xh_action_log` [ RunTime:0.0047s ]
+SQL: INSERT INTO `xh_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('1','1','3232295169','member','1','1472865354','admin在2016-09-03 09:15登录了后台') [ RunTime:0.0014s ]
+SQL: SELECT * FROM `xh_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 1 /home/vagrant/Code/omo/Application/Common/Common/function.php 第 679 行.
+NOTIC: [2] array_key_exists() expects parameter 2 to be array, null given /home/vagrant/Code/omo/Application/Common/Common/function.php 第 679 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_action_log` WHERE `action_id` = 1 AND `user_id` = 1 AND `create_time` > 1472778954 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `xh_member` SET `login`=`login`+1,`last_login_time`='1472865354',`last_login_ip`='3232295169' WHERE `uid` = 1 [ RunTime:0.0002s ]
+
+[ 2016-09-03T09:15:55+08:00 ] 192.168.233.1 /admin.php?s=/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009749s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011333s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001613s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001688s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0031s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0011s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%Index/index%' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0019s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000121s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000179s ]
+INFO: [ AdminIndex ] --START--
+SQL: SHOW COLUMNS FROM `xh_addons` [ RunTime:0.0026s ]
+SQL: SELECT `config` FROM `xh_addons` WHERE `name` = 'SiteStat' AND `status` = 1 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `xh_member` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_member` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xh_action_log` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_action_log` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `xh_document` [ RunTime:0.0017s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_document` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xh_category` [ RunTime:0.0029s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_category` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xh_model` [ RunTime:0.0028s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_model` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.133186s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025374s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025448s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002284s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002330s ]
+INFO: Run Addons\SiteStat\SiteStatAddon [ RunTime:0.082641s ]
+SQL: SELECT `config` FROM `xh_addons` WHERE `name` = 'SystemInfo' AND `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.468485s ]
+SQL: select version() as v; [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034773s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.309818s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.342338s ]
+INFO: Run Addons\SystemInfo\SystemInfoAddon [ RunTime:0.342365s ]
+SQL: SELECT `config` FROM `xh_addons` WHERE `name` = 'DevTeam' AND `status` = 1 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.519213s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019652s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.361991s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000018s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.379414s ]
+INFO: Run Addons\DevTeam\DevTeamAddon [ RunTime:0.037085s ]
+INFO: [ AdminIndex ] --END-- [ RunTime:0.462174s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019916s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.361991s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.379621s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001359s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001436s ]
+
+[ 2016-09-03T09:15:58+08:00 ] 192.168.233.1 /admin.php?s=/Datacenter/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031214s ]
+INFO: [ app_init ] --END-- [ RunTime:0.035613s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005236s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005486s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0009s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0005s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%Datacenter/index%' ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xh_menu` WHERE `id` = 131 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT DISTINCT  `group` FROM `xh_menu` WHERE `group` <> '' AND `pid` = 131  [ RunTime:0.0006s ]
+SQL: SELECT `id`,`url` FROM `xh_menu` WHERE `pid` = 131 AND `hide` = 0  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `xh_menu` WHERE `group` = '信息管理' AND `pid` = 131 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `xh_menu` WHERE `group` = '楼宇管理' AND `pid` = 131 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `xh_trading_area` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `xh_trading_area` WHERE `status` >= 0 ORDER BY id asc LIMIT 0,20   [ RunTime:0.0017s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_trading_area` WHERE `status` >= 0 LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [2] Declaration of Admin\Builder\AdminListBuilder::display() should be compatible with Admin\Builder\AdminBuilder::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 11 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012534s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012599s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003596s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003638s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010553s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.003763s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.010734s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008972s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.014544s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.019939s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010251s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.023802s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.030470s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010143s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.034268s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.040843s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010934s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.044642s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.051996s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010328s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.055795s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.062546s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010418s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.066366s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.073203s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010307s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.077028s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.083756s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010387s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.087553s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.094357s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010536s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.098164s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.105117s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010324s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.108918s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.115661s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009502s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.119482s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.125401s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009376s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.129229s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.135025s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009970s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.138825s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.145218s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009471s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.149023s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000014s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.154957s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008655s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.158782s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.163869s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011093s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.167666s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.175177s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009142s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.178989s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.184549s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009133s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.188348s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.193899s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000215s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000274s ]
+NOTIC: [8] Undefined variable: show /home/vagrant/Code/omo/Runtime/Cache/Admin/d3740882504eb10f252b7cc3981c17a1.php 第 103 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.175789s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.224872s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000011s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.397090s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003489s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003539s ]
+
+[ 2016-09-03T09:16:02+08:00 ] 192.168.233.1 /admin.php?s=/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.034132s ]
+INFO: [ app_init ] --END-- [ RunTime:0.038035s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006627s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006858s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%Demo/index%' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xh_menu` WHERE `id` = 131 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `xh_menu` WHERE `group` <> '' AND `pid` = 131  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`url` FROM `xh_menu` WHERE `pid` = 131 AND `hide` = 0  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `xh_menu` WHERE `group` = '信息管理' AND `pid` = 131 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `xh_menu` WHERE `group` = '楼宇管理' AND `pid` = 131 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `xh_resources` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `xh_resources` WHERE `status` >= 0 ORDER BY create_time desc LIMIT 0,20   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources` WHERE `status` >= 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] Declaration of Admin\Builder\AdminListBuilder::display() should be compatible with Admin\Builder\AdminBuilder::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 11 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011342s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011411s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001774s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001847s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011148s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.001980s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.011343s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010836s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.013392s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.022442s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009698s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.024467s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.032383s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008716s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.034399s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.041354s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009652s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.043364s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.051225s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008859s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.053240s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.060310s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009836s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.062341s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.070388s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009401s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.072413s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.080024s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009671s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.082033s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.089915s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011763s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.091928s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.101901s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009245s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.103925s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.111380s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010259s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.113465s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.121935s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009949s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.123980s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.132155s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010472s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.134169s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.142851s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009948s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.144886s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.153045s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009122s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.155060s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000017s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.162422s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009740s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.164468s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.172536s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000201s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000248s ]
+NOTIC: [8] Undefined variable: show /home/vagrant/Code/omo/Runtime/Cache/Admin/d3740882504eb10f252b7cc3981c17a1.php 第 103 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.146901s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.178885s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.323986s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003047s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003099s ]
+
+[ 2016-09-03T09:16:07+08:00 ] 192.168.233.1 /admin.php?s=/Demo/detail/rid/10080.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000068s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.040924s ]
+INFO: [ app_init ] --END-- [ RunTime:0.045927s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004670s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0017s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0009s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%Demo/detail%' ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `xh_resources_position` [ RunTime:0.0037s ]
+NOTIC: [8] Undefined variable: page /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 45 行.
+NOTIC: [8] Undefined variable: r /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 45 行.
+NOTIC: [8] Undefined index: limit /home/vagrant/Code/omo/ThinkPHP/Library/Think/Db/Driver.class.php 第 923 行.
+SQL: SELECT * FROM `xh_resources_position` WHERE `rid` = '10080' AND `status` >= 0 ORDER BY create_time desc LIMIT 0,20   [ RunTime:0.0026s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = '10080' AND `status` >= 0 LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Declaration of Admin\Builder\AdminListBuilder::display() should be compatible with Admin\Builder\AdminBuilder::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 11 行.
+NOTIC: [8] Undefined variable: r /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 66 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023733s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023991s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004771s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004961s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000075s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000209s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044795s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.005392s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000019s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.045311s ]
+NOTIC: [2] Division by zero /home/vagrant/Code/omo/ThinkPHP/Library/Think/Page.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000323s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.050541s ]
+NOTIC: [8] Undefined variable: show /home/vagrant/Code/omo/Runtime/Cache/Admin/d3740882504eb10f252b7cc3981c17a1.php 第 103 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.167857s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.056132s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000011s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.219057s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001764s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001814s ]
+
+[ 2016-09-03T09:16:12+08:00 ] 192.168.233.1 /admin.php?s=/Demo/showDetail/id/10150.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015759s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017547s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003615s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003717s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0007s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%Demo/showDetail%' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `xh_resources_position` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xh_resources_position` WHERE `id` = 10150 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] Declaration of Admin\Builder\AdminConfigBuilder::display() should be compatible with Admin\Builder\AdminBuilder::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') /home/vagrant/Code/omo/Application/Admin/Builder/AdminConfigBuilder.class.php 第 11 行.
+NOTIC: [8] Undefined variable: isEdit /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 87 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000259s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000354s ]
+NOTIC: [8] Undefined variable: importDatetimePicker /home/vagrant/Code/omo/Runtime/Cache/Admin/7a15e393305d98ddd2ff264cea51db6a.php 第 318 行.
+NOTIC: [8] Undefined variable: importCheckBox /home/vagrant/Code/omo/Runtime/Cache/Admin/7a15e393305d98ddd2ff264cea51db6a.php 第 341 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.217884s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.217950s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002569s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002628s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003282s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003341s ]
+
+[ 2016-09-03T09:16:25+08:00 ] 192.168.233.1 /admin.php?s=/Datacenter/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012138s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001059s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001165s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0004s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%Datacenter/index%' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xh_menu` WHERE `id` = 131 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT DISTINCT  `group` FROM `xh_menu` WHERE `group` <> '' AND `pid` = 131  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`url` FROM `xh_menu` WHERE `pid` = 131 AND `hide` = 0  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `xh_menu` WHERE `group` = '信息管理' AND `pid` = 131 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `xh_menu` WHERE `group` = '楼宇管理' AND `pid` = 131 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `xh_trading_area` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xh_trading_area` WHERE `status` >= 0 ORDER BY id asc LIMIT 0,20   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_trading_area` WHERE `status` >= 0 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] Declaration of Admin\Builder\AdminListBuilder::display() should be compatible with Admin\Builder\AdminBuilder::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 11 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001917s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001984s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000804s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000845s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002278s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.000977s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000010s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.002453s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002012s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.003447s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.004808s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004874s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.005920s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.010011s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003288s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.011026s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000014s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.013531s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004310s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.014549s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.018070s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003735s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.019092s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000014s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.022051s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002880s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.023140s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.025241s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004032s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.026263s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.029522s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005288s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.030537s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.035055s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003576s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.036081s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000014s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.038881s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004512s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.039920s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.043648s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004393s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.044663s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.048270s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003788s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.049283s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.052284s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004100s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.053299s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000018s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.056658s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005156s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.057740s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.062119s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005050s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.063139s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.067393s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004572s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.068415s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000019s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.072246s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004944s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.073357s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.077521s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005295s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.078536s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.083038s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000200s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000249s ]
+NOTIC: [8] Undefined variable: show /home/vagrant/Code/omo/Runtime/Cache/Admin/d3740882504eb10f252b7cc3981c17a1.php 第 103 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.163587s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.089589s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000011s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.252402s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002222s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002281s ]
+
+[ 2016-09-03T09:16:28+08:00 ] 192.168.233.1 /admin.php?s=/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011717s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002518s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002581s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0004s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%Demo/index%' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xh_menu` WHERE `id` = 131 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT DISTINCT  `group` FROM `xh_menu` WHERE `group` <> '' AND `pid` = 131  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`url` FROM `xh_menu` WHERE `pid` = 131 AND `hide` = 0  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `xh_menu` WHERE `group` = '信息管理' AND `pid` = 131 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `xh_menu` WHERE `group` = '楼宇管理' AND `pid` = 131 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `xh_resources` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xh_resources` WHERE `status` >= 0 ORDER BY create_time desc LIMIT 0,20   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources` WHERE `status` >= 0 LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [2] Declaration of Admin\Builder\AdminListBuilder::display() should be compatible with Admin\Builder\AdminBuilder::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 11 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004622s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004685s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002681s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002725s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003493s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.002853s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.003680s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004615s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.006591s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000011s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.008552s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003693s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.011429s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000010s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.012435s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003224s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.015310s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.015863s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003817s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.018750s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000011s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.019886s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001793s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.022768s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000010s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.021874s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001829s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.024741s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000010s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.023882s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002453s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.026752s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000009s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.026545s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002488s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.029410s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.029207s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002012s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.032078s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000011s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.031436s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001640s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.034309s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000008s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.033256s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003625s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.036152s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.037108s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004567s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.039999s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000011s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.041885s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004602s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.044774s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.046717s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005326s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.049608s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.052255s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004285s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.055139s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000010s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.056755s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004085s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.059628s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000011s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.061032s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000195s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000242s ]
+NOTIC: [8] Undefined variable: show /home/vagrant/Code/omo/Runtime/Cache/Admin/d3740882504eb10f252b7cc3981c17a1.php 第 103 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.152903s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.068134s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.218376s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001699s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001768s ]
+
+[ 2016-09-03T09:16:34+08:00 ] 192.168.233.1 /admin.php?s=/Demo/detail/rid/10082.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.012537s ]
+INFO: [ app_init ] --END-- [ RunTime:0.013603s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002921s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003009s ]
+SQL: SHOW COLUMNS FROM `xh_menu` [ RunTime:0.0008s ]
+SQL: SELECT `id`,`title`,`url` FROM `xh_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0004s ]
+SQL: SELECT `pid` FROM `xh_menu` WHERE ( pid !=0 AND url like '%Demo/detail%' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xh_region` WHERE ( status = 1 )  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `xh_resources_position` [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: page /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 45 行.
+NOTIC: [8] Undefined variable: r /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 45 行.
+NOTIC: [8] Undefined index: limit /home/vagrant/Code/omo/ThinkPHP/Library/Think/Db/Driver.class.php 第 923 行.
+SQL: SELECT * FROM `xh_resources_position` WHERE `rid` = '10082' AND `status` >= 0 ORDER BY create_time desc LIMIT 0,20   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = '10082' AND `status` >= 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] Declaration of Admin\Builder\AdminListBuilder::display() should be compatible with Admin\Builder\AdminBuilder::display($templateFile = '', $charset = '', $contentType = '', $content = '', $prefix = '') /home/vagrant/Code/omo/Application/Admin/Builder/AdminListBuilder.class.php 第 11 行.
+NOTIC: [8] Undefined variable: r /home/vagrant/Code/omo/Application/Admin/Controller/DemoController.class.php 第 66 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014583s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014665s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002874s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002930s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012309s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.003114s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.012558s ]
+NOTIC: [2] Division by zero /home/vagrant/Code/omo/ThinkPHP/Library/Think/Page.class.php 第 84 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000214s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000263s ]
+NOTIC: [8] Undefined variable: show /home/vagrant/Code/omo/Runtime/Cache/Admin/d3740882504eb10f252b7cc3981c17a1.php 第 103 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.155026s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.021418s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000011s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.173569s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002394s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002483s ]
+

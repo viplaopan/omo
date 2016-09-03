@@ -1,0 +1,49 @@
+.check{
+	float: left;
+	margin-top: 10px;
+	margin-right: 22px;
+}
+.check input{
+	margin: 0;
+	width: 0px;
+	height: 0px;
+	padding: 0;
+	border: 0;
+}
+.check label {
+	cursor: pointer;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #b5b5b5;
+	top: 0;
+  	left: 0;
+	outline: none;
+}
+.check.selected label:after{
+	content: '';
+	position: absolute;
+	width: 14px;
+	height: 7px;
+	background: transparent;
+	top:4px;
+	left:2px;
+	border: 2px solid #13aced;
+	border-top: none;
+	border-right: none;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.check span{
+	margin-left: 27px;
+	color: #222;
+	float: left;	
+	cursor:pointer ;
+}
+.check span a{
+	color: #13aced;
+	text-decoration: underline;
+}

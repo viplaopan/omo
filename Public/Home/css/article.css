@@ -1,0 +1,455 @@
+
+body{
+	background-color: #fff;
+}
+h2{
+	font-size: 28px;
+	color: #000;
+	padding-top: 25px;
+}
+.wrapTop p{
+	font-size: 20px;
+	color: #666;
+	line-height: 52px;
+}
+.wrapCen{
+	border-top: 1px solid #d8d8d8;
+	border-bottom: 1px solid #d8d8d8;
+}
+.wrapCen ol li{
+	width: 186px;
+	height: 56px;
+	line-height: 56px;
+	float: left;
+	padding-left: 75px;
+	background: #f6f6f6 url(../images/view01.png) 20px 13px no-repeat;
+	border-left: 1px solid #d8d8d8;
+}
+.wrapCen ol li:nth-child(2){
+	background: #f6f6f6 url(../images/view02.png) 20px 11px no-repeat;
+	border-right: 1px solid #d8d8d8;
+}
+.wrapCen ol li a{
+	font-size: 14px;
+	color: #000;
+}
+.wrapCen ol{
+	float: left;
+}
+.search{
+	float: right;
+	width: 220px;
+	height: 56px;
+	line-height: 56px;
+	background-color: #f6f6f6;
+	border-right: 1px solid #d8d8d8;
+	border-left: 1px solid #d8d8d8;
+	font-size: 14px;
+	color: #000;
+	padding-left: 55px;
+	background:  url(../images/de_searchIcon.png) 13px 14px no-repeat;
+}
+.wrapCen ol li.current{
+	background-color: #dbf4ff;
+}
+.inWrapL{
+	width: 851px;
+	float: left;
+}
+.inWrapL .list li{
+	margin-top: 20px;
+	height: 221px;
+	border: 1px solid #c6c6c6;
+}
+.inWrapL .list li .tab{
+	width: 228px;
+	float: left;
+	font-size: 0;
+	padding: 5px;
+}
+.inWrapL .tabHd{
+	height: 154px;
+	position: relative;
+	margin-bottom: 3px;
+}
+.inWrapL .tabHd img{
+	width: 216px;
+	height: 154px;
+	position: absolute;
+	display: none;
+}
+.inWrapL .tabHd img:nth-child(1){
+	display: block;
+}
+.inWrapL .tabBd img{
+	width: 70px;
+	height: 50px;
+	float: left;
+	margin-left: 3px;
+}
+.inWrapL .tabBd img:nth-child(1){
+	margin-left: 0;
+}
+.listImg img{
+	margin-top: 3px;
+	margin-left: 3px;
+}
+
+.listImg img:nth-child(2){
+	margin-left: 0;
+}
+.inWrapL .list li:hover{
+	border:1px solid #13aced;
+	cursor: pointer;
+}
+.inWrapL .list li .liCen{
+	float: left;
+	width: 370px;
+	color: #222;
+	margin-left: 10px;
+	font-size: 14px;
+	line-height: 24px;
+}
+.inWrapL .list li .liCen h3{
+	font-size: 22px;
+	font-weight: normal;
+	line-height: 55px;
+	height: 55px;
+	overflow: hidden;
+}
+.inWrapL .list li .liCen dd{
+	float: left;
+	font-size: 14px;
+	color: #999;
+	width: 123px;
+}
+.inWrapL .list li .liCen dl{
+	height: 40px;
+	overflow: hidden;
+}
+.inWrapL .list li .liCen dd:before{
+	content: '';
+	width: 3px;
+	height: 3px;
+	background-color: #999;
+	display: inline-block;position: relative;
+	margin-right: 5px;
+	top: -2px;
+}
+.inWrapL .list li .liCen p{
+	height: auto;
+	margin-bottom: 10px;;
+}
+.inWrapL .list li .liR{
+	width: 212px;
+	padding: 0 22px;
+	padding-top: 15px;
+	float: right;
+	background-color: #dbf4ff;
+	height: 219px;
+	font-size: 14px;
+	color: #222;
+}
+.pDetail{
+	margin-top: 10px;
+}
+.inWrapL .list li .liR strong{
+	font-size: 48px;
+	color: #2d2d2d;
+	font-weight: normal;
+	line-height: 50px;
+}
+.inWrapL .list li .liR b{
+	color: #fd7f0e;
+	font-size: 14px;
+	border: 1px solid #fd7f0e;
+	font-weight: normal;
+	padding: 0 10px;
+	line-height: 20px;
+	border-radius: 10px;
+}
+.inWrapL .list li .liR button{
+	width: 100%;
+	height: 36px;
+	background-color: #2d2d2d;
+	color: #fff;
+}
+.inWrapL .list li .liR button:hover{
+	background-color: #696969;
+}
+.inWrapL .list li .liR button a{
+	color: #fff;
+}
+.inWrapL .list li .liR .btn1{
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+.inWrapL .list li .liR button:nth-child(1){
+	background-color: #13aced;
+}
+.inWrapL .list li .liR button:nth-child(1):hover{
+	background-color: #38bdf6;
+}
+.flipOver{
+	margin-top: 33px;
+	margin-bottom: 30px;
+}
+.flipOver ul{
+	display: inline-block;
+	position: relative;
+	top: 11px;
+}
+.flipOver li{
+	float: left;
+	border: 1px solid #ddd;
+	margin-right: 5px;
+}
+.flipOver li a{
+	padding:6px 12px;
+	display: block;
+}
+.flipOver li:hover{
+	border: 1px solid #13aced;
+}
+.flipOver li:hover a{
+	color: #13aced;
+}
+.flipOver li.current{
+	background: #13aced;
+}
+.flipOver li.current a{
+	color: #fff;
+}
+.flipOver .special:hover{
+	border: none;
+	color: #222;
+}
+.flipOver .special{
+	border: none;
+	padding: 0;
+	margin-top: 10px;
+}
+.flipOver span{
+	color: #222;
+	margin:0 5px;
+}
+.flipOver span input{
+	margin: 0 8px;
+}
+.flipOver input{
+	width: 60px;
+	height: 30px;
+	border: 1px solid #ddd;
+	text-align: center;
+	outline: none;
+}
+.flipOver button{
+	width: 62px;
+	height: 32px;
+	background-color: #13aced;
+	color: #fff;
+	line-height: 32px;
+	text-align: center;
+	cursor: pointer;
+}
+.flipOver button:hover{
+	background: #149ed8;
+	outline: none;
+}
+.inWrapR{
+	float: right;
+	width: 220px;
+	background-color: #f6f6f6;
+	border: 1px solid #d8d8d8;
+	border-top: none;
+}
+.inWrapR .pad{
+	padding: 0 17px;
+}
+.inWrapR h5{
+	font-size: 18px;
+	color: #000;
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+.inWrapR .dropdown{
+	padding: 0;
+	background-color: #fff;
+}
+.inWrapR .dropdown button{
+	width: 185px;
+	height: 35px;
+	border: 1px solid #d8d8d8;
+	background-color: transparent;
+	text-align: left;
+	padding-left: 13px;
+	font-size: 14px;
+	color: #999;
+	outline: none;
+	position: relative;
+}
+.inWrapR .dropdown button:hover{
+	border: 1px solid #13aced;
+}
+.inWrapR .dropdown:hover .caret{
+	border-top: 3px solid #13aced;
+	border-left: 3px solid #13aced;
+}
+.inWrapR .dropdown .caret{
+	border: none;
+	width: 10px;
+	height: 10px;
+	border-top: 3px solid #2d2d2d;
+	border-left: 3px solid #2d2d2d;
+	float: right;
+	-webkit-ransform: rotate(-135deg);
+	-ms-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+	transform: rotate(-135deg);
+	position:absolute;
+	top: 11px;
+	right: 15px;
+}
+.city .dropdown-menu{
+	min-width: 185px;
+	border-radius: 0;
+	margin-top: 0;
+	text-align: center;
+	padding: 0;
+	border-top: 1px solid #fff;
+	border-bottom: none;
+	box-shadow: none;
+	cursor: pointer;z-index: 10;
+}
+.city .dropdown-menu li{
+	line-height: 30px;
+	border-bottom: 1px solid #d8d8d8;
+}
+.location input{
+	width: 185px;
+	height: 35px;
+	border: 1px solid #d8d8d8;
+	padding: 0 14px;
+	font-size: 14px;
+}
+.inWrapR .location,.inWrapR  .rapid{
+	border-bottom: 1px solid #d8d8d8;
+	padding-bottom: 14px;
+}
+.rapid .drop{
+	width: 185px;
+	height: 35px;
+	margin-bottom: 14px;
+}
+.rapid .drop em{
+	width: 58px;
+	height: 35px;
+	background-color: #2d2d2d;
+	display: inline-block;
+	line-height: 35px;
+	text-align: center;
+	color: #fff;
+	float: left;
+	position: relative;
+	z-index: 1;
+}
+.rapid .dropdown-menu{
+	min-width: 127px;
+	border-radius: 0;
+	left: 58px;
+	margin-top: 0;
+	text-align: center;
+	padding: 0;
+	border-top: 1px solid #fff;
+	border-bottom: none;
+	box-shadow: none;
+	cursor: pointer;z-index: 1;
+}
+.rapid .dropdown-menu li{
+	line-height: 30px;
+	border-bottom: 1px solid #d8d8d8;
+}
+.dropdownList dd:hover{
+	color: #13aced;
+}
+.rapid div dl{
+	background-color: #fff;
+	position: fixed;
+	width: 127px;
+	left: 50%;
+	margin-left: 280px;
+	border: 1px solid #d8d8d8;
+	text-align: center;
+	z-index: 2;
+	font-size: 14px;
+	cursor: pointer;
+	border-bottom: none;
+	display: none;
+}
+.rapid div dl dd{
+	line-height: 30px;
+	border-bottom: 1px solid #d8d8d8;
+}
+.inWrapR .rapid .dropdown button{
+	width: 127px;
+	float: right;
+	border: 1px solid #d8d8d8;
+}
+.inWrapR .rapid .drop:hover button{
+	border: 1px solid #13aced!important;
+}
+.inWrapR .rapid .drop:hover em{
+	background-color:#13aced;
+}
+.checkboxFive {
+	width: 84px;
+	position: relative;
+	float: left;
+	margin-bottom: 12px;
+}
+.checkboxFive.selected label{
+	background-color: #13aced;
+}
+.checkboxFive.selected span{
+	color: #13aced;
+}
+.checkboxFive label {
+	cursor: pointer;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 0;
+  	left: 0;
+  	border-radius: 5px;
+	background: #d7dcde;
+	outline: none;
+}
+.checkboxFive.selected label:after{
+	content: '';
+	position: absolute;
+	width: 12px;
+	height: 7px;
+	background: transparent;
+	top:6px;
+	left: 5px;
+	border: 3px solid #fff;
+	border-top: none;
+	border-right: none;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.checkboxFive span{
+	font-size: 14px;
+	color: #000;
+	margin-left: 26px;
+	line-height: 20px;
+	position: relative;
+	top: -1px;
+	cursor: pointer;
+}
+.checkboxFive:nth-child(3){
+	width: 100px;
+}

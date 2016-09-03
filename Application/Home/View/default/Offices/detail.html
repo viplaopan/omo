@@ -1,0 +1,555 @@
+<extend name="Base/common" />
+<block name="style">
+	<link rel="stylesheet" type="text/css" href="__CSS__/details.css">
+	<script type="text/javascript" src="__JS__/details.js"></script>
+</block>
+<block name="body">
+	<div class="wrap">
+		<div class="bread">
+			<div class="inBread main">
+				<span><a href="javascript:;">首页</a></span><span> > </span><span><a href="javascript:;">找办公空间</a></span><span> > </span><span class="current">{$info.title}</span>
+			</div>
+		</div>
+		<div class="inWrap main clearfix">
+			<div class="wrapL">
+				<div class="work bd">
+					<p>{$info.region}</p>
+					<p>{$info.title}</p>
+				</div>
+				<div class="serve bd">
+					<eq name="info.zanwu" value="0">
+						<h4>服务式办公</h4>
+						<neq name="info.minMonth" value=''>
+								<strong>¥{$info.minMonth}</strong>
+								<span>起/工位/月</span>
+								<p>价格会受到一些因素影响，包括所需工位数，租期长短等</p>
+							
+							<else/>
+								<strong>¥{$info.minHour}</strong>
+								<span>起/工位/时</span>
+								<p>价格会受到一些因素影响，包括所需工位数，租期长短等</p>
+						</neq>
+					<else/>
+					<h4 style="color: #FBAD1E;">暂无房源</h4>
+					</eq>
+				</div>
+				<div class="peple bd">
+					<h4>此中心顾问</h4>
+					<img src="{$info.contact.head}">
+					<p><span>{$info.contact.chinese_name}</span></p>
+					<div class="btns">
+						<button>视频观看</button>
+						<button>在线预约</button>
+						<button>点击收藏</button>
+					</div>
+					<!--<img src="__IMG__/code.jpg">
+					<p>轻扫二维码分享给小伙伴</p>-->''
+				</div>
+			</div>
+			<div class="wrapR">
+				<if condition="($promotions neq '') OR ($actuals neq '') ">
+				<div class="tab">
+					
+					<div class="tabHd">
+						<ul class="clearfix">
+							<notempty name="promotions"><li  class="current"><a href="javascript:;">促销讯息</a></li></notempty>
+							<notempty name="actuals"><li><a href="javascript:;">实时讯息</a></li></notempty>
+						</ul>
+					</div>
+					
+					<div class="tabBd clearfix">
+						<notempty name="promotions">
+						<ol>
+							<volist name='promotions' id='vo' mod='6' empty="暂时没有数据">
+								<script type="text/javascript">
+									var actuals{$vo['id']} = <php>echo json_encode($vo);</php>
+								</script>
+								<li class="<eq name="mod" value="4">first</eq> marks" data-toggle="modal" data-target="#myModal" data-id='{$vo['id']}'>
+									<div class="imagesLists" style="display: none;">
+										<volist name='vo.images' id='ivo' key='k'>
+											<div class="item <eq name="k" value="1">active</eq>">
+											    <img src="{$ivo.path|grace_path='Position'}">
+										    </div>
+									    </volist>
+									</div>
+									<a href="javascript:;"  class=" btn-primary">
+										<img src="{$vo.cover}">
+										<div class="img-down">
+											<div class="in-down">
+												<span>{$vo.monthTitle|default='暂无'}</span>
+												<s>{$vo.promMonthTitle|default='无'}</s>
+											</div>
+											<div class="in-down in-down2">
+												<span>{$vo.hourTitle|default='暂无'}</span>
+												<s>{$vo.promHourTitle|default='无'}</s>
+											</div>
+											<p>{$vo.start_time|date="Y年m月d日",###}至{$vo.end_time|date="Y年m月d日",###}
+												<br/>
+												可扩充为{$vo.addpace}人工位</p>
+										</div>
+										<strong>{$vo.typeTitle}</strong>
+									</a>
+								</li>
+							</volist>
+							<empty name="promotions">
+							<li class="empty"><div class="in-no-office">
+			                    <img src="__IMG__/not_office.jpg">
+			                    <p>SORRY，没有促销房源!</p>
+			                    <a href="{:U("Home/Offices/index")}">查看其他</a>
+			                </div>
+							</li>
+		               		 </empty>
+						</ol>
+						</notempty>
+						<notempty name="actuals">
+						<ol>
+							<volist name='actuals' id='vo' mod='4' empty="$empty">
+								<script type="text/javascript">
+									var actuals{$vo['id']} = <php>echo json_encode($vo);</php>
+								</script>
+								
+								<li class="<eq name="mod" value="0">first</eq> marks" data-toggle="modal" data-target="#myModal" data-id='{$vo['id']}'>
+									<div class="imagesLists" style="display: none;">
+										<volist name='vo.images' id='ivo' key='k'>
+											<div class="item <eq name="k" value="1">active</eq>">
+											    <img src="{$ivo.path|grace_path='Position'}">
+										    </div>
+									    </volist>
+									</div>
+									<a href="javascript:;"  class=" btn-primary">
+										<img src="{$vo.cover}">
+										<div class="img-down">
+											<div class="in-down">
+												<span>{$vo.monthTitle|default='暂无'}</span>
+												
+											</div>
+											<div class="in-down in-down2">
+												<span>{$vo.hourTitle|default='暂无'}</span>
+												
+											</div>
+											<p>{$vo.start_time|date="Y年m月d日",###}至{$vo.end_time|date="Y年m月d日",###}
+												<br/>
+												可扩充为{$vo.addpace}人工位</p>
+										</div>
+									</a>
+									<strong>{$vo.typeTitle}</strong>
+								</li>
+								
+							</volist>
+							<empty name="actuals">
+								<li class="empty"><div class="in-no-office">
+				                    <img src="__IMG__/not_office.jpg">
+				                    <p>SORRY， 没有实时房源!</p>
+				                    <a href="{:U("Home/Offices/index")}">查看其他</a>
+				                </div>
+								</li>
+			               		 </empty>
+						</ol>
+						</notempty>
+						
+					</div>
+					
+				</div>
+				<else/>
+				
+						<h1 style="padding: 50px;width: 100%;text-align: center;font-size: 22px;color: #FBAD1E;">此中心暂无房源信息</h1>
+					</if>
+				<div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
+					<div class="imgShade"><p>{$info.desc}</p></div>
+					<div class="carousel-inner" role="listbox">
+						<volist name='outSide' id='ivo' key='k'>
+							<div class="item <eq name="k" value="1">active</eq>" data-toggle="modal" data-target="#openImg">
+							    <img class="myimg" src="{$ivo.path|grace_path='Outside'}">
+						    </div>
+					    </volist>
+						
+					</div>
+					<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					</a>
+					<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					</a>
+				</div>
+				<!--<script type="text/javascript">
+					$(function(){
+						$('#openImg').on('shown.bs.modal', function (e) {
+						  // do something...
+						  var i = $(e.relatedTarget).index();
+						  $("#openImg .item").removeClass('active')
+						  $("#openImg .item").eq(i).addClass('active')
+						  
+						  $("#openImg ol li").removeClass('active')
+						  $("#openImg ol li").eq(i).addClass('active')
+						  
+						  
+						})
+					})
+				</script>-->
+				<div class="carDown">
+					<ol class="clearfix serviceol" style=" overflow: hidden;">
+						<volist name='services' id='vo'>
+						<li>{$vo}</li>
+						</volist>
+					</ol>
+
+					<button class="pack">展开更多信息+</button>
+				</div>
+				<!--<div class="office clearfix">
+					<div class="workRight">
+						<h4>办公空间</h4>
+						<p>钱江大厦地处浦电路东方路区域建筑群的中心位置，地铁浦电路站近在咫尺，地段优势明显。大厦楼体方正，外立面选用钢化中空镀膜玻璃幕墙，外观简洁现代，楼内办公环境静雅怡人，近旁就是张家浜河道，无论工作休闲，均可享受到商务交流的便利和自然环境的清新。</p>
+					</div>
+					<div class="workImg">
+						<img src="__IMG__/work_01.png">
+						<img src="__IMG__/work_02.png">
+						<img src="__IMG__/work_03.png">
+					</div>
+				</div>-->
+				<div class="rim clearfix">
+					<h4>周边商业配套服务</h4>
+					<ul>
+						<li class="first">
+							<img src="__IMG__/rim_icon01.jpg">
+							<h5>地铁/公交站</h5>
+							<p class="star star10"></p>
+							<span>约<strong>3</strong>个站点</span>
+							<dl>
+								<dd>桂平路钦州南路</dd>
+								<dd>虹梅路东兰路</dd>
+								<dd>漕宝路桂平路</dd>
+								<dd>漕宝路虹梅路</dd>
+								<dd>桂平路漕宝路</dd>
+							</dl>
+						</li>
+						<li>
+							<img src="__IMG__/rim_icon02.jpg">
+							<h5>快餐</h5>
+							<p class="star star9"></p>
+							<span>约<strong>3</strong>个站点</span>
+							<dl>
+								<dd>桂平路钦州南路</dd>
+								<dd>虹梅路东兰路</dd>
+								<dd>漕宝路桂平路</dd>
+								<dd>漕宝路虹梅路</dd>
+								<dd>桂平路漕宝路</dd>
+							</dl>
+						</li>
+						<li>
+							<img src="__IMG__/rim_icon03.jpg">
+							<h5>餐厅</h5>
+							<p class="star star9"></p>
+							<span>约<strong>3</strong>个站点</span>
+							<dl>
+								<dd>桂平路钦州南路</dd>
+								<dd>虹梅路东兰路</dd>
+								<dd>漕宝路桂平路</dd>
+								<dd>漕宝路虹梅路</dd>
+								<dd>桂平路漕宝路</dd>
+							</dl>
+						</li>
+						<li>
+							<img src="__IMG__/rim_icon04.jpg">
+							<h5>银行</h5>
+							<p class="star star8"></p>
+							<span>约<strong>3</strong>个站点</span>
+							<dl>
+								<dd>桂平路钦州南路</dd>
+								<dd>虹梅路东兰路</dd>
+								<dd>漕宝路桂平路</dd>
+								<dd>漕宝路虹梅路</dd>
+								<dd>桂平路漕宝路</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+				<div class="map">
+					<h4>地理位置</h4>
+					<p>钱江大厦地处浦电路东方路区域建筑群的中心位置，地铁浦电路站近在咫尺，地段优势明显。</p>
+					<img src="__IMG__/map_bg.jpg">
+				</div>
+				<div class="around">
+					<h4>周边办公间</h4>
+					<ul class="clearfix">
+						<li class="first">
+							<a href="javascript:;">
+								<img src="__IMG__/around_list01.jpg">
+								<h5>东苑丽宝广场</h5>
+								<p>钱江大厦地处浦电路东方路区域建筑群的中心位置......</p>
+								<strong>¥8000 起/工位/月</strong>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<img src="__IMG__/around_list02.jpg">
+								<h5>东苑丽宝广场</h5>
+								<p>钱江大厦地处浦电路东方路区域建筑群的中心位置......</p>
+								<strong>¥8000 起/工位/月</strong>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<img src="__IMG__/around_list03.jpg">
+								<h5>东苑丽宝广场</h5>
+								<p>钱江大厦地处浦电路东方路区域建筑群的中心位置......</p>
+								<strong>¥8000 起/工位/月</strong>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+			  <div class="modal-content">
+				  <div class="modal-header">
+					  <div id="carousel-generic" class="carousel slide" data-ride="carousel">
+						  <div class="carousel-inner" id="imagesModal" role="listbox">
+							  <div class="item active">
+								  <img src="__IMG__/details_big01.jpg">
+							  </div>
+							  <div class="item">
+								  <img src="__IMG__/details_small02.jpg">
+							  </div>
+							  <div class="item">
+								  <img src="__IMG__/details_small03.jpg">
+							  </div>
+						  </div>
+						  <a class="left carousel-control" href="#carousel-generic" role="button" data-slide="prev">
+							  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						  </a>
+						  <a class="right carousel-control" href="#carousel-generic" role="button" data-slide="next">
+							  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						  </a>
+					  </div>
+				  </div>
+				  <div class="modal-body clearfix">
+					  <div class="bodyLeft">
+						  <ul>
+							  <li>
+								  <span>按月：<a class="monthTitle"></a></span>
+								  <s>按月：<a class="promMonthTitle"></a></s>
+							  </li>
+							  <li>
+								  <span>按时：<a class="hourTitle"></a> </span>
+								  <s>按时：<a class="promHourTitle"></a> </s>
+							  </li>
+						  </ul>
+						  <ol>
+							  <li>
+								  <span>房源类型：</span>
+								  <em class="typeTitle">办公室</em>
+							  </li>
+							  <li>
+								  <span>标准工位：</span>
+								  <em class="workplace">5位</em>
+							  </li>
+							  <li>
+								  <span>至多工位：</span>
+								  <em class="addpace">7位</em>
+							  </li>
+						  </ol>
+					  </div>
+					  <div class="bodyRight">
+					  </div>
+					  <div class="btn">
+						  <button class="btn1">在线预约</button>
+						  <button class="btn2">视频观看</button>
+						  <button class="btn3" data-dismiss="modal" aria-label="Close" aria-hidden="true">关闭</button>
+					  </div>
+				  </div>
+			  </div>
+            </div>
+          </div>
+          <div class="modal fade open" id="openImg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	          <div class="modal-dialog openclass" role="document">
+	            <div class="modal-content">
+	              <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel"  data-interval="false"f>
+	                  <div class="carousel-bottom">
+	                  	<div class="warpOl">
+	                  <ol class="carousel-indicators">
+
+	                   <volist name='outSide' id='ivo' key='k'>
+							
+							    <li class="<eq name="k" value="1">active</eq>"><img data-target="#carousel" data-slide-to="{$k-1}" src="{$ivo.path|grace_path='Outside'}"></li>
+						
+					    </volist>
+					    
+	                  </ol>
+	                  </div>
+	                  <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+	                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	                  </a>
+	                  <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+	                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	                  </a>
+	                  
+	                  </div>
+	                  <div class="carousel-inner" role="listbox">
+	                    <volist name='outSide' id='ivo' key='k'>
+							<div class="item <eq name="k" value="1">active</eq>">
+							    <img src="{$ivo.path|grace_path='Outside'}" >
+						    </div>
+					    </volist>
+	                  </div>
+	                  
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+</block>
+
+<block name="script">
+<script type="text/javascript">
+        	$(function(){
+        		$('#carousel').carousel({
+				  interval: 0
+				});
+				var carLiLength = $('.carousel-indicators li').length;
+				$('.carousel-indicators').width(carLiLength*105);
+				$('#carousel').on('slide.bs.carousel', function (e) {
+				  // 获取当前图片
+				  $('#openImg .modal-content').hide()
+				})
+        		$('#carousel').on('slid.bs.carousel', function (e) {
+        		  $('#openImg .modal-content').fadeIn();
+        		  // 获取当前图片
+				  var itemImg = $(e.relatedTarget).find('img');
+        		  changeImageSize(itemImg);
+        		 
+        		  var i = $(".warpOl .active").index();
+        		  //ol宽度
+        		  var oW = $('.warpOl ol').width();
+        		  //显示宽度
+        		  var sW = 100*(i +1) + i*5 ;
+        		  
+        		  var imgW = $('#openImg .item.active img').width();
+        		  
+				  //var cW = $('#openImg .carousel-control').width();
+				  
+				  var warpOl = imgW - 220;
+				  if(sW > (warpOl - 100)){
+				  	   var smNum = $("#openImg .carousel-indicators li").length;
+				  
+				  	   if(i == (smNum-1)){
+				  	   	$('.warpOl ol').css('margin-left',warpOl-sW)
+				  	   }else{
+				  	   	$('.warpOl ol').css('margin-left',warpOl-sW-100)
+				  	   }
+				  	   
+				  }else{
+				  	   $('.warpOl ol').css('margin-left','auto')
+				  }
+        			
+				})
+        		$('#openImg').on('show.bs.modal', function (e) {
+        			
+					  //判断第几个Item
+					  var i = $(e.relatedTarget).index();
+					  var itemImg = $("#openImg .item").eq(i).find('img');
+					  itemImg.hide();
+					  $('#openImg .carousel-bottom').hide()
+				})
+				$('#openImg').on('shown.bs.modal', function (e) {
+					
+				  // do something...
+				  var i = $(e.relatedTarget).index();
+				  $("#openImg .item").removeClass('active')
+				  $("#openImg .item").eq(i).addClass('active')
+				  
+				  $("#openImg ol li").removeClass('active')
+				  $("#openImg ol li").eq(i).addClass('active')
+				  var itemImg = $("#openImg .item").eq(i).find('img');
+			      itemImg.show();
+			      $('#openImg .carousel-bottom').show()
+			      
+				  changeImageSize(itemImg)
+				 
+				  changeSimgMarginLeft(itemImg);
+				})
+			    function changeSimgMarginLeft(itemImg){
+			    	var i = $(".warpOl .active").index();
+        		  //ol宽度
+        		  var oW = $('.warpOl ol').width();
+        		  //显示宽度
+        		  var sW = 100*(i +1) + i*5 ;
+        		  
+        		  var imgW = itemImg.width();
+        		  
+				  //var cW = $('#openImg .carousel-control').width();
+				  
+				  var warpOl = imgW - 220;
+				  if(sW > (warpOl - 100)){
+				  	   var smNum = $("#openImg .carousel-indicators li").length;
+				  
+				  	   if(i == (smNum-1)){
+				  	   	$('.warpOl ol').css('margin-left',warpOl-sW)
+				  	   }else{
+				  	   	$('.warpOl ol').css('margin-left',warpOl-sW-100)
+				  	   }
+				  	   
+				  }else{
+				  	   $('.warpOl ol').css('margin-left','auto')
+				  }
+			    }
+				function changeImageSize(obj){
+					
+					//获取图片宽高
+					  var imgW = obj.width();
+					  var imgH = obj.height();
+		
+				      //$("#openImg .modal-dialog").width(imgW)
+				      //$("#openImg .modal-dialog").height(imgH)
+					  //获取浏览器现实宽高
+					  var winW = $(window).width();
+					  var winH = $(window).height();
+
+			
+					   if(imgW < winW && imgH < winH){
+					   	  	
+					   return false;
+					   }
+					  if(imgW > winW && imgH > winH){
+					  
+					  	if(imgW>imgH){
+					  		obj.width(imgW);
+					  	}else{
+					  		obj.height(winH);
+					  	}
+					  	return false;
+					  }
+					  if(imgW > winW){
+					
+					  	obj.width(winW);
+					  	return false;
+					  }
+					  if(imgH > winH){
+					  	
+					  	obj.height(winH);
+					  	return false;
+					  }
+					  
+				}
+        	})
+        </script>
+	<script type="text/javascript">
+		$(function(){
+			
+			$('#myModal').on('show.bs.modal', function (e) {
+			    var id = $(e.relatedTarget).attr('data-id');
+                var data = eval('actuals' + id);
+                $('.monthTitle').html(data.monthTitle);
+                $('.promMonthTitle').html(data.promMonthTitle);
+                $('.hourTitle').html(data.hourTitle);
+                $('.promHourTitle').html(data.promHourTitle);
+                $('.typeTitle').html(data.typeTitle);
+                $('.workplace').html(data.workplace);
+                $('.addpace').html(data.addpace);
+                var imageslists = $(e.relatedTarget).find('.imagesLists').html();
+      
+                $('#imagesModal').html(imageslists);
+			})
+		})		
+	</script>
+</block>

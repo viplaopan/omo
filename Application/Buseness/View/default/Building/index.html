@@ -1,0 +1,80 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link rel="stylesheet" type="text/css" href="__CSS__/contactWay.css">
+    <script type="text/javascript" src="__JS__/contactWay.js"></script>
+    <script type="text/javascript" src="__JS__/jquery.validate.js"></script>
+    <script type="text/javascript" src="__JS__/building.js"></script>
+    <script type="text/javascript" src="__JS__/jquery.checkbox.js"></script>
+</block>
+
+<block name="body">
+    
+    <div class="contactWay main clearfix">
+        <div class="contactLeft">
+            <h2>添加/编辑楼宇信息</h2>
+            <ul>
+                <li class="<eq name="Think.get.step" value="1">current</eq> finish"><a href="{:U('index',array('step'=>1,'id'=>I('get.id')))}">位于哪里</a></li>
+                <li class="<eq name="Think.get.step" value="2">current</eq> <egt name="step" value="1">finish</egt>"><a href="<egt name="step" value="1">{:U('index',array('step'=>2,'id'=>I('get.id')))}<else/>javascript:;</egt>">什么类型？</a></li>
+                <li class="<eq name="Think.get.step" value="3">current</eq> <egt name="step" value="2">finish</egt>"><a href="<egt name="step" value="2">{:U('index',array('step'=>3,'id'=>I('get.id')))}<else/>javascript:;</egt>">综合描述</a></li>
+                <li class="<eq name="Think.get.step" value="4">current</eq> <egt name="step" value="3">finish</egt>"><a href="<egt name="step" value="3">{:U('index',array('step'=>4,'id'=>I('get.id')))}<else/>javascript:;</egt>">详细描述</a></li>
+                <li class="<eq name="Think.get.step" value="5">current</eq> <egt name="step" value="4">finish</egt>"><a href="<egt name="step" value="4">{:U('index',array('step'=>5,'id'=>I('get.id')))}<else/>javascript:;</egt>">联系方式</a></li>
+            </ul>
+        </div>
+        <div class="contactCenter">
+            <ol>
+            	<if condition="($Think.get.step eq '1') OR ($Think.get.step eq '')">
+	                <li class="step">
+	                	<form action="{:U('step',array('s'=>1))}" method="post" id="step1">
+	                    	<include file="step1"/>
+	                    	<input type="hidden" name="id" value="{:I('get.id')}">
+	                   </form>
+	                </li>
+                </if>
+                
+                <eq name="Think.get.step" value="2">
+	                <li class="step">
+	                	<form action="{:U('Building/step',array('s' =>2))}" method="post" id="step2">
+	                    	<include file="step2"/>
+	                    	
+	                    </form>
+	                </li>
+                </eq>
+                <eq name="Think.get.step" value="3">
+	                <li class="step">
+	                	<form action="{:U('step',array('s'=>3))}" method="post" id="step3">
+	                    	<include file="step3"/>
+	                    	<input type="hidden" name="id" value="{:I('get.id')}">
+	                    </form>
+	        
+	                </li>
+                </eq>
+                <eq name="Think.get.step" value="4">
+	                <li class="step">
+	                    <form action="{:U('step',array('s'=>4))}" method="post" id="step4">
+	                    	<include file="step4"/>
+	                    	<input type="hidden" name="id" id="id" value="{:I('get.id')}">
+	                    </form>
+	                    
+	                </li>
+                </eq>
+                <eq name="Think.get.step" value="5">
+	                <li class="step">
+	                    
+	                    	<include file="step5"/>
+	                   
+	                </li>
+                </eq>
+            </ol>
+        </div>
+        <div class="contactRight">
+            <div>
+                <button type="submit">取消保存</button>
+                <button>保存退出</button>
+            </div>
+            <div class="contactBanner"><a href="javascript:;"></a></div>
+        </div>
+    </div>
+
+</block>
+<block name="script"></block>

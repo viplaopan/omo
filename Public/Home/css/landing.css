@@ -1,0 +1,181 @@
+body{
+	background-color: #f4f4f4;
+	min-height: 100%;
+}
+header{
+	position: inherit;
+}
+nav{
+	box-shadow: none;
+	position: inherit;
+}
+
+.lading{
+	margin-top: 35px;
+}
+.lading h3,.lading h2{
+	text-align: center;
+	font-size: 26px;
+	line-height: 40px;
+	font-weight: normal;
+	color: #3b3d3d;
+}
+.lading h2{
+	color: #13aced;
+}
+.inLading{
+	width: 875px;
+	height: 435px;
+	background-color: #fff;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+	margin-top: 30px;
+	padding: 30px 42px;
+}
+.ladingLeft{
+	width: 395px;
+	border-right: 1px solid #b5b5b5;
+	float: left;
+	color: #222;
+	height: 373px;
+}
+.inLading h4{
+	font-size:22px;
+	font-weight: normal; 
+}
+.ladingLeft p{
+	font-size: 14px;
+	margin-top: 15px;
+	margin-bottom: 8px;
+}
+.name input,.password input{
+	width: 350px;
+	height: 34px;
+	border: 1px solid #b5b5b5;
+	outline: none;
+	padding-left: 10px;
+}
+.name input:focus,.password input:focus {
+  	border-color: #13aced;
+	box-shadow: 0 0 0 1px #13aced inset;
+	-moz-transition: all 0.2s ease-in-out;
+	-webkit-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+.password input{
+	
+}
+.remember input{
+	width: 20px;
+}
+.remember{
+	margin-top: 14px;
+	font-size: 14px;
+}
+.remember .check{
+	float: left;
+	position: relative;
+	    padding-left: 25px;
+}
+.remember em{
+	float: right;
+	margin-right: 41px;
+	color: #13aced;
+}
+.check label {
+	cursor: pointer;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #b5b5b5;
+	top: 0;
+  	left: 0;
+	outline: none;
+}
+.check.selected label:after{
+	content: '';
+	position: absolute;
+	width: 14px;
+	height: 7px;
+	background: transparent;
+	top:4px;
+	left:2px;
+	border: 2px solid #13aced;
+	border-top: none;
+	border-right: none;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.ladingLeft .error{
+	color: #e20c0c;
+	line-height: 25px;
+	margin-bottom: 10px;
+}
+.ladingLeft button,.ladingRight button{
+	width: 210px;
+	height: 35px;
+	background-color: #13aced;
+	font-size: 14px;
+	font-family: '微软雅黑';
+	color: #fff;
+	outline: none;
+}
+
+.ladingRight{
+	width: 394px;
+	float: left;
+	padding-left: 40px;
+	font-size: 14px;
+}
+.ladingRight dl{
+	margin-top: 15px;
+}
+.ladingRight dl dt{
+	color: #222;
+	margin-bottom: 15px;
+}
+.ladingRight dl dd{
+	color: #999;
+	line-height: 37px;
+	padding-left: 30px;
+}
+.ladingRight dl dd:before{
+	content: '';
+	width: 14px;
+	height: 7px;
+	background: transparent;
+	top:3px;
+	left:1px;
+	display: inline-block;
+	position: relative;
+	left: -30px;
+	top: -2px;
+	border: 2px solid #13aced;
+	border-top: none;
+	border-right: none;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.ladingRight button{
+	margin-top: 28px;
+	background-color: #333;
+}
+.ladingLeft button:hover,.ladingRight button:hover{
+	background-color: #0c9ddb;
+	-webkit-transition: all .35s;
+	transition: all .35s;
+}
+footer{
+	height: 179px;
+	background: url(../images/footerBg2.jpg) center no-repeat;
+	padding-top:70px;
+	position: relative;
+	margin-top:75px;
+}

@@ -1,0 +1,121 @@
+<extend name="Base/common" />
+
+<block name="style">
+	<link rel="stylesheet" type="text/css" href="__CSS__/housing.css">
+</block>
+<block name="body">
+	<div class="hous-main">
+		<div class="main-top">
+			<strong>您已发布的实时5房源</strong>
+			<span>（实时：真实存在，且处于空置状态或明确告知开始空置时间）</span>
+			<div class="filtrate clearfix">
+				<div class="drop clearfix">
+					<em>类型</em>
+					<div class="dropdown clearfix">
+						<span class="caret"></span>
+						<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> </button>
+						<ul class="dropdown-menu" aria-labelledby="dLabel">
+							<li>所有房源</li>
+							<li>办公室</li>
+							<li>会议室</li>
+						</ul>
+					</div>
+				</div>
+				<div class="drop clearfix">
+					<em>状态</em>
+					<div class="dropdown clearfix">
+						<span class="caret"></span>
+						<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> </button>
+						<ul class="dropdown-menu" aria-labelledby="dLabel">
+							<li>所有房源</li>
+							<li>审核中</li>
+							<li>已完成</li>
+						</ul>
+					</div>
+				</div>
+				<div class="drop clearfix">
+					<em>房源动态</em>
+					<div class="dropdown clearfix">
+						<span class="caret"></span>
+						<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> </button>
+						<ul class="dropdown-menu" aria-labelledby="dLabel">
+							<li>所有房源</li>
+							<li>实时房源</li>
+							<li>促销房源</li>
+						</ul>
+					</div>
+				</div>
+				<a class="addHous" href="{:U('editPosition',array('rid'=>I('get.rid')))}">新增房源</a>
+			</div>
+		</div>
+		<div class="in-hous">
+			<ul class="clearfix">
+				<volist name='lists' id='vo' empty="$empty" mod="3">
+					<li <eq name='mod' value='0'>class="first"</eq>>
+						<img src="{$vo.imgPath}">
+						<div class="compile">
+							<a class="editbtn" href="{:U('editPosition',array('id'=>$vo['id']))}">编辑</a>
+							<button class="del" data-id='{$vo.id}'>删除</button>
+						</div>
+						<div class="li-down">
+							<div class="btns">
+								<button>编号：001</button>
+								<button>{$vo.typeTitle}</button>
+								<button>闲置中</button>
+								<button>{$vo.promotionTitle}</button>
+							</div>
+							<div class="in-li">
+								<span>{$vo.monthTitle|default='暂无按月出租'}</span>
+								<em>{$vo.hourTitle|default='暂无小时出租'}</em>
+							</div>
+						</div>
+					</li>
+				</volist>
+				
+				
+			</ul>
+		</div>
+	</div>
+	<div class="flipOver clearfix">
+		<ul class="clearfix">
+			<li>
+				<a href="javascript:;"> 上一页</a>
+			</li>
+			<li class="current">
+				<a href="javascript:;">1</a>
+			</li>
+			<li>
+				<a href="javascript:;">2</a>
+			</li>
+			<li>
+				<a href="javascript:;">3</a>
+			</li>
+			<li>
+				<a href="javascript:;">4</a>
+			</li>
+			<li class="special">...</li>
+			<li>
+				<a href="javascript:;">80</a>
+			</li>
+			<li>
+				<a href="javascript:;">下一页</a>
+			</li>
+		</ul>
+		<span>共<em>80</em>页，到第<input type="text">页</span>
+		<button>确定</button>
+	</div>
+</block>
+<block name="script">
+	<script type="text/javascript">
+		$(function(){
+			$('.del').click(function(){
+				var id = $(this).attr('data-id');
+				$.post('{:U("del")}', {id:id}, function(data) {
+					if (data.status == 1) {
+						window.location.href = '';
+					}
+				}, 'json');
+			})
+		})
+	</script>
+</block>

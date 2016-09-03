@@ -1,0 +1,307 @@
+<extend name="Base/common" />
+
+<block name="style">
+	<link rel="stylesheet" type="text/css" href="__CSS__/contactWay.css">
+	<link rel="stylesheet" type="text/css" href="__CSS__/uploadify.css">
+	<script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+	<script type="text/javascript" src="__JS__/jquery.checkbox.js"></script>
+	
+	
+	
+	<link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+    <link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">
+    <link href="__CSS__/dropdown.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="__JS__/jquery.validate.js"></script>
+	
+	
+	<script type="text/javascript">
+		$(function() {
+			$('.checkbox').omoCheckbox();
+			//会议室
+			$('#typeDown .dropdown-menu li').click(function(){
+				$v = $(this).attr('value');
+				if($v == 4){
+					$(".monthDiv").hide()
+				}else{
+					$(".monthDiv").show()
+				}
+			})
+			$v = $("input[name='type']").attr('value');
+			if($v == 4){
+				$(".monthDiv").hide()
+			}else{
+				$(".monthDiv").show()
+			}
+		})
+	</script>
+	<style type="text/css">
+		.proclass{display: none;}
+	</style>
+</block>
+<block name="body">
+	<div class="contactWay main clearfix">
+		<div class="contactLeft">
+			<h2>添加房源</h2>
+			<dl>
+				<dt>有情有情提醒</dt>
+				<dd>1、关闭的房源可重新发布，请勿重复发布统一房源</dd>
+				<dd>2、新添房源完整填写后经审核后发布在平台上</dd>
+				<dd>3、审核中的房源不影响“自我营销*”推广，但请注意真实性。</dd>
+			</dl>
+			<dl>
+				<dt>关于发布与审核</dt>
+				<dd>审核通过的房源信息在平台上可以被查询到，而未被审核通过只能自我营销在移动端朋友圈分享传播，而无法被查询并不被正式推荐在平台上。</dd>
+			</dl>
+			<dl>
+				<dt>关于“自我营销”</dt>
+				<dd>不管已经在平台上发布还是有待审核的信息，均可通过扫一扫对应的二维码生成移动端页面分享传播，且获得的浏览量均可积累称为平台优先推荐的考量之一。</dd>
+			</dl>
+		</div>
+		<div class="contactCenter">
+			<form action="__SELF__" method="post">
+				<ol>
+					<li class="step">
+						<div class="address">
+							<div class="redact clearfix">
+								<p id="typeError">类&nbsp;&nbsp;&nbsp;&nbsp;型<em>*</em></p>
+								<div class="drop clearfix">
+									<div class="dropdown clearfix" id="typeDown">
+										<span class="caret"></span>
+										<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{$position['type']|default="2"|get_res_type}</button>
+										<input type="hidden" name="type" id="type" value="{$position.type|default='1'}" />
+										<ul class="dropdown-menu" aria-labelledby="dLabel">
+											<volist name='typeList' id="vo">
+												<li value="{$vo.type}">{$vo.type|get_res_type}</li>
+											</volist>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="step clearfix">
+						<p id="fyError" class="spec">房源动态<em>*</em><span> 可多选</span></p>
+						<input class="checkbox" name="actual_time" label="实时房源" <eq name="position['actual_time']" value="1">checked="checked"</eq> type="checkbox">
+						<input class="checkbox" name="promotion" label="促销房源" <eq name="position['promotion']" value="1">checked="checked"</eq> type="checkbox">
+	
+					</li>
+					<li class="step">
+						<div class="synthesis">
+							<div class="addhous clearfix">
+								<div class="redact in-min time proclass">
+									<p>促销时间</p>
+									<input type="text" class="time" name="start_time" value="{$position.start_time}" placeholder="开始时间">至
+								</div>
+								<div class="redact in-min time proclass">
+									<p></p>
+									<input type="text" class="time" name="end_time" value="{$position.end_time}" placeholder="结束时间">
+								</div>
+								<div class="redact in-min">
+									<p>标准工位<em>*</em></p>
+									<input name="workplace" type="text" value="{$position.workplace}">位
+								</div>
+								<div class="redact in-min">
+									<p>可扩充至<em>*</em></p>
+									<input name="addpace" type="text" value="{$position.addpace}">位
+								</div>
+								<div class="redact in-min monthDiv">
+									<p id="error_month">按月收费<em>*</em></p>
+									<input name="month" type="text" value="{$position.month}">元/月
+								</div>
+								<div class="redact in-min proclass monthDiv">
+									<p>按月促销价格<em>*</em></p>
+									<input name="mprom" type="text" value="{$position.mprom}">元/月
+								</div>
+								<div class="redact in-min">
+									<p id="error_hour">按小时</p>
+									<input name="hour" type="text" value="{$position.hour}">元/时
+								</div>
+								<div class="redact in-min proclass">
+									<p>按小时促销价格</p>
+									<input name="hprom" type="text" value="{$position.hprom}">元/月
+								</div>
+							</div>
+							<div class="linkman clearfix">
+								<p id="error_imgCount">添加房源照片<em>*</em></p>
+								<span style="height: 17px;">
+				推荐照片尺寸780X490像素，单张文件大小控制在1M以内。
+			</span>
+								<input type="text" style="width: 0; margin-top: -35px; height: 0; border: 0;" name="resourcesImagesCount" value="{$outsides|sizeof}">
+								<input type="file" id="resourcesImages">
+								<input type="hidden" name="imgCount" value="{$pimgs|sizeof}" />
+							</div>
+							<div class="clearfix" id="resourcesImagesInfo">
+								<volist name="pimgs" key='k' id="vo">
+									<div class="in-uploading <eq name="k" value="1 ">first</eq>">
+										<img src="{$vo.path|grace_path='Position'}">
+										<a class="delRimg" href="javascript:;">删除</a>
+										<input type="hidden" name="resourcePosition[]" value="{$vo.path}">
+									</div>
+								</volist>
+							</div>
+							<script type="text/javascript">
+								$(function() {
+									//上传图片
+									/* 初始化上传插件 */
+									$("#resourcesImages").uploadify({
+										"height": 35,
+										"swf": "__STATIC__/uploadify/uploadify.swf",
+										"fileObjName": "download",
+										"buttonText": "+上传图片",
+										"uploader": "{:U('File/uploadResourceImage',array('session_id'=>session_id(),'s'=>'PICTURE_POSITION'))}",
+										"width": 130,
+										'removeTimeout': 1,
+										'fileTypeExts': '*.jpg; *.png; *.gif;',
+										"onUploadSuccess": uploadPicture,
+										'onFallback': function() {
+											alert('未检测到兼容版本的Flash.');
+										}
+									});
+	
+									function uploadPicture(file, data) {
+										var data = $.parseJSON(data);
+										var src = '';
+										if(data.status) {
+											src = data.url || '__ROOT__/Uploads/Resource/Position/' + data.savepath + data.savename;
+											if($('#resourcesImagesInfo .in-uploading').length > 0) {
+												var firstclass = '';
+											} else {
+												var firstclass = 'first';
+											}
+											var count = $("input[name='imgCount']").val();
+											$("input[name='imgCount']").val(count + 1)
+											$('#resourcesImagesInfo').append(
+												'<div class="in-uploading ' + firstclass + '">' +
+												'<img src="' + src + '">' +
+												'<a class="delRimg" href="javascript:;">删除</a>' +
+												'<input type="hidden" name="resourcePosition[]" value="' + data.savepath + data.savename + '" />' +
+												'</div>'
+											);
+	
+										} else {
+											//报错
+										}
+									}
+									$("#resourcesImagesInfo").on("click", ".delRimg", function() {
+										$(this).parent().remove();
+									});
+								})
+							</script>
+							<div class="video">
+								<button>+上传视频</button>
+								<a href="javascript:;" class="upgrade">（需申请升级开通，点击申请）</a>
+								<div class="in-video">
+									<img src="__IMG__/synthesis_ 02.jpg" height="200" width="265">
+									<a href="javascript:;">删除</a>
+								</div>
+							</div>
+							<input type="hidden" name="id" id="id" value="{$position.id}" />
+							<button type="submit" class="next">保存房源</button>
+						</div>
+					</li>
+				</ol>
+			</form>
+		</div>
+		<div class="contactRight">
+			<div class="contactBanner">
+				<a href="javascript:;"></a>
+			</div>
+		</div>
+	</div>
+</block>
+<block name="script">
+	<script>
+		$(document)
+	    	.ajaxStart(function(){
+	    		$("button:submit").attr("disabled", true);
+	    	})
+	    	.ajaxStop(function(){
+	    		$("button:submit").attr("disabled", false);
+	    	});
+		$(function(){
+			$('#typeDown .dropdown-menu li').click(function(){
+				var value = $(this).attr('value');
+				$("input[name='type']").val(value);
+			})
+			$("input[name='start_time']").datetimepicker({
+                format: 'yyyy-mm-dd',
+                language:"zh-CN",
+                minView:3,
+                autoclose:true
+            });
+            $("input[name='end_time']").datetimepicker({
+                format: 'yyyy-mm-dd',
+                language:"zh-CN",
+                minView:3,
+                autoclose:true
+            });
+            $("input[name= 'promotion']").change(function(){
+            	if($(this).attr('checked') == 'checked'){
+            		$('.proclass').show();
+            		if($("input[name='type']").val() == 4){
+            			$(".monthDiv").hide()
+            		}
+            	}else{
+            		$('.proclass').hide();
+            	}
+            })
+            if($("input[name= 'promotion']").attr('checked') == 'checked'){
+        		$('.proclass').show();
+        		if($("input[name='type']").val() == 4){
+        			$(".monthDiv").hide()
+        		}
+        	}else{
+        		$('.proclass').hide();
+        	}
+		})
+		$("form").validate({
+			rules: {
+				imgCount: {
+					min:1,
+				},
+				month:{  
+	                required: {  
+	                    depends:function(){ //二选一  
+	                        return ($('input[name=hour]').val().length == 0 && $('input[name=month]').val().length == 0);  
+	                    }  
+	                }  
+	            },  
+	            hour:{  
+	                required: {  
+	                    depends:function(){ //二选一  
+	                        return ($('input[name=hour]').val().length == 0 && $('input[name=month]').val().length == 0);  
+	                    }  
+	                }  
+	            }  
+			},
+			messages: {
+				imgCount: {
+					min:'你必须上传3张以上图片',
+				},
+				month:"二选一",  
+            	hour:"二选一"  
+			},
+
+			errorPlacement: function(error, element) { //错误信息位置设置方法
+				var errorId = $(element).attr('name');
+				
+				error.appendTo( $("#error_" + errorId) );
+			},
+			debug: false,
+			submitHandler: function(form) {
+				$("button:submit").attr("disabled", true);
+				var ajaxUrl = $('form').attr('action');
+				$.post(ajaxUrl, $('form').serialize(), function(data) {
+					if (data.status == 1) {
+						window.location.href = data.url;
+					}
+					$("button:submit").attr("disabled", false);
+				}, 'json');
+				return false;
+			}
+		});
+
+	</script>
+</block>

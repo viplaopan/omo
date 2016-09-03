@@ -1,0 +1,313 @@
+<block name='style'>
+	<link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="__CSS__/uploadify.css">
+	<link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+</block>
+<script type="text/javascript">
+	$(function() {
+		$("#step3").submit(function() {
+				return false;
+			})
+			//step1
+		$("#step3").validate({
+			rules: {
+
+				desc: {
+					required: true,
+					maxlength:100
+				},
+				serNum: {
+					min: 2,
+				},
+				resourcesImagesCount: {
+					min: 1,
+				},
+				resInsideImagesCount: {
+					min: 1,
+				},
+			},
+			messages: {
+				build_time: {
+					required: "必填!",
+				},
+				desc: {
+					required: "必填!",
+					maxlength: "100字以内"
+				},
+				serNum: {
+					min: "至少选择2项服务设施！",
+				},
+				resourcesImagesCount: {
+					min: "必需添加楼宇照片！",
+				},
+				resInsideImagesCount: {
+					min: "必需添加内部照片！",
+				},
+			},
+			errorPlacement: function(error, element) { //错误信息位置设置方法
+				var name = element.attr('name');
+				error.appendTo($('#error_' + name));
+			},
+			debug: false,
+			submitHandler: function(form) {
+
+				var ajaxUrl = $('#step3').attr('action');
+				$.post(ajaxUrl, $('#step3').serialize(), function(data) {
+					if (data.status == 1) {
+						window.location.href = data.url;
+					}
+				}, 'json');
+			}
+		});
+		$('.build_time').datetimepicker({
+			startView: 'decade',
+			format: 'yyyy',
+			language: "zh-CN",
+			minView: 'decade',
+			autoclose: true
+		});
+
+	})
+</script>
+<div class="synthesis">
+	<div class="redact short">
+		<p id='error_build_time'>楼宇的建成时间<em>*</em></p>
+		<input type="text" name="build_time" class="build_time" value="{$resources.build_time}">年
+	</div>
+	<div class="redact wh">
+		<p id="error_desc">简洁扼要的描述楼宇特点（100字内）<em>*</em></p>
+		<span>例如：地铁上盖甲级写字楼，市中心CBD区域，核心金融圈，毗邻黄浦江滨江公园</span>
+		<textarea name="desc">{$resources.desc}</textarea>
+	</div>
+
+	<div class="linkman clearfix">
+		<p id="error_resourcesImagesCount">添加图片信息<em>*</em></p>
+		<span style="height: 45px;">
+			建议第一张为楼宇照片，推荐照片尺寸为700×500像素，单张照片大小控制在1M以内，最少添加3张图片。
+		</span>
+		<input type="text" style="width: 0; margin-top: -35px; height: 0; border: 0;" name="resourcesImagesCount" value="{$outsides|sizeof}">
+		<input type="file" id="resourcesImages">
+	</div>
+	<div class="clearfix" id="resourcesImagesInfo">
+		<volist name="outsides" key='k' id="vo">
+			<div class="in-uploading <eq name="k" value="1">first</eq>">
+				<img src="{$vo.path|grace_path='Outside'}">
+				<a class="delRimg" href="javascript:;">删除</a>
+				<input type="hidden" name="resourceOutside[]" value="{$vo.path}">
+			</div>
+		</volist>
+	</div>
+	<script type="text/javascript">
+		$(function() {
+			//上传图片
+			/* 初始化上传插件 */
+			$("#resourcesImages").uploadify({
+				"height": 35,
+				"swf": "__STATIC__/uploadify/uploadify.swf",
+				"fileObjName": "download",
+				"buttonText": "+上传图片",
+				"uploader": "{:U('File/uploadResourceImage',array('session_id'=>session_id(),'s'=>'PICTURE_RESOURCE'))}",
+				"width": 130,
+				'removeTimeout': 1,
+				'fileTypeExts': '*.jpg; *.png; *.gif;',
+				"onUploadSuccess": uploadPicture,
+				'onFallback': function() {
+					alert('未检测到兼容版本的Flash.');
+				}
+			});
+
+			function uploadPicture(file, data) {
+				var data = $.parseJSON(data);
+				var src = '';
+				if (data.status) {
+					var rint = Number($("input[name='resourcesImagesCount']").val()) + 1;
+
+                    if(rint > 8){
+                    	$("#error_resourcesImagesCount").html('添加图片信息<em>*</em><label for="resourcesImagesCount" class="error">楼宇图片最多添加8张！</label>')
+                    	return false;
+                    }
+                    $("input[name='resourcesImagesCount']").val(rint)
+					//改变验证状态valid();
+					$("#step3").valid();
+
+					src = data.url || '__ROOT__/Uploads/Resource/Outside/' + data.savepath + data.savename;
+		
+					if((rint - 1)%4 == 0){
+						var firstclass ='first';
+					} else {
+						var firstclass = '';
+					}
+					
+
+					$('#resourcesImagesInfo').append(
+						'<div class="in-uploading ' + firstclass + '">' +
+						'<img src="' + src + '">' +
+						'<a class="delRimg" href="javascript:;">删除</a>' +
+						'<input type="hidden" name="resourceOutside[]" value="' + data.savepath + data.savename + '" />' +
+						'</div>'
+					);
+
+				} else {
+					//报错
+				}
+			}
+			$("#resourcesImagesInfo").on("click", ".delRimg", function() {
+				var rint = Number($("input[name='resourcesImagesCount']").val()) - 1;
+				$("input[name='resourcesImagesCount']").val(rint)
+				$(this).parent().remove();
+			});
+		})
+	</script>
+
+	<!--<div class="linkman clearfix">
+		<p id="error_resInsideImagesCount">添加内部照片<em>*</em></p>
+		<span>请上传至少8张室内空间的照片，请不要包含水印及品牌，电话等信息，否则我们将不给予审核通过。推荐照片尺寸780X490像素，单张文件大小控制在1M以内。</span>
+		<input type="text" style="width: 0; margin-top: -35px; height: 0; border: 0;" name="resInsideImagesCount" value="{$insides|sizeof}">
+		<input type="file" id="resInsideImages">
+	</div>-->
+
+	<!--<div class="clearfix" id="resInsideImagesInfo">
+		<volist name="insides" id="vo" key="k">
+			<div class="in-uploading <eq name="k" value="1">first</eq>">
+				<img src="{$vo.path|grace_path='Inside'}">
+				<a class="delRimg" href="javascript:;">删除</a>
+				<input type="hidden" name="resourceInside[]" value="{$vo.path}">
+			</div>
+		</volist>
+	</div>
+	<script type="text/javascript">
+		$(function() {
+			//上传图片
+			/* 初始化上传插件 */
+			$("#resInsideImages").uploadify({
+				"height": 35,
+				"swf": "__STATIC__/uploadify/uploadify.swf",
+				"fileObjName": "download",
+				"buttonText": "+上传图片",
+				"uploader": "{:U('File/uploadResourceImage',array('session_id'=>session_id(),'s'=>'PICTURE_RESOURCE_INSIDE'))}",
+				"width": 130,
+				'removeTimeout': 1,
+				'fileTypeExts': '*.jpg; *.png; *.gif;',
+				"onUploadSuccess": uploadPicture,
+				'onFallback': function() {
+					alert('未检测到兼容版本的Flash.');
+				}
+			});
+
+			function uploadPicture(file, data) {
+				var data = $.parseJSON(data);
+				var src = '';
+				if (data.status) {
+					var rint = $("input[name='resInsideImagesCount']").val() + 1;
+					$("input[name='resInsideImagesCount']").val(rint)
+
+					//改变验证状态valid();
+					$("#step3").valid();
+
+					src = data.url || '__ROOT__/Uploads/Resource/Inside/' + data.savepath + data.savename;
+					if ($('#resInsideImagesInfo .in-uploading').length > 0) {
+						var firstclass = '';
+					} else {
+						var firstclass = 'first';
+					}
+
+					$('#resInsideImagesInfo').append(
+						'<div class="in-uploading ' + firstclass + '">' +
+						'<img src="' + src + '">' +
+						'<a class="delRimg" href="javascript:;">删除</a>' +
+						'<input type="hidden" name="resourceInside[]" value="' + data.savepath + data.savename + '" />' +
+						'</div>'
+					);
+
+				} else {
+					//报错
+				}
+			}
+			$("#resInsideImagesInfo").on("click", ".delRimg", function() {
+				$(this).parent().remove();
+			});
+		})
+	</script>-->
+
+	<div class="video clearfix">
+		<input type="file" id="resourcesVadio">
+		<a href="javascript:;" class="upgrade">（需申请升级开通，点击申请）</a>
+		<div class="videos">
+			<notempty name="resources['vadio']">
+				<div class="in-video">
+				  <video src="{$resources.vadio}" style="width: 264px;" controls>您的浏览器不支持 video 标签。</video>
+				  <a href="javascript:;" class="delRimg">删除</a>
+				  <input type="hidden" name="vadio" value="{$resources.vadio}">
+				</div>
+			</notempty>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function() {
+			//上传图片
+			/* 初始化上传插件 */
+			$("#resourcesVadio").uploadify({
+				"height": 35,
+				"swf": "__STATIC__/uploadify/uploadify.swf",
+				"fileObjName": "download",
+				"buttonText": "+上传视频",
+				"uploader": "{:U('File/uploadResourceVadio',array('session_id'=>session_id(),'s'=>'PICTURE_RESOURCE'))}",
+				"width": 130,
+				'removeTimeout': 1,
+				'fileTypeExts': '*.mp4; *.flv;',
+				"onUploadSuccess": uploadPicture,
+				'onFallback': function() {
+					alert('未检测到兼容版本的Flash.');
+				}
+			});
+
+			function uploadPicture(file, data) {
+				var data = $.parseJSON(data);
+				var src = data.url || '__ROOT__/Uploads/Resource/Inside/' + data.savepath + data.savename;
+
+				if (data.status) {
+					$('.videos').append(
+						'<div class="in-video">' +
+						'<video src="' + src + '" style="width: 264px;" controls="controls">' +
+						'您的浏览器不支持 video 标签。' +
+						'</video>' +
+						'<a href="javascript:;" class="delRimg">删除</a>' +
+						'<input type="hidden" name="vadio" value="' + data.savepath + data.savename + '" />' +
+						'</div>'
+					);
+				} else {
+					//报错
+				}
+			}
+			$(".video").on("click", ".delRimg", function() {
+				$(this).parent().remove();
+			});
+			$('.service').omoCheckbox();
+			$('.service').change(function() {
+				var sernum = $("input[class='service'][checked='checked']").length;
+				$("input[name='serNum']").val(sernum);
+
+				$("input[name='serNum']").blur()
+			})
+		})
+	</script>
+
+	<!--<div class="redact wh">
+		<p>更多详细介绍下您提供的办公空间</p>
+		<span>字数在360以内，请勿包含电话，品牌等讯息，否则审核将不给予通过。</span>
+		<textarea name="more_desc">{$resources.more_desc}</textarea>
+	</div>-->
+	<div class="redact short clearfix">
+		<p id="error_serNum">服务设施<em>*</em></p>
+		<span>至少选择2项</span>
+		<volist name='services' key="k" id='vo'>
+			<input class="service" type="checkbox" <eq name="rservice[$vo['id']]" value="1"> checked="checked"</eq> value="{$vo.id}" name="service[]" label='{$vo.title}' />
+		</volist>
+		<!--记录选中服务设施多少个-->
+		<input type="text" value="{$rservice|sizeof}" name="serNum" style="height: 0; width: 0; display: none;" />
+	</div>
+	<button type="submit" class="next">保存并下一步</button>
+</div>

@@ -1,0 +1,284 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link rel="stylesheet" type="text/css" href="__CSS__/article.css">
+    <script type="text/javascript" src="__JS__/article.js"></script>
+</block>
+<block name="body">
+
+    <div class="wrap">
+        <div class="wrapTop main">
+            <h2><php>echo count($list);</php> offices in 上海上海区域办公空间</h2>
+            <p>上海是世界上最繁忙的集装箱港口，也是亚洲最主要的金融中心。找到您理想的办公空间与我们的上海地区指南</p>
+        </div>
+        <div class="wrapCen">
+            <div class="inCen main clearfix">
+                <ol class="clearfix">
+                    <li class="current">
+                        <a href="javascript:;">列表视图</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">地图视图</a>
+                    </li>
+                </ol>
+                <div class="search">搜索</div>
+            </div>
+        </div>
+        <div class="wrapDown main clearfix ">
+            <div class="inWrapL">
+                <ul class="list">
+                    <volist name="lists" id="vo">
+                    	<li>
+                            <div class="tab">
+                                <div class="tabHd">
+                                    <volist name="vo.img" id="ivo" key="key">
+                                        <!--<a href="{$ivo.path|grace_path='Outside'}" class="cloud-zoom" rel="position: 'inside' , showTitle: false, adjustX:0, adjustY:0">--><img src="{$ivo.path|grace_path='Outside'}"><!--</a>-->
+                                    </volist>
+                                </div>
+                                <div class="tabBd clearfix">
+                                    <volist name="vo.img" id="ivo">
+                                       <img src="{$ivo.path|grace_path='Outside'}">
+                                    </volist>
+                                </div>
+                            </div>
+                            <div class="liCen">
+                                <h3>{$vo.area|get_region}  {$vo.address|msubstr=0,6,'utf-8',false}  {$vo.title|msubstr=0,6,'utf-8',false}</h3>
+                                <p>{$vo.desc}</p>
+                                <dl class="clearfix">
+                                	<volist name="vo.server" id="service_name">
+                                        <dd>{$service_name}</dd>
+                                   </volist>
+                                </dl>
+                            </div>
+                            <div class="liR">
+                            	<eq name="vo.zanwu" value='0'>
+		                                <neq name="vo.minMonth" value=''>
+		                                	<div><strong>¥{$vo.minMonth}</strong> 起<br/><span>工位/月</span></div>
+		                                	<else/>
+		                                	<div><strong>¥{$vo.minHour}</strong> 起<br/><span>工位/时</span></div>
+		                                </neq>
+	                                <else/>
+	                                	<p style="font-size: 18px; text-align: center; width: 100%; color: #FBAD1E;">暂无房源</p>
+                                </eq>
+                                <div class="pDetail">
+                                    <neq name="vo.actual_time" value='0'><b>实时房源</b></neq>
+                                    <neq name="vo.actual_time" value='0'><b>促销房源</b></neq>
+                                </div>
+                                <div class="btns">                                                                                                                                                                                                                                                                                                                 
+                                    <a href="{:U('Offices/detail',array('id'=>$vo['id']))}"> <button class="btn1">详 情</button></a>
+                                    <button class="btn2">收 藏</button>
+                                </div>
+                            </div>
+                        </li>
+                        
+                    </volist>
+                </ul>
+                <div class="flipOver clearfix">
+                    <ul class="clearfix">
+                        <li><a href="javascript:;"> 上一页</a></li>
+                        <li class="current"><a href="javascript:;">1</a></li>
+                        <li><a href="javascript:;">2</a></li>
+                        <li><a href="javascript:;">3</a></li>
+                        <li><a href="javascript:;">4</a></li>
+                        <li class="special">...</li>
+                        <li><a href="javascript:;">80</a></li>
+                        <li><a href="javascript:;">下一页</a></li>
+                    </ul>
+                    <span>共<em>80</em>页，到第<input type="text">页</span>
+                    <button>确定</button>
+                </div>
+            </div>
+            <div class="inWrapR">
+                <div class="city pad">
+                    <h5>城市</h5>
+                    <div class="dropdown">
+                        <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">上海</button><span class="caret"></span>
+                        <ul class="dropdown-menu" aria-labelledby="dLabel">
+                            <li>北京</li>
+                            <li>上海</li>
+                            <li>杭州</li>
+                            <li>广州</li>
+                            <li>深圳</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="location pad">
+                    <h5>地理位置</h5>
+                    <input type="text" placeholder="徐汇区宜山路425号光启城商务楼">
+                </div>
+                <div class="rapid pad">
+                    <h5>快速搜索</h5>
+                    <div class="drop clearfix">
+                        <em>类 型</em>
+                        <div class="dropdown clearfix">
+                            <span class="caret"></span>
+                            <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">不限</button>
+                            <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                <li>0</li>
+                                <li>0</li>
+                                <li>0</li>
+                                <li>0</li>
+                                <li>0</li>
+                                <li>0</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="drop clearfix">
+                        <em>时 间</em>
+                        <div class="dropdown clearfix">
+                            <span class="caret"></span>
+                            <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">不限</button>
+                            <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                <li>1</li>
+                                <li>1</li>
+                                <li>1</li>
+                                <li>1</li>
+                                <li>1</li>
+                                <li>1</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="drop clearfix">
+                        <em>人 数</em>
+                        <div class="dropdown clearfix">
+                            <span class="caret"></span>
+                            <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">不限</button>
+                            <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                                <li>2</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="drop clearfix area">
+                        <em>区 域</em>
+                        <div class="dropdown clearfix">
+                            <span class="caret"></span>
+                            <button id="area" type="button" aria-haspopup="true" aria-expanded="false">不限</button>
+                            <ul class="dropdown-menu" id="area-ul">
+                                <li>浦  东</li>
+                                <li>徐  汇</li>
+                                <li>静  安</li>
+                                <li>长  宁</li>
+                                <li>普  陀</li>
+                                <li>黄  浦</li>
+                                <li>虹  口</li>
+                                <li>闵  行</li>
+                                <li>闸  北</li>
+                                <li>杨  浦</li>
+                                <li>青  浦</li>
+                                <li>松  江</li>
+                                <li>嘉  定</li>
+                                <li>宝  山</li>
+                                <li>奉  贤</li>
+                            </ul>
+                            <div class="dropdownList">
+                                <dl>
+                                    <dd>申/老闵行</dd>
+                                    <dd>华漕</dd>
+                                    <dd>虹桥镇</dd>
+                                    <dd>龙柏</dd>
+                                    <dd>南方商城</dd>
+                                    <dd>浦江</dd>
+                                    <dd>七宝</dd>
+                                    <dd>莘庄</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="drop clearfix">
+                        <em>面 积</em>
+                        <div class="dropdown clearfix">
+                            <span class="caret"></span>
+                            <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">不限</button>
+                            <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                <li>1</li>
+                                <li>1</li>
+                                <li>1</li>
+                                <li>1</li>
+                                <li>1</li>
+                                <li>1</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="drop clearfix">
+                        <em>价 位</em>
+                        <div class="dropdown clearfix">
+                            <span class="caret"></span>
+                            <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">不限</button>
+                            <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                <li>1</li>
+                                <li>1</li>
+                                <li>1</li>
+                                <li>1</li>
+                                <li>1</li>
+                                <li>1</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="drop clearfix">
+                        <em>装 修</em>
+                        <div class="dropdown clearfix">
+                            <span class="caret"></span>
+                            <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">不限</button>
+                            <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                <li>1</li>
+                                <li>1</li>
+                                <li>1</li>
+                                <li>1</li>
+                                <li>1</li>
+                                <li>1</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="facility pad clearfix">
+                    <h5>设施支持</h5>
+                    <div class="checkboxFive">
+                        <input type="hidden" value="1" name="" />
+                        <label for="checkboxFiveInput"></label>
+                        <span>会议室</span>
+                    </div>
+                    <div class="checkboxFive">
+                        <input type="hidden" value="1" name="" />
+                        <label for="checkboxFiveInput"></label>
+                        <span>24小时开放</span>
+                    </div>
+                    <div class="checkboxFive">
+                        <input type="hidden" value="1" name="" />
+                        <label for="checkboxFiveInput"></label>
+                        <span>WIFI</span>
+                    </div>
+                    <div class="checkboxFive">
+                        <input type="hidden" value="1" name="" />
+                        <label for="checkboxFiveInput"></label>
+                        <span>茶水间</span>
+                    </div>
+                    <div class="checkboxFive">
+                        <input type="hidden" value="1" name="" />
+                        <label for="checkboxFiveInput"></label>
+                        <span>查询</span>
+                    </div>
+                    <div class="checkboxFive">
+                        <input type="hidden" value="1" name="" />
+                        <label for="checkboxFiveInput"></label>
+                        <span>活动室</span>
+                    </div>
+                    <div class="checkboxFive">
+                        <input type="hidden" value="1" name="" />
+                        <label for="checkboxFiveInput"></label>
+                        <span>休息区</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="javascript">
+    <script type="text/javascript" src="__JS__/bootstrap.min.js"></script>
+    <script type="text/javascript" src="__JS__/common.js"></script>
+    <script type="text/javascript" src="__JS__/article.js"></script>
+</block>

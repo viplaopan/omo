@@ -1,0 +1,92 @@
+<extend name="Public/base" />
+<block name="body">
+  <script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+  
+  <div class="main-title cf">
+    <h2>
+      <eq name="info['id']" value=''>添加商圈
+        <else/>
+        编辑商圈</eq>
+    </h2>
+  </div>
+  <!-- 标签页导航 -->
+  <div class="tab-wrap">
+    <div class="tab-content"> 
+      <!-- 表单 -->
+      <form action="{:U('Datacenter/editTrading')}" method="post" class="form-horizontal">
+        <label class="item-label">编号 </label>
+        <div class="controls">
+          <input type="text" name="id" value="{$info.id}" class="text input-large" placeholder="无需填写" readonly="">
+        </div>
+        <label class="item-label">商圈区域 </label>
+        <div class="controls">
+          <select name="area">
+          	<volist name = "area" id = "vo">
+            	<option value="{$vo.region_id}">{$vo.region_name}</option>
+           </volist>
+          </select>
+          <script type="text/javascript">
+          		$(function(){
+          			$("select[name='area']").val({$info.area});
+          		})
+            </script>
+        </div>
+        <label class="item-label">商圈名称 </label>
+        <div class="controls">
+          <input type="text" name="name" value="{$info.name}" class="text input-large">
+        </div>
+        <label class="item-label">状态 </label>
+        <div class="controls">
+          <select name="status">
+            <option value="-1">删除</option>
+            <option value="0">禁用</option>
+            <option value="1">启用</option>
+            <option value="2">未审核</option>
+          </select>
+          <script type="text/javascript">
+          		$(function(){
+          			$("select[name='status']").val({$info.status});
+          		})
+          </script>
+        </div>
+        <br>
+        <div class="form-item">
+          <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确定</button>
+          <button onclick="javascript:history.back(-1);return false;" class="btn btn-return">返回</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</block>
+<block name="script">
+<link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+<php>
+if(C('COLOR_STYLE')=='blue_color') echo '
+<link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">
+';
+</php>
+<link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script> 
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script> 
+<script type="text/javascript">
+$('#submit').click(function(){
+    $('#form').submit();
+});
+
+$(function(){
+	$('.time').datetimepicker({
+        format: 'yyyy-mm-dd hh:ii',
+        language:"zh-CN",
+        minView:2,
+        autoclose:true
+    });
+    $('.date').datetimepicker({
+        format: 'yyyy-mm-dd',
+        language:"zh-CN",
+        minView:2,
+        autoclose:true
+    });
+    showTab();
+});
+</script>
+</block>

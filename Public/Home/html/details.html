@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/base.css">
+        <link rel="stylesheet" type="text/css" href="../css/details.css">
+        <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../js/common.js"></script>
+        <script type="text/javascript" src="../js/details.js"></script>
+        <style type="text/css">
+        	img{max-width: none;}
+        	#openImg .item img{max-width: none;}
+        </style>
+        <script>
+           /* $(function(){
+              $(".outsideImg").click(function(){
+                  $("#openImg").modal()
+              })
+              $('#openImg').on('show.bs.modal', function (e) {
+                var target = e.currentTarget;
+                $(target).find(".openclass").css({
+                  top: '0',
+                  width:'auto',
+                  transform:'translateX(-50%)'
+                });
+                // do something...
+              })
+            })*/
+        </script>
+    </head>
+    <body>
+        <div class="top">
+            <header>
+                <div class="inHeader main clearfix">
+                    <h1>
+                        <a href="javascript:;"><img src="../images/logo.png" height="63" width="182"></a>
+                    </h1>
+                    <div class="dropdown">
+                      <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">上海 </button> <span class="caret"></span>
+                      <ul class="dropdown-menu" aria-labelledby="dLabel">
+                        <li>上海</li>
+                        <li>北京</li>
+                        <li>深圳</li>
+                        <li>武汉</li>
+                      </ul>
+                    </div>
+                    <div class="phone">021-60487602 / 13817236352</div>
+                    <div class="col">
+                        <a href="javascript:;" class="collectNum">01</a>
+                        <a href="javascript:;" class="collectYour">您的<br/>收藏</a>
+                    </div>
+                </div>
+            </header>
+            <nav>
+                <ul class="clearfix main">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="article.html">找办公空间</a></li>
+                    <li><a href="javascript:;">怎么帮助到您</a></li>
+                    <li><a href="javascript:;">关于我们</a></li>
+                    <li><a href="javascript:;">行业动态</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="wrap">
+          <div class="bread">
+              <div class="inBread main">
+                  <span><a href="javascript:;">首页</a></span><span> > </span><span><a href="javascript:;">找办公空间</a></span><span> > </span><span class="current">光启城</span>
+              </div>
+          </div>
+          <div class="inWrap main clearfix">
+              <div class="wrapL">
+                  <div class="work bd">
+                      <p>上海市徐汇区</p>
+                      <p>光启城商务中心</p>
+                  </div>
+                  <div class="serve bd">
+                      <h4>服务式办公</h4>
+                      <strong>¥1500</strong>
+                      <span>起/工位/月</span>
+                      <p>价格会受到一些因素影响，包括所需工位数，租期长短等</p>
+                  </div>
+                  <div class="peple bd">
+                      <h4>此中心顾问</h4>
+                      <img src="../images/serve_de01.jpg">
+                      <p><span>光启城商务楼</span><em>孙悟空</em></p>
+                      <div class="btns">
+                        <button>视频观看</button>
+                        <button>在线预约</button>
+                        <button>点击收藏</button>
+                      </div>
+                      <img src="../images/code.jpg">
+                      <p>轻扫二维码分享给小伙伴</p>
+                  </div>
+              </div>
+              <div class="wrapR">
+                  <div class="tab">
+                      <div class="tabHd">
+                        <ul class="clearfix">
+                          <li  class="current"><a href="javascript:;">促销讯息</a></li>
+                          <li><a href="javascript:;">实时讯息</a></li>
+                        </ul>
+                      </div>
+                      <div class="tabBd clearfix">
+                          <ol>
+                            <li class="first marks"  data-toggle="modal" data-target="#myModal">
+                              <a href="javascript:;"  class=" btn-primary">
+                                <img src="../images/details_01.jpg">
+                                <div class="img-down">
+                                  <div class="in-down">
+                                    <span>￥3000/5人/月</span>
+                                    <s>￥3500/5人/月</s>
+                                  </div>
+                                  <div class="in-down in-down2">
+                                    <span>￥300/5人/时 </span>
+                                    <s>￥350/5人/时</s>
+                                  </div>
+                                  <p>2016年6月22至2016年12月31日可扩充为7人工位</p>
+                                </div>
+                                <strong>会议室</strong>
+                              </a>
+                            </li>
+                            <li data-toggle="modal" data-target="#myModal">
+                              <a href="javascript:;"  class=" btn-primary">
+                                <img src="../images/details_02.jpg">
+                                <div class="img-down">
+                                  <div class="in-down">
+                                    <span>￥3000/5人/月</span>
+                                    <s>￥3500/5人/月</s>
+                                  </div>
+                                  <div class="in-down in-down2">
+                                    <span>暂无小时出租</span>
+                                  </div>
+                                  <p>2016年6月22至2016年12月31日可扩充为7人工位</p>
+                                </div>
+                              </a>
+                            </li>
+                            <li data-toggle="modal" data-target="#myModal">
+                              <a href="javascript:;"  class=" btn-primary">
+                                <img src="../images/details_03.jpg">
+                                <div class="img-down">
+                                  <div class="in-down">
+                                    <span>暂无按月出租</span>
+                                  </div>
+                                  <div class="in-down in-down2">
+                                    <span>￥300/5人/时 </span>
+                                    <s>￥350/5人/时</s>
+                                  </div>
+                                  <p>2016年6月22至2016年12月31日可扩充为7人工位</p>
+                                </div>
+                              </a>
+                            </li>
+                          </ol>
+                          <ol>
+                            <li  class="first" data-toggle="modal" data-target="#myModal">
+                              <a href="javascript:;"  class=" btn-primary">
+                                <img src="../images/details_01.jpg">
+                                <div class="img-down">
+                                  <div class="in-down">
+                                    <span>￥3000/5人/月</span>
+                                  </div>
+                                  <div class="in-down in-down2">
+                                    <span>￥300/5人/时 </span>
+                                  </div>
+                                  <p>2016年6月22至2016年12月31日可扩充为7人工位</p>
+                                </div>
+                              </a>
+                            </li>
+                            <li  data-toggle="modal" data-target="#myModal">
+                              <a href="javascript:;"  class=" btn-primary">
+                                <img src="../images/details_02.jpg">
+                                <div class="img-down">
+                                  <div class="in-down">
+                                    <span>￥3000/5人/月</span>
+                                  </div>
+                                  <div class="in-down in-down2">
+                                    <span>暂无小时出租</span>
+                                  </div>
+                                  <p>2016年6月22至2016年12月31日可扩充为7人工位</p>
+                                </div>
+                              </a>
+                            </li>
+                            <li data-toggle="modal" data-target="#myModal">
+                              <a href="javascript:;"  class=" btn-primary">
+                                <img src="../images/details_03.jpg">
+                                <div class="img-down">
+                                  <div class="in-down">
+                                    <span>暂无按月出租</span>
+                                  </div>
+                                  <div class="in-down in-down2">
+                                    <span>￥300/5人/时 </span>
+                                  </div>
+                                  <p>2016年6月22至2016年12月31日可扩充为7人工位</p>
+                                </div>
+                              </a>
+                            </li>
+                            <li class="empty">
+                              <div class="in-no-office">
+                                <img src="../images/not_office.jpg">
+                                <p>SORRY，服务中心无办公室出租！</p>
+                                <a href="javascript:;">查看其他</a>
+                              </div>
+                            </li>
+                          </ol>
+                      </div>
+                      
+                  </div>
+                  <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel">
+                    <div class="imgShade"><p>该商务中心自诩有一些优势 - 位于地铁浦电路站近在咫尺，地段优势明显</p></div>
+                    <div class="carousel-inner" role="listbox">
+                      <div class="item active" data-toggle="modal" data-target="#openImg">
+                        <img src="../images/de_list01.jpg" class="outsideImg">
+                      </div>
+                      <div class="item"  data-toggle="modal" data-target="#openImg">
+                        <img src="../images/around_list01.jpg">
+                      </div>
+                      <div class="item"  data-toggle="modal" data-target="#openImg">
+                        <img src="../images/details_01.jpg">
+                      </div>
+                    </div>
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    </a>
+                  </div>
+                  <div class="carDown">
+                    <ol class="clearfix">
+                      <li>前台接待服务</li>
+                      <li>多国语言服务</li>
+                      <li>独立电话系统</li>
+                      <li>网络线路支持</li>
+                      <li>WIFI无线网络</li>
+                      <li>有线电视网络</li>
+                      <li>整套办公家具</li>
+                      <li>会议室</li>
+                      <li>投影设备</li>
+                      <li>视频会议系统</li>
+                      <li>异地办公</li>
+                      <li>财务支持</li>
+                      <li>法务支持</li>
+                      <li>IT支持</li>
+                      <li>人事支持</li>
+                    </ol>
+                    <ul class="slUp clearfix">
+                      <li>前台接待服务</li>
+                      <li>多国语言服务</li>
+                      <li>独立电话系统</li>
+                      <li>网络线路支持</li>
+                      <li>WIFI无线网络</li>
+                      <li>有线电视网络</li>
+                      <li>整套办公家具</li>
+                      <li>会议室</li>
+                      <li>投影设备</li>
+                      <li>视频会议系统</li>
+                      <li>异地办公</li>
+                      <li>财务支持</li>
+                      <li>法务支持</li>
+                      <li>IT支持</li>
+                      <li>人事支持</li>
+                    </ul>
+                    <button class="pack">展开更多信息+</button>
+                  </div>
+                  <div class="office clearfix">
+                    <div class="workRight">
+                      <h4>办公空间</h4>
+                      <p>钱江大厦地处浦电路东方路区域建筑群的中心位置，地铁浦电路站近在咫尺，地段优势明显。大厦楼体方正，外立面选用钢化中空镀膜玻璃幕墙，外观简洁现代，楼内办公环境静雅怡人，近旁就是张家浜河道，无论工作休闲，均可享受到商务交流的便利和自然环境的清新。</p>
+                    </div>
+                    <div class="workImg">
+                        <img src="../images/work_01.png">
+                        <img src="../images/work_02.png">
+                        <img src="../images/work_03.png">
+                    </div>
+                  </div>
+                  <div class="rim clearfix">
+                      <h4>周边商业配套服务</h4>
+                      <ul>
+                        <li class="first">
+                          <img src="../images/rim_icon01.jpg">
+                          <h5>地铁/公交站</h5>
+                          <p class="star star10"></p>
+                          <span>约<strong>3</strong>个站点</span>
+                          <dl>
+                            <dd>桂平路钦州南路</dd>
+                            <dd>虹梅路东兰路</dd>
+                            <dd>漕宝路桂平路</dd>
+                            <dd>漕宝路虹梅路</dd>
+                            <dd>桂平路漕宝路</dd>
+                          </dl>
+                        </li>
+                        <li>
+                          <img src="../images/rim_icon02.jpg">
+                          <h5>快餐</h5>
+                          <p class="star star9"></p>
+                          <span>约<strong>3</strong>个站点</span>
+                          <dl>
+                            <dd>桂平路钦州南路</dd>
+                            <dd>虹梅路东兰路</dd>
+                            <dd>漕宝路桂平路</dd>
+                            <dd>漕宝路虹梅路</dd>
+                            <dd>桂平路漕宝路</dd>
+                          </dl>
+                        </li>
+                        <li>
+                          <img src="../images/rim_icon03.jpg">
+                          <h5>餐厅</h5>
+                          <p class="star star9"></p>
+                          <span>约<strong>3</strong>个站点</span>
+                          <dl>
+                            <dd>桂平路钦州南路</dd>
+                            <dd>虹梅路东兰路</dd>
+                            <dd>漕宝路桂平路</dd>
+                            <dd>漕宝路虹梅路</dd>
+                            <dd>桂平路漕宝路</dd>
+                          </dl>
+                        </li>
+                        <li>
+                          <img src="../images/rim_icon04.jpg">
+                          <h5>银行</h5>
+                          <p class="star star8"></p>
+                          <span>约<strong>3</strong>个站点</span>
+                          <dl>
+                            <dd>桂平路钦州南路</dd>
+                            <dd>虹梅路东兰路</dd>
+                            <dd>漕宝路桂平路</dd>
+                            <dd>漕宝路虹梅路</dd>
+                            <dd>桂平路漕宝路</dd>
+                          </dl>
+                        </li>
+                      </ul>
+                  </div>
+                  <div class="map">
+                    <h4>地理位置</h4>
+                    <p>钱江大厦地处浦电路东方路区域建筑群的中心位置，地铁浦电路站近在咫尺，地段优势明显。</p>
+                    <img src="../images/map_bg.jpg">
+                  </div>
+                  <div class="around">
+                    <h4>周边办公间</h4>
+                    <ul class="clearfix">
+                      <li class="first">
+                        <a href="javascript:;">
+                          <img src="../images/around_list01.jpg">
+                          <h5>东苑丽宝广场</h5>
+                          <p>钱江大厦地处浦电路东方路区域建筑群的中心位置......</p>
+                          <strong>¥8000 起/工位/月</strong>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:;">
+                          <img src="../images/around_list02.jpg">
+                          <h5>东苑丽宝广场</h5>
+                          <p>钱江大厦地处浦电路东方路区域建筑群的中心位置......</p>
+                          <strong>¥8000 起/工位/月</strong>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:;">
+                          <img src="../images/around_list03.jpg">
+                          <h5>东苑丽宝广场</h5>
+                          <p>钱江大厦地处浦电路东方路区域建筑群的中心位置......</p>
+                          <strong>¥8000 起/工位/月</strong>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <footer>
+            <div class="inFooter main">
+                <h4><a href="javascript:;"></a></h4>
+                <div class="find">
+                    <input type="text" placeholder="输入您的联系电话">
+                    <button>委托找场地</button>
+                </div>
+                <p class="telephone">400-820-4416</p>
+                <p class="hour">（早9:00-晚10:00）sun@71servivr.com</p>
+                <ul class="clearfix">
+                    <li>
+                        <a href="javascript:;">服务条款</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">分享奖励</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">联系我们</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">隐私权条例</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">加入我们</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">分享您的办公</a>
+                    </li>
+                </ul>
+                <p class="copy">2004-2012 Shanghai Suntech Computer Technology Co., Ltd. All Rights Reserved</p>
+            </div>
+        </footer>
+        <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div id="carousel-generic" class="carousel slide" data-ride="carousel">
+                      <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                          <img src="../images/details_big01.jpg">
+                        </div>
+                        <div class="item">
+                          <img src="../images/details_small02.jpg">
+                        </div>
+                        <div class="item">
+                          <img src="../images/details_small03.jpg">
+                        </div>
+                      </div>
+                      <a class="left carousel-control" href="#carousel-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                      </a>
+                      <a class="right carousel-control" href="#carousel-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                      </a>
+                    </div>
+                </div>
+                <div class="modal-body clearfix">
+                    <div class="bodyLeft">
+                      <ul>
+                        <li>
+                          <span>按月：￥3000/5人/月</span>
+                          <s>按月：￥3500/5人/月</s>
+                        </li>
+                        <li>
+                          <span>按时：￥300/5人/时 </span>
+                          <s>按时：￥350/5人/时 </s>
+                        </li>
+                      </ul>
+                      <ol>
+                        <li>
+                          <span>房源类型：</span>
+                          <em>办公室</em>
+                        </li>
+                        <li>
+                          <span>标准工位：</span>
+                          <em>5位</em>
+                        </li>
+                        <li>
+                          <span>至多工位：</span>
+                          <em>7位</em>
+                        </li>
+                      </ol>
+                    </div>
+                    <div class="bodyRight">
+                    </div>
+                    <div class="btn">
+                      <button class="btn1">在线预约</button>
+                      <button class="btn2">视频观看</button>
+                      <button class="btn3" data-dismiss="modal" aria-label="Close" aria-hidden="true">关闭</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <div class="modal fade open " id="openImg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog openclass" role="document">
+            <div class="modal-content">
+              <div id="carousel" class="carousel slide carousel-fade">
+                  	<div class="carousel-bottom">
+                  		<div class="warpOl">
+                  			<ol class="carousel-indicators">
+			                    <li class="active"><img  data-target="#carousel" data-slide-to="0"  src="../images/big_deimg1.jpg"></li>
+			                    <li><img data-target="#carousel" data-slide-to="1" src="../images/big_deimg2.jpg"></li>
+			                    <li><img data-target="#carousel" data-slide-to="2" src="../images/big_deimg3.jpg"></li>
+			                    <li><img  data-target="#carousel" data-slide-to="3"  src="../images/big_deimg1.jpg"></li>
+			                    <li><img data-target="#carousel" data-slide-to="4" src="../images/big_deimg2.jpg"></li>
+			                    <li><img data-target="#carousel" data-slide-to="5" src="../images/big_deimg3.jpg"></li>
+		                  	</ol>
+                  		</div>
+	                  	<a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+		                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		              	</a>
+		                <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+		                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		                </a>
+                  	</div>
+                  	<div class="carousel-inner" role="listbox">
+                    	<div class="item active">
+                      		<img src="../images/big_deimg1.jpg">
+                    	</div>
+	                    <div class="item">
+	                      <img src="../images/big_deimg2.jpg">
+	                    </div>
+	                    <div class="item">
+	                      <img src="../images/big_deimg3.jpg">
+	                    </div>
+	                    <div class="item">
+                      		<img src="../images/big_deimg1.jpg">
+                    	</div>
+	                    <div class="item">
+	                      <img src="../images/big_deimg2.jpg">
+	                    </div>
+	                    <div class="item">
+	                      <img src="../images/big_deimg3.jpg">
+	                    </div>
+	                </div>
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--<script>
+        	$(function() {
+				var aImg=$('.mediumImg li');
+					$('.mediumImg li').addClass('dis');
+					$('.mediumImg li:first').removeClass('dis');
+					$('.smallImg li').mouseover(function(event) {		
+						var i=$(this).index();
+						aImg.eq(i).attr('class','current');
+						aImg.eq(i).siblings().attr('class', 'dis');
+						$(this).addClass('current').siblings('').removeClass('current');
+					});
+					var imgKey=0;
+					var liLenth=$('.inSmallImg li').length;
+					function nextFn(){
+						imgKey++;
+							if(imgKey>liLenth-4){
+								imgKey=liLenth-4;
+							}
+							var s=imgKey*-104;
+							$('.inSmallImg').stop(true).animate({'top':s}, 600);
+					}
+					$('.up').click(nextFn);
+					$('.down').click(function(event) {
+							imgKey--;
+							if(imgKey<0){
+								imgKey=0;
+							}
+							var s=imgKey*-104;
+							$('.inSmallImg').stop(true).animate({'top':s}, 600);
+			
+						});
+			});
+        </script>-->
+        <script type="text/javascript">
+        	$(function(){
+        		$('#carousel').carousel({
+				  interval: 0
+				});
+				var carLiLength = $('.carousel-indicators li').length;
+				$('.carousel-indicators').width(carLiLength*105);
+				$('#carousel').on('slide.bs.carousel', function (e) {
+				  // 获取当前图片
+				  $('#openImg .modal-content').hide()
+				})
+        		$('#carousel').on('slid.bs.carousel', function (e) {
+        			// 获取当前图片
+				  var itemImg = $(e.relatedTarget).find('img');
+        			changeImageSize(itemImg);
+        		  $('#openImg .modal-content').show(250);
+        		  var i = $(".warpOl .active").index();
+        		  //ol宽度
+        		  var oW = $('.warpOl ol').width();
+        		  //显示宽度
+        		  var sW = 100*(i +1) + i*5 ;
+        		  
+        		  var imgW = $('#openImg .item.active img').width();
+        		  
+				  //var cW = $('#openImg .carousel-control').width();
+				   alert(imgW)
+				  var warpOl = imgW - 220;
+
+				  if(sW > (warpOl - 100)){
+						
+				  	   $('.warpOl ol').css('margin-left','-100px')
+				  }else{
+				  	   $('.warpOl ol').css('margin-left','auto')
+				  }
+        			
+				})
+        		$('#openImg').on('show.bs.modal', function (e) {
+					  //判断第几个Item
+					  var i = $(e.relatedTarget).index();
+					  var itemImg = $("#openImg .item").eq(i).find('img');
+					  itemImg.hide();
+					  $('#openImg .carousel-bottom').hide()
+				})
+				$('#openImg').on('shown.bs.modal', function (e) {
+					
+				  // do something...
+				  var i = $(e.relatedTarget).index();
+				  $("#openImg .item").removeClass('active')
+				  $("#openImg .item").eq(i).addClass('active')
+				  
+				  $("#openImg ol li").removeClass('active')
+				  $("#openImg ol li").eq(i).addClass('active')
+				  var itemImg = $("#openImg .item").eq(i).find('img');
+			      itemImg.show();
+			      $('#openImg .carousel-bottom').show()
+				  changeImageSize(itemImg)
+				  
+				})
+			
+				function changeImageSize(obj){
+					
+					//获取图片宽高
+					  var imgW = obj.width();
+					  var imgH = obj.height();
+					  
+				      //$("#openImg .modal-dialog").width(imgW)
+				      //$("#openImg .modal-dialog").height(imgH)
+					  //获取浏览器现实宽高
+					  var winW = $(window).width();
+					  var winH = $(window).height();
+
+					  obj.height(winH)
+				}
+        	})
+        </script>
+	
+    </body>
+</html>

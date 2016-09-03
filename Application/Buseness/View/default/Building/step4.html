@@ -1,0 +1,114 @@
+<script type="text/javascript">
+	$(function(){
+		$("#step4").submit(function(){
+			return false;
+		})
+		//step1
+		$("#step4").validate({
+			rules: {
+				traffic_desc: {
+					required: true,
+					maxlength:300,
+				},
+				metro: {
+					required: true,
+				},
+				metro_dist: {
+					required: true,
+					digits:true,
+				},
+				train: {
+					required: true,
+				},
+				train_dist: {
+					required: true,
+					digits:true,
+				},
+				airport: {
+					required: true,
+				},
+				airport_dist: {
+					required: true,
+					digits:true,
+				}
+			},
+			messages: {
+				traffic_desc: {
+					required: "必填!",
+					maxlength:"300个字以内 ",
+				},
+				metro: {
+					required: "必填!",
+				},
+				metro_dist: {
+					required: "必填!",
+					digits: "只能输入整数!",
+				},
+				train: {
+					required: "必填!",
+				},
+				train_dist: {
+					required: "必填!",
+					digits: "只能输入整数!",
+				},
+				airport: {
+					required: "必填!",
+				},
+				airport_dist: {
+					required: "必填!",
+					digits: "只能输入整数!",
+				}
+			},
+			errorPlacement: function(error, element) { //错误信息位置设置方法
+				var name = element.attr('name');
+				error.appendTo($('#error_' + name));
+			},
+			debug: false,
+			submitHandler: function(form) {
+				
+				var ajaxUrl = $('#step4').attr('action');
+				$.post(ajaxUrl, $('#step4').serialize(), function(data) {
+					if (data.status == 1) {
+						window.location.href = data.url;
+					}
+				}, 'json');
+			}
+		});
+	})
+</script>
+<div class="minute clearfix">
+	<div class="redact wh">
+		<p id="error_traffic_desc">更详细的描述<em>*</em></p>
+		<span>更详细的描述周边等讯息，有利于吸引更多伙伴，包括周边交通，住宿，商务服务支持等。300字内</span>
+		<textarea name="traffic_desc">{$traffic.traffic_desc}</textarea>
+	</div>
+	<div class="redact">
+		<p>交通位置描述<em>*</em></p>
+		<span>请详细真实描述交通距离位置等信息，如果是你们的优势的话。</span>
+	</div>
+	<div class="redact in-min">
+		<p id="error_metro">轨道交通（站点名）<em>*</em></p>
+		<input type="text" name="metro" value="{$traffic.metro}">
+	</div>
+	<div class="redact in-min">
+		<p id="error_metro_dist">距离（米）：<em>*</em></p>
+		<input type="text" name="metro_dist" value="{$traffic.metro_dist}">
+	</div>
+	<div class="redact in-min">
+		<p id="error_train">火车站<em>*</em></p>
+		<input type="text" name="train" value="{$traffic.train}">
+	</div>
+	<div class="redact in-min">
+		<p id="error_train_dist">距离（米）：<em>*</em></p>
+		<input type="text" name="train_dist" value="{$traffic.train_dist}">
+	</div>
+	<div class="redact in-min">
+		<p id="error_airport">机场<em>*</em></p>
+		<input type="text" name="airport" value="{$traffic.airport}">
+	</div>
+	<div class="redact in-min">
+		<p id="error_airport_dist">距离（米）：<em>*</em></p>
+		<input type="text" name="airport_dist" value="{$traffic.airport_dist}">
+	</div>
+	<button type="submit" class="next">保存并下一步</button>
+</div>

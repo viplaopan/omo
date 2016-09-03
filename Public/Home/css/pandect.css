@@ -1,0 +1,271 @@
+body{
+	background-color: #f4f4f4;
+}
+header{
+	position: inherit;
+}
+nav{
+	box-shadow: none;
+	position: inherit;
+}
+nav ul{
+	position: relative;
+}
+.in-nav-r{
+	position: absolute;
+	width: 170px;
+	height: 47px;
+	left: 50%;
+	font-size: 14px;
+	color: #fff;
+	top: 0;
+	margin-left: 390px;
+	line-height: 47px;
+}
+.in-nav-r a{
+	color: #fff;
+	text-decoration: none;
+	margin-left: 5px;
+}
+.in-nav-r .unread{
+	color: #13aced;
+	margin-right: 10px;
+}
+.pandect ul li{
+	width: 195px;
+	text-align: center;
+	padding-top: 15px;
+	height: 208px;
+	float: left;
+	margin-left: 30px;
+	margin-top: 23px;
+	background: url(../images/pandect_icon_bg.png) 0 0 no-repeat;
+}
+.pandect ul li a{
+	text-decoration: none;
+}
+.pandect ul li.first{
+	margin-left: 0;
+}
+.pandect ul li a em{
+	width: 56px;
+	height: 50px;
+	margin: 0 auto;
+	display: block;
+	background: url(../images/pandect_icon2.png) 0 0 no-repeat;
+}
+.pandect ul li:nth-child(2) em{
+	background-position: -71px 0;
+}
+.pandect ul li:nth-child(3) em{
+	background-position: -135px 0;
+}
+.pandect ul li:nth-child(4) em{
+	background-position: -193px 0;
+}
+.pandect ul li:nth-child(5) em{
+	background-position: -241px 0;
+	width: 50px;
+}
+.pandect ul li:nth-child(6) em{
+	background-position:2px -51px;
+}
+.pandect ul li:nth-child(7) em{
+	background-position:-66px -51px;
+}
+.pandect ul li:nth-child(8){
+	background: url(../images/pandect_icon_bg02.png) 0 0 no-repeat;
+}
+.pandect ul li:nth-child(8) em{
+	background: url(../images/pandect_icon3.png) 0 0 no-repeat;
+	background-position:15px 1px;
+}
+.pandect ul li:nth-child(8) p{
+	color: #fff;
+	width: 135px;
+	line-height: 45px;
+	font-size: 32px;
+	margin: 0 auto;
+	margin-top: 5px;
+}
+.pandect ul li a b{
+	font-size: 80px;
+	color: #13aced;
+	font-weight: normal;
+	line-height: 90px;
+}
+.pandect ul li a p{
+	font-size: 20px;
+	color: #666;
+}
+.pandect .add{
+	width: 120px;
+	height: 35px;
+	background:#2d2d2d url(../images/pandect_add_icon.png) 12px 9px no-repeat;
+	font-size: 14px;
+	color: #fff;
+	padding-left: 20px;
+	margin-right: 20px;
+	margin-top: -50px;
+	margin-bottom: 0;
+	float: right;
+	outline: none;
+}
+.pandect .add:hover{
+	background-color: #13aced;
+}
+.inPandect{
+	border: 1px solid #ccc;
+	background-color: #fff;
+	margin-top: 40px;
+}
+.inPandect h3{
+	height: 67px;
+	color: #3b3d3d;
+	font-size: 26px;
+	line-height: 67px;
+	padding-left: 30px;
+	border-bottom: 1px solid #ccc;
+}
+.inPandect li{
+	padding:23px 0;
+	margin-left: 28px;
+	margin-right: 20px;
+	height: 140px;
+	border-bottom: 1px dotted #cdcdcd;
+	position: relative;
+}
+.pan-li-cen{
+	width: 710px;
+	color: #fff;
+	font-size: 20px;
+	color: #666;
+	margin-left: 27px;
+	float: left;
+}
+.inPandect img{
+	width: 136px;
+	height: 97px;
+	float: left;
+}
+.pan-li-cen dt,.pan-li-cen dd{
+	float: left;
+	margin-left: 45px;
+}
+.pan-li-cen dd.ora{
+	color: #ff8400;
+}
+.pan-li-cen dd.blu{
+	color: #13aced;
+}
+.pan-li-cen dd.red{
+	color: #ff0000;
+}
+
+.pan-li-cen dt{
+	font-weight: normal;
+	margin-left: 0;
+}
+.in-pan-li {
+	height: 48px;
+	width: 100%;
+	background-color: #f7f7f7;
+	margin-top: 18px;
+}
+.in-pan-li dd{
+	font-size: 14px;
+	line-height: 48px;
+	margin-left: 15px;
+
+}
+.in-pan-li dd:before{
+	width: 4px;
+	height: 4px;
+	background-color: #666;
+	content: '';
+	display: inline-block;
+	margin-right: 10px;
+	position: relative;
+	top: -2px;
+}
+.inPandect p{
+	position: absolute;
+	right: 10px;
+	color: #e60012;
+	top: 85px;
+}
+.inPandect .btns{
+	width: 105px;
+	float: right;
+}
+.inPandect .btns .btn1,.inPandect .btns .btn2,.inPandect .btns .btn3{
+	width: 24px;
+	height: 28px;
+	background: url(../images/pandect_bj_icon01.png) 0 0 no-repeat;
+	outline: none;
+	margin-right: 12px;
+}
+.inPandect .btn4{
+	width: 120px;
+	height: 35px;
+	line-height: 31px;
+	padding-left: 24px;
+	display: block;
+	background-color: #fff;
+	border: 2px solid #13aced;
+	outline: none;
+	font-size: 14px;
+	color: #13aced;
+	float:right;
+	margin-top: 15px;
+	background:#fff url(../images/pandect_add_icon2.png) 12px 8px no-repeat;
+	text-indent: 20px;
+}
+.inPandect .btn4:hover{
+	color: #fff;
+	background:#13aced url(../images/pandect_add_icon.png) 12px 8px no-repeat;
+}
+.inPandect .btns .btn1:hover,.inPandect .btns .btn2:hover,.inPandect .btns .btn3:hover{
+	background: url(../images/pandect_bj_icon02.png) 0 0 no-repeat;
+}
+.inPandect .btns .btn2:hover{
+	background-position: -40px 0;
+}
+.inPandect .btns .btn3:hover{
+	background-position: -81px 0;
+}
+.inPandect .btns .btn2{
+	width: 25px;
+	background-position: -40px 0;
+	position: relative;
+	top: -1px;
+}
+.inPandect .btns .btn3{
+	margin-right: 0;
+	background-position: -81px 0;
+	position: relative;
+	top: -2px;
+}
+.pandect .all{
+	width: 135px;
+	height: 35px;
+	background: #2d2d2d url(../images/all_bg.png) 101px 14px no-repeat;
+	color: #fff;
+	font-size: 14px;
+	-webkit-transition: all .2s;
+	transition: all .2s;
+	margin-top: 20px;
+	outline: none;
+}
+.pandect .all:hover{
+	background-color: #13aced;
+	-webkit-transition: all .2s;
+	transition: all .2s;
+}
+footer{
+	height: 179px;
+	background: url(../images/footerBg2.jpg) center no-repeat;
+	padding-top:70px;
+	position: relative;
+	margin-top:75px;
+}

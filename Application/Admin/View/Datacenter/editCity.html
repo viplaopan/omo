@@ -1,0 +1,102 @@
+<extend name="Public/base" />
+<block name="body">
+  <script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+  <script type="text/javascript">
+  	    var regions = {$regions};
+  	    $(function(){
+  	    	  //城市联动默认值
+  	    	  $.each(regions, function(i,item) {
+  	    	  	    if(item.region_type == 1){
+  	    	  	   	  $("select[name='prov']").append(
+  	    	  	   	 	      '<option value="' +item.region_id+ '">' +item.region_name+ '</option>'
+  	    	  	   	  );
+  	    	  	    }
+  	    	  });
+  	    	  //城市联动默认值
+  	    	  $.each(regions, function(i,item) {
+  	    	  	    if(item.parent_id == 2){
+  	    	  	   	  $("select[name='area']").append(
+  	    	  	   	 	      '<option value="' +item.region_id+ '">' +item.region_name+ '</option>'
+  	    	  	   	  );
+  	    	  	    }
+  	    	  });
+  	    	  //省份城市的联动
+  	    	  $("select[name='prov']").change(function(){
+  	    	      var self = $(this);
+  	    	      $("select[name='area']").html('');
+  	    	      $.each(regions, function(i,item) {
+  	    	  	    if(self.val() == item.parent_id){
+  	    	  	   	  $("select[name='area']").append(
+  	    	  	   	 	      '<option value="' +item.region_id+ '">' +item.region_name+ '</option>'
+  	    	  	   	  );
+  	    	  	    }
+  	    	  	  });
+  	    	  })
+  	    	  
+  	    })
+  </script>
+  <div class="main-title cf">
+    <h2>
+      <eq name="info['id']" value=''>添加城市
+        <else/>
+        编辑商圈</eq>
+    </h2>
+  </div>
+  <!-- 标签页导航 -->
+  <div class="tab-wrap">
+    <div class="tab-content"> 
+      <!-- 表单 -->
+      <form action="{:U('Datacenter/editCity')}" method="post" class="form-horizontal">
+        <label class="item-label">请选择城市 </label>
+        <div class="controls">
+          
+          
+          <select name="prov">
+          	 
+          </select>
+          <select name="area">
+          	
+          </select>
+        </div>
+       
+        <br>
+        <div class="form-item">
+          <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确定</button>
+          <button onclick="javascript:history.back(-1);return false;" class="btn btn-return">返回</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</block>
+<block name="script">
+<link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+<php>
+if(C('COLOR_STYLE')=='blue_color') echo '
+<link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">
+';
+</php>
+<link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script> 
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script> 
+<script type="text/javascript">
+$('#submit').click(function(){
+    $('#form').submit();
+});
+
+$(function(){
+	$('.time').datetimepicker({
+        format: 'yyyy-mm-dd hh:ii',
+        language:"zh-CN",
+        minView:2,
+        autoclose:true
+    });
+    $('.date').datetimepicker({
+        format: 'yyyy-mm-dd',
+        language:"zh-CN",
+        minView:2,
+        autoclose:true
+    });
+    showTab();
+});
+</script>
+</block>

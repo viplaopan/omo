@@ -1,0 +1,452 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'font-icons';
+    src: url('../fonts/font-icons.eot');
+    src: url('../fonts/font-icons.eot') format('embedded-opentype'), url('../fonts/font-icons.svg') format('svg'), url('../fonts/font-icons.woff') format('woff'), url('../fonts/font-icons.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.font-icons {
+    font-family: "font-icons";
+}
+/* 禁用iPhone中Safari的字号自动调整 */
+html {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+/* 去除iPhone中默认的input样式 */
+input[type="submit"], input[type="reset"], input[type="button"], input {
+	resize: none;
+}
+
+/* 取消链接高亮  */
+body, div, ul, li, ol, h1, h2, h3, h4, h5, h6, input, textarea, select, p, dl, dt, dd, a, img, button, form, table, th, tr, td, tbody, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* 设置HTML5元素为块 */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+/* 图片自适应 */
+img {
+	max-width: 100%;
+	height: auto;
+	width: auto\9; /* ie8 */
+	-ms-interpolation-mode: bicubic;/*为了照顾ie图片缩放失真*/
+}
+
+/* 初始化 */
+body, div, ul, li, ol, h1, h2, h3, h4, h5, h6, input, textarea, select, p, dl, dt, dd, a, img, button, form, table, th, tr, td, tbody, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+body {
+	font: 12px/1.5 Helvetica,Tahoma,Arial,'Hiragino Sans GB',"Microsoft YaHei",SimSun,Heiti,sans-serif;
+	color: #555;
+	background-color: #f6f6f6;
+}
+em, i {
+	font-style: normal;
+}
+.clearfix:after {
+	content: "";
+	display: block;
+	visibility: hidden;
+	height: 0;
+	clear: both;
+}
+.clearfix {
+	zoom: 1;
+}
+a {
+	text-decoration: none;
+	color: #666;
+	background-color: 0;
+	font-family: '微软雅黑', Microsoft YaHei, Tahoma, Arial, sans-serif;
+}
+a:hover {
+	text-decoration: none;
+	color: #fff;
+}
+a:visited{
+	color: red;
+	text-decoration: none!important;
+}
+ul, ol {
+	list-style: none;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-family: Microsoft YaHei;
+}
+img {
+	border: none;
+}
+*{
+	box-sizing: border-box;
+	font-family: '微软雅黑';
+}
+.main{
+	width: 1100px;
+	margin: 0 auto;
+}
+/* 头部样式 */
+.top{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: #f6f6f6;
+	z-index: 2;
+}
+.wrap{
+	margin-top: 145px;
+	z-index: 1;
+}
+.inHeader{
+	position: relative;
+}
+.inHeader .dropdown{
+	position: absolute;
+	top: 55px;
+	left: 194px;
+	font-size: 12px;
+	color: #222;
+	padding-bottom: 15px;
+	-webkit-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+.clist .inHeader .dropdown{
+	top: 30px;
+	left: 130px;
+	-webkit-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+.dropdown-menu li:hover{
+	color: #13aced;
+}
+.inHeader .dropdown button{
+	width: 57px;
+	height: 20px;
+	background-color: #f6f6f6;
+	line-height: 20px;
+	border: 1px solid #d4d4d4;
+	border-radius: 2px;
+	outline: none;
+	text-align: left;
+	padding-left: 12px;
+}
+.inHeader .dropdown ul{
+	min-width: 57px;
+	box-shadow: none;
+	margin: 0;
+	top: 90%;
+}
+.inHeader .dropdown ul:before{
+	content: '';
+	width: 7px;
+	height: 7px;
+	display: block;
+	position: absolute;
+	top: -7px;
+	right: 7px;
+	background: url(../images/sj.jpg) 0 0 no-repeat;
+}
+.inHeader .dropdown ul li{
+	line-height: 24px;
+	font-size: 12px;
+	text-align: center;
+	cursor: pointer;
+}
+.inHeader .caret{
+	position: absolute;
+	top: 9px;
+	right: 6px;
+}
+header{
+	-webkit-backface-visibility: hidden;
+    -webkit-transition: padding 300ms ease,height 300ms ease,border 300ms ease;
+    -o-transition: padding 300ms ease,height 300ms ease,border 300ms ease;
+    transition: padding 300ms ease,height 300ms ease,border 300ms ease;
+    background:#f6f6f6;
+    width: 100%;
+    line-height: 0;
+    font-size: 0;
+    z-index: 20;
+    height: 95px;
+    position: fixed;
+    top: 0;
+}
+header h1 a{
+	display: block;
+	float: left;
+	width: 182px;
+	margin-top: 6px;
+}
+header .phone{
+	font-size: 28px;
+	font-weight: bold;
+	color: #13aced;
+	float: left;
+	margin-left: 160px;
+	padding-left: 42px;
+	line-height: 95px;
+	transition: all 300ms ease;
+	background: url(../images/phone_icon01.png) 0 center no-repeat;
+}
+header h1 a img{
+	-webkit-backface-visibility: hidden;
+    -webkit-perspective: 10000px;
+    -webkit-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+    vertical-align: middle;
+    width: auto;
+    height: 63px;
+    max-width: none \9;
+    max-height: 100%;
+    margin-top: 7px;
+    display: block;
+}
+.inHeader h1 img{
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transition: all 0.5s;
+}
+.clist .inHeader h1 img{
+	height: 40px;
+	width: auto;
+}
+.top.clist{
+
+	position: fixed;
+	z-index: 10;
+}
+.clist header {
+	height: 60px;
+}
+.clist header .phone{
+	line-height: 60px;
+}
+.clist nav{
+	margin-top: -86px;
+}
+header .col{
+	float: right;
+	height: 55px;
+	margin-top: 20px;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+.clist header .col{
+	margin-top: 0;
+	height: 60px;
+}
+.clist .collectNum{
+	height: 30px;
+	line-height: 30px;
+	font-size: 30px;
+	padding:0 7px;
+	margin-top: 14px;
+	margin-right: 15px;
+}
+.collectNum{
+	padding:0 20px;
+	height: 55px;
+	background-color: #444;
+	color: #fff;
+	font-size: 45px;
+	line-height: 55px;
+	float: left;
+	position: relative;
+	-webkit-transition: all .5s;
+	transition: all .5s;
+}
+.clist .collectYour{
+	height: 60px;
+	line-height: 20px;
+}
+.collectYour{
+	padding: 10px 15px 0 55px;
+	float: right;
+	line-height: 18px;
+	color: #fff;
+	font-size: 14px;
+	height: 55px;
+	background: #13aced url(../images/collect_icon.png) 19px center no-repeat;
+	-webkit-transition: all .5s;
+	transition: all .5s;
+}
+.clist .collectNum:after{
+	right: -7px;
+}
+.collectNum:after{
+    content: '';
+    position: absolute;
+    right: -9px;
+    top: 50%;
+    margin-top: -11px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 11px 0 11px 13px;
+    border-color: transparent transparent transparent #444;
+}
+nav{
+	background-color: #2d2d2d;
+	height: 50px;
+	width: 100%;
+    position: fixed;
+    -webkit-transition: margin-top 500ms ease;
+    -o-transition: margin-top 500ms ease;
+    transition: margin-top 500ms ease;
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.26);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.26);
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.26);
+    margin-top: 0;
+    z-index: 15;
+    font-size: 0;
+    top: 95px;
+	border-top: 3px solid #13aced;
+}
+nav li a{
+	float:left;
+	line-height: 47px;
+	color: #fff!important;
+	font-size: 14px;
+	padding:  0 35px;
+	text-decoration: none!important;
+}
+nav li a:hover{
+	background-color: #13aced;
+	transition: all 1s;
+}
+nav li a.current{
+	background-color: #13aced;
+}
+footer{
+	height: 378px;
+	background:#2d2d2d url(../images/footerBg.jpg) center no-repeat;
+	padding-top: 32px;
+	text-align: center;
+}
+footer h4{
+	width: 181px;
+	height: 61px;
+	background:  url(../images/foot_logo.jpg) 0 0 no-repeat;
+	margin: 0 auto;
+}
+.inFooter .find{
+	font-size: 0;
+	width: 550px;
+	height: 53px;
+	border:2px solid #1f99cd;
+	margin: 0 auto;
+	border-radius: 4px;
+	margin-top: 32px;
+}
+.inFooter .find input{
+	width: 410px;
+	height: 49px;
+	padding-left: 20px;
+	position: relative;
+	top:-1px;
+	outline: none;
+	font-size: 14px;
+	border-radius: 2px 0 0 2px;
+}
+.inFooter .find button{
+	width: 136px;
+	height: 49px;
+	background-color: #1f99cd;
+	color: #fff;
+	font-size: 18px;
+}
+.inFooter .telephone{
+	font-size: 34px;
+	color: #1f99cd;
+	margin-top: 15px;
+}
+.inFooter .hour{
+	font-size: 14px;
+	color: #727272;
+	margin-top: -4px;
+}
+.inFooter ul{
+	width: 618px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.inFooter ul li a{
+	float:left;
+	color: #ede6e6;
+	font-size: 14px;
+	padding: 0 20px;
+	background: url(../images/foot_libg.jpg) right center no-repeat;
+}
+.inFooter ul li:nth-child(6) a{
+	background: none;
+}
+.inFooter .copy{
+	color: #727272;
+	font-size: 14px;
+	margin-top: 10px;
+}
+
+
+/* 弹出框 */
+.modal-header h5{
+	font-size: 40px;
+	color: #fff;
+	font-weight: normal;
+}
+.modal-header span{
+	width: 48px;
+	height: 48px;
+	background-color: rgba(0,0,0,.4);
+	position: absolute;
+	padding: 9px;
+	top: 0px;
+	right: -48px;
+	cursor: pointer;
+	opacity: 1;
+}
+.modal-body{
+	padding: 20px 25px;
+	font-size: 14px;
+	line-height: 24px;
+}
+.modal-dialog{
+	width: 708px;
+	margin: 0;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	height: 0;
+}
+.modal-content{
+	border-radius: 0;
+	box-shadow: none;
+	border: none;
+	-webkit-transform: translatex(-50%) translatey(-50%);
+	-ms-transform: translatex(-50%) translatey(-50%);
+	-moz-transform: translatex(-50%) translatey(-50%);
+	-o-transform: translatex(-50%) translatey(-50%);
+	transform: translatex(-50%) translatey(-50%);
+}
+.datetimepicker table tr td span.active{
+	background-color: #13aced!important;
+}
+.fl{float: left;}
+.datetimepicker table tr td.active:hover, .datetimepicker table tr td.active:hover:hover, .datetimepicker table tr td.active.disabled:hover, .datetimepicker table tr td.active.disabled:hover:hover, .datetimepicker table tr td.active:active, .datetimepicker table tr td.active:hover:active, .datetimepicker table tr td.active.disabled:active, .datetimepicker table tr td.active.disabled:hover:active, .datetimepicker table tr td.active.active, .datetimepicker table tr td.active:hover.active, .datetimepicker table tr td.active.disabled.active, .datetimepicker table tr td.active.disabled:hover.active, .datetimepicker table tr td.active.disabled, .datetimepicker table tr td.active:hover.disabled, .datetimepicker table tr td.active.disabled.disabled, .datetimepicker table tr td.active.disabled:hover.disabled, .datetimepicker table tr td.active[disabled], .datetimepicker table tr td.active:hover[disabled], .datetimepicker table tr td.active.disabled[disabled], .datetimepicker table tr td.active.disabled:hover[disabled] {
+    /* background-color: #0044cc; */
+    background: #13aced!important;
+}

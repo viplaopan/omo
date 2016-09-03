@@ -1,0 +1,682 @@
+[ 2016-09-01T07:27:34+08:00 ] 192.168.3.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.084624s ]
+INFO: [ app_init ] --END-- [ RunTime:0.098637s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.017742s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.017891s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000408s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000468s ]
+SQL: SHOW COLUMNS FROM `xh_adv` [ RunTime:0.0201s ]
+SQL: SELECT * FROM `xh_adv` LEFT JOIN xh_adv_pos as b ON xh_adv.pos_id = b.id  WHERE b.status = 1 AND b.type = 1 AND b.path = 'Home/Index/index'  [ RunTime:0.0072s ]
+NOTIC: [8] Undefined variable: oneplus_seo_meta /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+NOTIC: [8] Undefined variable: seo /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ohmyoffice_db.xh_seo_rule' doesn't exist
+
+[ 2016-09-01T08:46:14+08:00 ] 192.168.3.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.063740s ]
+INFO: [ app_init ] --END-- [ RunTime:0.077285s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.014793s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014866s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000726s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000853s ]
+ERR: SQLSTATE[HY000] [1049] Unknown database 'ohmyoffice_db'
+
+[ 2016-09-01T11:39:50+08:00 ] 192.168.3.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.083923s ]
+INFO: [ app_init ] --END-- [ RunTime:0.096460s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.019560s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.019719s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000432s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000505s ]
+ERR: SQLSTATE[HY000] [1049] Unknown database 'ohmyoffice_db'
+
+[ 2016-09-01T11:52:47+08:00 ] 192.168.3.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.027928s ]
+INFO: [ app_init ] --END-- [ RunTime:0.030410s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003138s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003282s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000338s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000407s ]
+ERR: SQLSTATE[HY000] [1049] Unknown database 'ohmyoffice_db'
+
+[ 2016-09-01T12:28:23+08:00 ] 192.168.3.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.022362s ]
+INFO: [ app_init ] --END-- [ RunTime:0.026555s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004069s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000393s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000443s ]
+SQL: SHOW COLUMNS FROM `xh_adv` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `xh_adv` LEFT JOIN xh_adv_pos as b ON xh_adv.pos_id = b.id  WHERE b.status = 1 AND b.type = 1 AND b.path = 'Home/Index/index'  [ RunTime:0.0028s ]
+NOTIC: [8] Undefined variable: oneplus_seo_meta /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+NOTIC: [8] Undefined variable: seo /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+SQL: SHOW COLUMNS FROM `xh_seo_rule` [ RunTime:0.0005s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.303283s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.303369s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.015741s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015806s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.017514s ]
+INFO: [ app_end ] --END-- [ RunTime:0.017582s ]
+
+[ 2016-09-01T12:28:24+08:00 ] 192.168.3.1 /Public/Home/fonts/font-icons.woff
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.030022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.030195s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001143s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000355s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000434s ]
+SQL: SHOW COLUMNS FROM `xh_adv` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `xh_adv` LEFT JOIN xh_adv_pos as b ON xh_adv.pos_id = b.id  WHERE b.status = 1 AND b.type = 1 AND b.path = 'Home/Index/index'  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: oneplus_seo_meta /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+NOTIC: [8] Undefined variable: seo /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+SQL: SHOW COLUMNS FROM `xh_seo_rule` [ RunTime:0.0008s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.153675s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.153798s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002201s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002273s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001159s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001407s ]
+
+[ 2016-09-01T12:28:25+08:00 ] 192.168.3.1 /Uploads/Images/2016-06-14/576028b0138a6.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.027306s ]
+INFO: [ app_init ] --END-- [ RunTime:0.027726s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002219s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002299s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000386s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000532s ]
+SQL: SHOW COLUMNS FROM `xh_adv` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xh_adv` LEFT JOIN xh_adv_pos as b ON xh_adv.pos_id = b.id  WHERE b.status = 1 AND b.type = 1 AND b.path = 'Home/Index/index'  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: oneplus_seo_meta /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+NOTIC: [8] Undefined variable: seo /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+SQL: SHOW COLUMNS FROM `xh_seo_rule` [ RunTime:0.0007s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.211468s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.211631s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001542s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001593s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000988s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001041s ]
+
+[ 2016-09-01T12:28:25+08:00 ] 192.168.3.1 /Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.017789s ]
+INFO: [ app_init ] --END-- [ RunTime:0.018003s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000891s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000977s ]
+
+[ 2016-09-01T12:28:33+08:00 ] 192.168.3.1 /Home/Offices/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.018551s ]
+INFO: [ app_init ] --END-- [ RunTime:0.021663s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003321s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003387s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000410s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000488s ]
+SQL: SHOW COLUMNS FROM `xh_adv` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xh_adv` LEFT JOIN xh_adv_pos as b ON xh_adv.pos_id = b.id  WHERE b.status = 1 AND b.type = 1 AND b.path = 'Home/Index/index'  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: oneplus_seo_meta /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+NOTIC: [8] Undefined variable: seo /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+SQL: SHOW COLUMNS FROM `xh_seo_rule` [ RunTime:0.0005s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.170022s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.170477s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003901s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003963s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003193s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003242s ]
+
+[ 2016-09-01T12:28:33+08:00 ] 192.168.3.1 /Uploads/Images/2016-06-14/576028b0138a6.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.006792s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006957s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001806s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001884s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000407s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000498s ]
+SQL: SHOW COLUMNS FROM `xh_adv` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xh_adv` LEFT JOIN xh_adv_pos as b ON xh_adv.pos_id = b.id  WHERE b.status = 1 AND b.type = 1 AND b.path = 'Home/Index/index'  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: oneplus_seo_meta /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+NOTIC: [8] Undefined variable: seo /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+SQL: SHOW COLUMNS FROM `xh_seo_rule` [ RunTime:0.0006s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.150312s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.150393s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001046s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001094s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000594s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000636s ]
+
+[ 2016-09-01T12:28:34+08:00 ] 192.168.3.1 /Public/Home/fonts/font-icons.woff
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008325s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008510s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003439s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000330s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000386s ]
+SQL: SHOW COLUMNS FROM `xh_adv` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `xh_adv` LEFT JOIN xh_adv_pos as b ON xh_adv.pos_id = b.id  WHERE b.status = 1 AND b.type = 1 AND b.path = 'Home/Index/index'  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: oneplus_seo_meta /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+NOTIC: [8] Undefined variable: seo /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+SQL: SHOW COLUMNS FROM `xh_seo_rule` [ RunTime:0.0006s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.149675s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.149754s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001047s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001249s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001217s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001282s ]
+
+[ 2016-09-01T12:28:34+08:00 ] 192.168.3.1 /Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.005249s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002736s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002806s ]
+
+[ 2016-09-01T12:28:36+08:00 ] 192.168.3.1 /Home/Offices/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015193s ]
+INFO: [ app_init ] --END-- [ RunTime:0.018264s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003677s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003761s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000347s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000413s ]
+SQL: SHOW COLUMNS FROM `xh_adv` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `xh_adv` LEFT JOIN xh_adv_pos as b ON xh_adv.pos_id = b.id  WHERE b.status = 1 AND b.type = 1 AND b.path = 'Home/Index/index'  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined variable: oneplus_seo_meta /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+NOTIC: [8] Undefined variable: seo /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+SQL: SHOW COLUMNS FROM `xh_seo_rule` [ RunTime:0.0007s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.197993s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.198063s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002680s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002745s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002934s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002991s ]
+
+[ 2016-09-01T12:28:36+08:00 ] 192.168.3.1 /Uploads/Images/2016-06-14/576028b0138a6.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.026930s ]
+INFO: [ app_init ] --END-- [ RunTime:0.027127s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001387s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001502s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000345s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000399s ]
+SQL: SHOW COLUMNS FROM `xh_adv` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xh_adv` LEFT JOIN xh_adv_pos as b ON xh_adv.pos_id = b.id  WHERE b.status = 1 AND b.type = 1 AND b.path = 'Home/Index/index'  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: oneplus_seo_meta /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+NOTIC: [8] Undefined variable: seo /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+SQL: SHOW COLUMNS FROM `xh_seo_rule` [ RunTime:0.0005s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.116523s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.116612s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000869s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000918s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000797s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000841s ]
+
+[ 2016-09-01T12:28:37+08:00 ] 192.168.3.1 /Public/Home/fonts/font-icons.woff
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.014243s ]
+INFO: [ app_init ] --END-- [ RunTime:0.014441s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000743s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000718s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000822s ]
+SQL: SHOW COLUMNS FROM `xh_adv` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xh_adv` LEFT JOIN xh_adv_pos as b ON xh_adv.pos_id = b.id  WHERE b.status = 1 AND b.type = 1 AND b.path = 'Home/Index/index'  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: oneplus_seo_meta /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+NOTIC: [8] Undefined variable: seo /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+SQL: SHOW COLUMNS FROM `xh_seo_rule` [ RunTime:0.0007s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.192355s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.192413s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000865s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000908s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001010s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001082s ]
+
+[ 2016-09-01T12:28:37+08:00 ] 192.168.3.1 /Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.014486s ]
+INFO: [ app_init ] --END-- [ RunTime:0.014628s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000779s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000859s ]
+
+[ 2016-09-01T12:28:38+08:00 ] 192.168.3.1 /Home/Offices/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009520s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009677s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001078s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001141s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000718s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000813s ]
+SQL: SHOW COLUMNS FROM `xh_adv` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xh_adv` LEFT JOIN xh_adv_pos as b ON xh_adv.pos_id = b.id  WHERE b.status = 1 AND b.type = 1 AND b.path = 'Home/Index/index'  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: oneplus_seo_meta /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+NOTIC: [8] Undefined variable: seo /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+SQL: SHOW COLUMNS FROM `xh_seo_rule` [ RunTime:0.0009s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.170059s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.170179s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001294s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001332s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001080s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001146s ]
+
+[ 2016-09-01T12:28:39+08:00 ] 192.168.3.1 /Uploads/Images/2016-06-14/576028b0138a6.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.007613s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007880s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001096s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001179s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000512s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000623s ]
+SQL: SHOW COLUMNS FROM `xh_adv` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `xh_adv` LEFT JOIN xh_adv_pos as b ON xh_adv.pos_id = b.id  WHERE b.status = 1 AND b.type = 1 AND b.path = 'Home/Index/index'  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: oneplus_seo_meta /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+NOTIC: [8] Undefined variable: seo /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+SQL: SHOW COLUMNS FROM `xh_seo_rule` [ RunTime:0.0008s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.163757s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.163831s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000661s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000703s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000967s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001027s ]
+
+[ 2016-09-01T12:28:39+08:00 ] 192.168.3.1 /Public/Home/fonts/font-icons.woff
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.007391s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007555s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001700s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000323s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000374s ]
+SQL: SHOW COLUMNS FROM `xh_adv` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `xh_adv` LEFT JOIN xh_adv_pos as b ON xh_adv.pos_id = b.id  WHERE b.status = 1 AND b.type = 1 AND b.path = 'Home/Index/index'  [ RunTime:0.0011s ]
+NOTIC: [8] Undefined variable: oneplus_seo_meta /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+NOTIC: [8] Undefined variable: seo /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+SQL: SHOW COLUMNS FROM `xh_seo_rule` [ RunTime:0.0007s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.179179s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.179262s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001924s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001981s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001352s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001443s ]
+
+[ 2016-09-01T12:28:39+08:00 ] 192.168.3.1 /Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.025551s ]
+INFO: [ app_init ] --END-- [ RunTime:0.028330s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007511s ]
+
+[ 2016-09-01T12:28:41+08:00 ] 192.168.3.1 /Home/Offices/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010311s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000809s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000882s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000408s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000539s ]
+SQL: SHOW COLUMNS FROM `xh_adv` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xh_adv` LEFT JOIN xh_adv_pos as b ON xh_adv.pos_id = b.id  WHERE b.status = 1 AND b.type = 1 AND b.path = 'Home/Index/index'  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: oneplus_seo_meta /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+NOTIC: [8] Undefined variable: seo /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+SQL: SHOW COLUMNS FROM `xh_seo_rule` [ RunTime:0.0009s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.189321s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.189422s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003761s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003831s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003108s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003226s ]
+
+[ 2016-09-01T12:28:41+08:00 ] 192.168.3.1 /Uploads/Images/2016-06-14/576028b0138a6.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.006213s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006386s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001451s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001532s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000324s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000373s ]
+SQL: SHOW COLUMNS FROM `xh_adv` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xh_adv` LEFT JOIN xh_adv_pos as b ON xh_adv.pos_id = b.id  WHERE b.status = 1 AND b.type = 1 AND b.path = 'Home/Index/index'  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: oneplus_seo_meta /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+NOTIC: [8] Undefined variable: seo /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+SQL: SHOW COLUMNS FROM `xh_seo_rule` [ RunTime:0.0005s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.171855s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.171913s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000920s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000965s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000821s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000871s ]
+
+[ 2016-09-01T12:28:41+08:00 ] 192.168.3.1 /Public/Home/fonts/font-icons.woff
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011518s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011718s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007005s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007117s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000344s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000469s ]
+SQL: SHOW COLUMNS FROM `xh_adv` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xh_adv` LEFT JOIN xh_adv_pos as b ON xh_adv.pos_id = b.id  WHERE b.status = 1 AND b.type = 1 AND b.path = 'Home/Index/index'  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: oneplus_seo_meta /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+NOTIC: [8] Undefined variable: seo /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+SQL: SHOW COLUMNS FROM `xh_seo_rule` [ RunTime:0.0006s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.110422s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.110485s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005316s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005365s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001355s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001436s ]
+
+[ 2016-09-01T12:28:41+08:00 ] 192.168.3.1 /Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.007090s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007339s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000978s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001068s ]
+
+[ 2016-09-01T12:34:02+08:00 ] 192.168.3.1 /Home/Offices/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.068992s ]
+INFO: [ app_init ] --END-- [ RunTime:0.082602s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.016874s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.016972s ]
+SQL: SHOW COLUMNS FROM `xh_resources` [ RunTime:0.0100s ]
+SQL: SELECT `id`,`uid`,`title`,`desc`,`city`,`area`,`trading_area`,`address`,`position`,`build_time`,`cover`,`vadio`,`website`,`company`,`more_desc`,`update_time`,`deadline`,`create_time`,`click_count`,`postcode`,`step`,`status` FROM `xh_resources` WHERE `status` = 1 AND `city` = 321 AND `create_time` < 1472704441 AND ( deadline = 0 OR deadline > 1472704441 ) ORDER BY `id` DESC  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `xh_resources_images` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `xh_resources_images` WHERE `rid` = 10096 AND `type` = 1 LIMIT 3   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xh_resources_service` [ RunTime:0.0019s ]
+SQL: SELECT `service_name` FROM `xh_resources_service` WHERE `rid` = 10096  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `xh_resources_position` [ RunTime:0.0021s ]
+SQL: SELECT MIN(month) AS tp_min FROM `xh_resources_position` WHERE `rid` = 10096 LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT MIN(hour) AS tp_min FROM `xh_resources_position` WHERE `rid` = 10096 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = 10096 AND `actual_time` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = 10096 AND `actual_time` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xh_resources_images` WHERE `rid` = 10085 AND `type` = 1 LIMIT 3   [ RunTime:0.0001s ]
+SQL: SELECT `service_name` FROM `xh_resources_service` WHERE `rid` = 10085  [ RunTime:0.0001s ]
+SQL: SELECT MIN(month) AS tp_min FROM `xh_resources_position` WHERE `rid` = 10085 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT MIN(hour) AS tp_min FROM `xh_resources_position` WHERE `rid` = 10085 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = 10085 AND `actual_time` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = 10085 AND `actual_time` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xh_resources_images` WHERE `rid` = 10083 AND `type` = 1 LIMIT 3   [ RunTime:0.0001s ]
+SQL: SELECT `service_name` FROM `xh_resources_service` WHERE `rid` = 10083  [ RunTime:0.0001s ]
+SQL: SELECT MIN(month) AS tp_min FROM `xh_resources_position` WHERE `rid` = 10083 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT MIN(hour) AS tp_min FROM `xh_resources_position` WHERE `rid` = 10083 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = 10083 AND `actual_time` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = 10083 AND `actual_time` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xh_resources_images` WHERE `rid` = 10082 AND `type` = 1 LIMIT 3   [ RunTime:0.0001s ]
+SQL: SELECT `service_name` FROM `xh_resources_service` WHERE `rid` = 10082  [ RunTime:0.0001s ]
+SQL: SELECT MIN(month) AS tp_min FROM `xh_resources_position` WHERE `rid` = 10082 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT MIN(hour) AS tp_min FROM `xh_resources_position` WHERE `rid` = 10082 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = 10082 AND `actual_time` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = 10082 AND `actual_time` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xh_resources_images` WHERE `rid` = 10080 AND `type` = 1 LIMIT 3   [ RunTime:0.0002s ]
+SQL: SELECT `service_name` FROM `xh_resources_service` WHERE `rid` = 10080  [ RunTime:0.0001s ]
+SQL: SELECT MIN(month) AS tp_min FROM `xh_resources_position` WHERE `rid` = 10080 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT MIN(hour) AS tp_min FROM `xh_resources_position` WHERE `rid` = 10080 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = 10080 AND `actual_time` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = 10080 AND `actual_time` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000239s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000330s ]
+SQL: SHOW COLUMNS FROM `xh_adv` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `xh_adv` LEFT JOIN xh_adv_pos as b ON xh_adv.pos_id = b.id  WHERE b.status = 1 AND b.type = 1 AND b.path = 'Home/Offices/index'  [ RunTime:0.0048s ]
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Runtime/Cache/Home/a756d13413f4bc7aceac163d74eb527a.php 第 4 行.
+NOTIC: [8] Undefined variable: oneplus_seo_meta /home/vagrant/Code/omo/Runtime/Cache/Home/a756d13413f4bc7aceac163d74eb527a.php 第 6 行.
+NOTIC: [8] Undefined variable: seo /home/vagrant/Code/omo/Runtime/Cache/Home/a756d13413f4bc7aceac163d74eb527a.php 第 6 行.
+SQL: SHOW COLUMNS FROM `xh_seo_rule` [ RunTime:0.0032s ]
+NOTIC: [2] mysqli_real_escape_string() expects exactly 2 parameters, 1 given /home/vagrant/Code/omo/Application/Common/Model/SeoRuleModel.class.php 第 81 行.
+NOTIC: [2] mysqli_real_escape_string() expects exactly 2 parameters, 1 given /home/vagrant/Code/omo/Application/Common/Model/SeoRuleModel.class.php 第 82 行.
+NOTIC: [2] mysqli_real_escape_string() expects exactly 2 parameters, 1 given /home/vagrant/Code/omo/Application/Common/Model/SeoRuleModel.class.php 第 83 行.
+SQL: SELECT * FROM `xh_seo_rule` WHERE ( (app='' or app='') and (controller='' or controller='') and (action='' or action='') and status=1 ) ORDER BY sort asc  [ RunTime:0.0012s ]
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Application/Common/Model/SeoRuleModel.class.php 第 39 行.
+NOTIC: [8] Undefined variable: list /home/vagrant/Code/omo/Runtime/Cache/Home/a756d13413f4bc7aceac163d74eb527a.php 第 57 行.
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0024s ]
+SQL: SELECT `region_name` FROM `xh_region` WHERE `region_id` = 2704 LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT `region_name` FROM `xh_region` WHERE `region_id` = 2707 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `region_name` FROM `xh_region` WHERE `region_id` = 2703 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `region_name` FROM `xh_region` WHERE `region_id` = 2704 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `region_name` FROM `xh_region` WHERE `region_id` = 2706 LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.378808s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.378875s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.013032s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.013105s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007590s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007649s ]
+
+[ 2016-09-01T13:31:37+08:00 ] 192.168.3.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.034723s ]
+INFO: [ app_init ] --END-- [ RunTime:0.036410s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003322s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000369s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000424s ]
+SQL: SHOW COLUMNS FROM `xh_adv` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `xh_adv` LEFT JOIN xh_adv_pos as b ON xh_adv.pos_id = b.id  WHERE b.status = 1 AND b.type = 1 AND b.path = 'Home/Index/index'  [ RunTime:0.0014s ]
+NOTIC: [8] Undefined variable: oneplus_seo_meta /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+NOTIC: [8] Undefined variable: seo /home/vagrant/Code/omo/Runtime/Cache/Home/769e70f2e46f34ceb60619bbda5e4691.php 第 6 行.
+SQL: SHOW COLUMNS FROM `xh_seo_rule` [ RunTime:0.0016s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.313833s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.313911s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003438s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003575s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004490s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004576s ]
+
+[ 2016-09-01T13:31:38+08:00 ] 192.168.3.1 /Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.005573s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005768s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002954s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003238s ]
+
+[ 2016-09-01T13:31:41+08:00 ] 192.168.3.1 /Home/Offices/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015346s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017301s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004663s ]
+SQL: SHOW COLUMNS FROM `xh_resources` [ RunTime:0.0007s ]
+SQL: SELECT `id`,`uid`,`title`,`desc`,`city`,`area`,`trading_area`,`address`,`position`,`build_time`,`cover`,`vadio`,`website`,`company`,`more_desc`,`update_time`,`deadline`,`create_time`,`click_count`,`postcode`,`step`,`status` FROM `xh_resources` WHERE `status` = 1 AND `city` = 321 AND `create_time` < 1472707901 AND ( deadline = 0 OR deadline > 1472707901 ) ORDER BY `id` DESC  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `xh_resources_images` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `xh_resources_images` WHERE `rid` = 10096 AND `type` = 1 LIMIT 3   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xh_resources_service` [ RunTime:0.0006s ]
+SQL: SELECT `service_name` FROM `xh_resources_service` WHERE `rid` = 10096  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `xh_resources_position` [ RunTime:0.0005s ]
+SQL: SELECT MIN(month) AS tp_min FROM `xh_resources_position` WHERE `rid` = 10096 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT MIN(hour) AS tp_min FROM `xh_resources_position` WHERE `rid` = 10096 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = 10096 AND `actual_time` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = 10096 AND `actual_time` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xh_resources_images` WHERE `rid` = 10085 AND `type` = 1 LIMIT 3   [ RunTime:0.0005s ]
+SQL: SELECT `service_name` FROM `xh_resources_service` WHERE `rid` = 10085  [ RunTime:0.0004s ]
+SQL: SELECT MIN(month) AS tp_min FROM `xh_resources_position` WHERE `rid` = 10085 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT MIN(hour) AS tp_min FROM `xh_resources_position` WHERE `rid` = 10085 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = 10085 AND `actual_time` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = 10085 AND `actual_time` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xh_resources_images` WHERE `rid` = 10083 AND `type` = 1 LIMIT 3   [ RunTime:0.0010s ]
+SQL: SELECT `service_name` FROM `xh_resources_service` WHERE `rid` = 10083  [ RunTime:0.0008s ]
+SQL: SELECT MIN(month) AS tp_min FROM `xh_resources_position` WHERE `rid` = 10083 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT MIN(hour) AS tp_min FROM `xh_resources_position` WHERE `rid` = 10083 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = 10083 AND `actual_time` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = 10083 AND `actual_time` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xh_resources_images` WHERE `rid` = 10082 AND `type` = 1 LIMIT 3   [ RunTime:0.0001s ]
+SQL: SELECT `service_name` FROM `xh_resources_service` WHERE `rid` = 10082  [ RunTime:0.0001s ]
+SQL: SELECT MIN(month) AS tp_min FROM `xh_resources_position` WHERE `rid` = 10082 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT MIN(hour) AS tp_min FROM `xh_resources_position` WHERE `rid` = 10082 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = 10082 AND `actual_time` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = 10082 AND `actual_time` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `xh_resources_images` WHERE `rid` = 10080 AND `type` = 1 LIMIT 3   [ RunTime:0.0001s ]
+SQL: SELECT `service_name` FROM `xh_resources_service` WHERE `rid` = 10080  [ RunTime:0.0001s ]
+SQL: SELECT MIN(month) AS tp_min FROM `xh_resources_position` WHERE `rid` = 10080 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT MIN(hour) AS tp_min FROM `xh_resources_position` WHERE `rid` = 10080 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = 10080 AND `actual_time` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xh_resources_position` WHERE `rid` = 10080 AND `actual_time` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000231s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000282s ]
+SQL: SHOW COLUMNS FROM `xh_adv` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `xh_adv` LEFT JOIN xh_adv_pos as b ON xh_adv.pos_id = b.id  WHERE b.status = 1 AND b.type = 1 AND b.path = 'Home/Offices/index'  [ RunTime:0.0006s ]
+NOTIC: [2] Invalid argument supplied for foreach() /home/vagrant/Code/omo/Runtime/Cache/Home/a756d13413f4bc7aceac163d74eb527a.php 第 4 行.
+NOTIC: [8] Undefined variable: oneplus_seo_meta /home/vagrant/Code/omo/Runtime/Cache/Home/a756d13413f4bc7aceac163d74eb527a.php 第 6 行.
+NOTIC: [8] Undefined variable: seo /home/vagrant/Code/omo/Runtime/Cache/Home/a756d13413f4bc7aceac163d74eb527a.php 第 6 行.
+SQL: SHOW COLUMNS FROM `xh_seo_rule` [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: list /home/vagrant/Code/omo/Runtime/Cache/Home/a756d13413f4bc7aceac163d74eb527a.php 第 57 行.
+SQL: SHOW COLUMNS FROM `xh_region` [ RunTime:0.0006s ]
+SQL: SELECT `region_name` FROM `xh_region` WHERE `region_id` = 2704 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `region_name` FROM `xh_region` WHERE `region_id` = 2707 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `region_name` FROM `xh_region` WHERE `region_id` = 2703 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `region_name` FROM `xh_region` WHERE `region_id` = 2704 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `region_name` FROM `xh_region` WHERE `region_id` = 2706 LIMIT 1   [ RunTime:0.0005s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.292385s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.292468s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003661s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003744s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007399s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007564s ]
+
+[ 2016-09-01T13:31:44+08:00 ] 192.168.3.1 /Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.014155s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015352s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003192s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003373s ]
+
