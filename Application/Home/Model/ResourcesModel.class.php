@@ -38,11 +38,16 @@ class ResourcesModel extends Model{
      * @return array              文档列表
      */
     public function lists($city, $order = '`id` DESC', $status = 1, $field = true){
+
         $map = $this->listMap($city, $status);
-		$lists = $this->field($field)->where($map)->order($order)->select();
+        
+
+		$lists = $this->where($map)->order($order)->select();
+        
+       
 		$statusArr = array(0=>'未完成',2=>'审核中',1=>'展示中');
 		foreach ($lists as $k => &$v) {
-			
+			 
 			$v['status_info'] = $statusArr[$v['status']];
 			$v['img'] = D('ResourcesImages')->where(array('rid' => $v['id'], 'type' => 1))->limit(3)->select();
 			$v['server'] = D('ResourcesService')->where(array('rid' => $v['id']))->getField('service_name', true);
@@ -84,7 +89,7 @@ class ResourcesModel extends Model{
 
     public function detail($id = 0){
 		/* 获取基础数据 */
-        $info = $this->field(true)->find($id);
+        $info = $this->where('status = 1')->field(true)->find($id);
 		
 		//读取城市信息
 		$info['region'] = get_region($info['city']) . '市' . get_region($info['area']);
@@ -359,9 +364,9 @@ class ResourcesModel extends Model{
     private function listMap($city, $status = 1, $pos = null){
         /* 设置状态 */
         if($status != NULL){
-        	$map = array('status' => $status, 'pid' => 0);
+        	$map = array(C('DB_PREFIX') . 'resources.status' => $status);  //, 'pid' => 0
         }else{
-        	$map = array('pid' => 0);
+        	//$map = array('pid' => 0);
         }
         
 
@@ -374,7 +379,7 @@ class ResourcesModel extends Model{
             }
         }
 
-        $map['create_time'] = array('lt', NOW_TIME);
+        $map[C('DB_PREFIX') . 'resources.create_time'] = array('lt', NOW_TIME);
         $map['_string']     = 'deadline = 0 OR deadline > ' . NOW_TIME;
 
         /* 设置推荐位 */

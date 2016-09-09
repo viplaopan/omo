@@ -1157,9 +1157,9 @@ function rand_username (){
 /**
  * 获取房源类型 RES_TYPE 
  */
-function get_res_type($type = 0){
+function get_res_type($type = 0, $label=''){
    $rts = C('RES_TYPE');
-   return $rts[$type];
+   return $type == 0 ? $label : $rts[$type];
 }
 require_once(APP_PATH . '/Common/Common/seo.php');
 require_once(APP_PATH . '/Common/Common/cache.php');

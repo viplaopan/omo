@@ -22,7 +22,7 @@
 		//设置默认值
 		var city_val = box_obj.find("input[name='city']").val();
 		var area_val = box_obj.find("input[name='area']").val();
-		var trading_val= box_obj.find("input[name='trading']").val();
+		var trading_val= box_obj.find("input[name='trading_area']").val();
 		//给城市复制Click
 		city_obj.find('.dropdown-menu').on("click","li", function() {
 		    var self = $(this);
@@ -40,7 +40,7 @@
 			area_obj.find("input[name='area']").val(0);
 			area_obj.find("button[type='button']").html('区');
 			
-			trading_obj.find("input[name='trading']").val(0);
+			trading_obj.find("input[name='trading_area']").val(0);
 			trading_obj.find("button[type='button']").html('商圈');
 			
 			trading_obj.find('.dropdown-menu li').remove();
@@ -61,7 +61,7 @@
 			//城市
 			tradingStart();
 			
-			trading_obj.find("input[name='trading']").val(0);
+			trading_obj.find("input[name='trading_area']").val(0);
 			trading_obj.find("button[type='button']").html('商圈');
 		});
 		//给商圈复制Click
@@ -70,8 +70,11 @@
 			var labelId = self.parent().attr('aria-labelledby');			
 			var labelInfo = self.attr('label');
 			var labelValue = self.attr('value');
+			
 			//更新 城市选择
-			box_obj.find("input[name='trading']").val(labelValue);
+			trading_obj.find("input[name='trading_area']").val(labelValue);
+			
+			console.log(trading_obj.find("input[name='traditrading_areang']"));
 			trading_val = labelValue;
 			$('#' + labelId).html(labelInfo);
 			//城市

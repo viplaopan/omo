@@ -137,7 +137,10 @@ class AdminConfigBuilder extends AdminBuilder
         $this->_buttonList[] = array('title' => $title, 'attr' => $attr);
         return $this;
     }
-
+    public function keyFree($name, $title, $free = null)
+    {
+        return $this->key($name, $title, $subtitle, $free);
+    }
     public function buttonSubmit($url = '', $title = '确定')
     {
         if ($url == '') {
@@ -174,7 +177,7 @@ class AdminConfigBuilder extends AdminBuilder
         }
     }
 
-    public function display()
+    public function display($template = '')
     {
         //将数据融入到key中
         foreach ($this->_keyList as &$e) {
@@ -191,7 +194,7 @@ class AdminConfigBuilder extends AdminBuilder
         $this->assign('keyList', $this->_keyList);
         $this->assign('buttonList', $this->_buttonList);
         $this->assign('savePostUrl', $this->_savePostUrl);
-        parent::display('admin_config');
+        parent::display($template?'../'. $template:'admin_config');
     }
 
     /**自动处理配置存储事件，配置项必须全大写

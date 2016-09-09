@@ -28,7 +28,6 @@ $(function() {
     $(".serviceol").css('height','90px');
 	var i=false;
 	$('.pack').click(function(event) {
-
 		if(i){
 				$(".serviceol").animate({height:"90px"},200)
 				$(this).html('展开更多信息+');

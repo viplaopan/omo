@@ -2,7 +2,7 @@
 
 <block name="body">
     <div class="main-title">
-        <h2>{$title}</h2>
+        <h2>{$meta_title}</h2>
     </div>
     <script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
     <form action="{$savePostUrl}" method="post" class="form-horizontal">
@@ -53,7 +53,67 @@
                             <label for="{$inputId}">{$option|htmlspecialchars}</label>
                         </volist>
                     </case>
-                    
+                    <case value="showImg">
+                        <style type="text/css">
+                            .image-item{
+                                float: left;
+                                margin-right: 5px;
+                            }
+                            .image-item img{
+                                width: 100px;
+                                height: 100px;
+                            }
+                        </style>
+                        <div class="controls">
+                            <div class="img-box">
+                                <php>
+
+                                    $pid = I('get.id');
+                                    $lists = D($field['name'])->where('pid = ' . $pid)->select();
+                                </php>
+                                <volist name="lists" id='vo'>
+                                    <div class="image-item"><img src="/Uploads/Resource/Position/{$vo.path}"/></div>
+                                </volist>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            $(function(){
+                                $(".image-item").click(function () {
+                                var winW = $(window).width();
+                                var winH = $(window).height();
+
+                                //如果没有图片则不显示
+                                if ($(this).find('img').attr('src') === undefined) {
+                                    return false;
+                                }
+                                // 创建弹出框以及获取弹出图片
+                                var imgPopup = "<div id=\"uploadPop\" class=\"upload-img-popup\"></div>"
+                                var imgItem = $(this).html();
+                                
+                                //如果弹出层存在，则不能再弹出
+                                var popupLen = $(".upload-img-popup").length;
+                                if (popupLen < 1) {
+                                    $(imgPopup).appendTo("body");
+                                    $(".upload-img-popup").html(
+                                        imgItem + "<a class=\"close-pop\" href=\"javascript:;\" title=\"关闭\"></a>"
+                                    );
+                                }
+
+                                // 弹出层定位
+                                var uploadImg = $("#uploadPop").find("img");
+                                var popW = uploadImg.width();
+                                var popH = uploadImg.height();
+                                var left = (winW - popW) / 2;
+                                var top = (winH - popH) / 2 + 50;
+                                $(".upload-img-popup").css({
+                                    "max-width": winW * 0.9,
+                                    "left": left,
+                                    "top": top
+                                });
+                            });
+                            })
+                        </script>
+                    </case>
                     <case value="image">
                         <div class="controls">
                             <input type="file" id="upload_picture_{$field.name}">

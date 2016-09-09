@@ -319,7 +319,8 @@ h2{
 	border-top: 1px solid #fff;
 	border-bottom: none;
 	box-shadow: none;
-	cursor: pointer;z-index: 10;
+	cursor: pointer;
+	z-index: 99999;
 }
 .city .dropdown-menu li{
 	line-height: 30px;
@@ -363,7 +364,7 @@ h2{
 	border-top: 1px solid #fff;
 	border-bottom: none;
 	box-shadow: none;
-	cursor: pointer;z-index: 1;
+	cursor: pointer;z-index: 999999;
 }
 .rapid .dropdown-menu li{
 	line-height: 30px;
