@@ -1,0 +1,295 @@
+body{
+	background-color: #fff;
+}
+.banner{
+	height: 403px;
+	padding: 150px 0;
+	position: relative;
+	overflow: hidden;
+	background: url(../images/about_banner.jpg) center no-repeat;
+}
+h3 {
+    text-align: center;
+    font-size: 32px;
+    color: #666;
+    font-weight: normal;
+    color: #292929;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+.space{
+	text-align: center;
+	padding: 30px 0;
+	font-size: 14px;
+	color: #666;
+	line-height: 26px;
+}
+.space h5{
+	font-size: 32px;
+	color: #222;
+	line-height: 66px;
+}
+.share{
+	background-color: #13aced;
+	padding: 50px 0 60px 0;
+}
+.share ul{
+	width: 1100px;
+	margin: 0 auto;
+}
+.share ul li{
+	width: 306px;
+	height: 426px;
+	margin: 0 30px;
+	background-color: #fff;
+	float: left;
+}
+.share ul li .up{
+	background: url(../images/about_share_01.jpg) 0 0 no-repeat;
+	width: 306px;
+	height: 304px;
+	position: relative;
+}
+.share ul li:nth-child(2) .up{
+	background: url(../images/about_share_02.jpg) 0 0 no-repeat;
+}
+.share ul li:nth-child(3) .up{
+	background: url(../images/about_share_03.jpg) 0 0 no-repeat;
+}
+.share ul li a{
+	text-decoration: none;
+}
+.share ul li .up p{
+	width: 100%;
+	height: 35px;
+	color: #fff;
+	font-size: 18px;
+	line-height: 35px;
+	background-color: rgba(0,0,0,.5);
+	padding-left: 15px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.share ul li .down {
+	padding: 9px 15px;
+}
+.share ul li .down p{
+	color: #666;
+	font-size: 14px;
+	line-height: 26px;
+}
+.caption:after {
+    content: '';
+    width: 173px;
+    height: 3px;
+    background-color: #13aced;
+    display: block;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+.simple,.sim{
+	width: 100%;
+	height: 452px;
+	background: url(../images/simple_bg.jpg) 0 0 no-repeat;
+}
+.sim{
+	background: rgba(0,0,0,.75);
+	padding-top: 45px;
+}
+.sim h3{
+	color: #fff;
+	margin-bottom: 15px;
+}
+.mid_block .first{
+	margin-left: 0;
+}
+.count-item{
+    display: inline-block;
+    margin-left: 42px;
+    position: relative;
+    margin-top: 40px;
+}
+.count-number {
+    height: 220px;
+    font-family: "font-icons";
+    font-size: 220px;
+    min-width: 146px;
+    color: #fff;
+    padding: 0 20px;
+    text-align: center;
+    line-height: 220px;
+    -moz-line-height: normal;
+    border-radius: 6px;
+    background: #13aced;
+}
+.count-number:after {
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 102px;
+    height: 0;
+    width: 100%;
+    content: " ";
+    border-bottom: 4px solid #0d94ce;
+}
+.count-fonts {
+    font-size: 18px;
+    color: #fff;
+    line-height: 20px;
+    padding-top: 24px;
+    text-align: center;
+}
+.count-mc {
+    font-family: "font-icons";
+    display: block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    font-size: 32px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#count_2,#count_4{
+	width: 300px!important;
+	position: relative;
+}
+#count_2:before,#count_4:before{
+	content: '';
+	position: absolute;
+	right: 9px;
+	top: 9px;
+	width: 31px;
+	height: 31px;
+	background: url(../images/icon.png) 0 0 no-repeat;
+}
+.imgTab{
+	background-color: #fff;
+	padding-bottom: 30px;
+}
+.inTab{
+	width: 1100px;
+	overflow:hidden;
+}
+.inTab .imgTabHead{
+	width: 2200px;
+	height: 210px;
+	position: relative;
+}
+.imgTab ol{
+	width: 1100px;
+	float: left;
+}
+.imgTab ol li{
+	float: left;
+}
+.imgTab ul{
+	position: absolute;
+	left: 49%;
+}
+.imgTab ul li{
+	width: 10px;
+	height: 10px;
+	background-color: #999999;
+	border-radius: 50%;
+	float: left;
+	margin-left: 8px;
+	text-align: center;
+}
+.imgTab ul li.current{
+	background-color: #d70a30;
+}
+.imgTab ul li.first{
+	margin-left: 0;
+}
+.contact{
+	width: 1100px;
+	margin: 0 auto;
+	color: #666;
+	font-size: 14px;
+	text-align: center;
+}
+.contact h5{
+	font-size: 32px;
+	color: #222;
+	line-height: 65px;
+}
+.inContact{
+	margin-top: 50px;
+}
+.contact .con-left {
+	float: left;
+}
+.contact .con-left input{
+	display: block;
+	width: 530px;
+	height: 52px;
+	padding-left: 10px;
+	border: 1px solid #bfbfbf;
+	outline: none;
+	margin-top: 15px;
+}
+.contact .con-left input:focus,.con-right textarea:focus{
+  	border-color: #13aced;
+	box-shadow: 0 0 0 0px #13aced inset;
+	-moz-transition: all 0.2s ease-in-out;
+	-webkit-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+.inContact ol {
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+.inContact ol li{
+	text-align: left;
+	line-height: 30px;
+}
+.con-right {
+	float: right;
+	width: 532px;
+}
+.con-right textarea{
+	width: 530px;
+	height: 185px;
+	border: 1px solid #bfbfbf;
+	outline: none;
+	resize: none;
+	padding-top: 15px;
+	padding-left: 20px;
+	margin-top: 15px;
+}
+.con-right button{
+	width: 135px;
+	height: 42px;
+	background-color: #13aced;
+	color: #fff;
+	outline: none;
+	display: block;
+	float: right;
+	margin-top: 12px;
+}
+button:hover{
+	background-color: #14a0db;
+}
+.inBanner {
+    width: 880px;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    margin-left: -440px;
+    z-index: 1;
+    line-height: 30px;
+    font-size: 16px;
+}
+.inBanner h3 {
+    font-size: 48px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    color: #fff;
+}
