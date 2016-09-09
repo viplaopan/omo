@@ -36,7 +36,7 @@ class IndexController extends Controller {
     public function clause(){
         $this->display();
     }
-    public function abuout(){
+    public function about(){
         $this->display();
     }
 }
