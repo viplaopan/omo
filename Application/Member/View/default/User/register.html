@@ -1,0 +1,223 @@
+<extend name="Base/common" />
+
+<block name="style">
+    <link rel="stylesheet" type="text/css" href="__CSS__/register.css">
+    <script type="text/javascript" src="__JS__/register.js"></script>
+    <script type="text/javascript" src="__JS__/jquery.validate.js"></script>
+    <script type="text/javascript" src="__JS__/jquery.checkbox.js"></script>
+    <script type="text/javascript">
+    	$(function(){
+    		$('#agree').omoCheckbox();
+    		$('#agree').change(function(){
+    			var check = $(this).attr('checked');
+    			if(check == 'checked'){
+    				$("input[name='agree']").val(1)
+    			}else{
+    				$("input[name='agree']").val('')
+    			}
+    		})
+    	})
+    </script>
+    <style type="text/css">
+    	.registerRight .error{
+    		color: #e20c0c;
+    	}
+    </style>
+</block>
+
+<block name="body">
+    <div class="register">
+        	<div class="inRegister clearfix">
+        		<div class="registerLeft">
+        			<h4>注册</h4>
+        			<p>感谢您的信任，请做好准备与我们一起来体验与众不同的合作之旅，你们专业精美办公空间不仅仅在我们平台上发布，同时我们也将同步推送并呈现到全球潜在客户面前，在Facebook，Twitter等等，并且采取更有效的技术体验使你们的讯息传播更广更深，从而吸引更多更有品质的潜在客户入驻。<br/><br/>赶快注册吧！请完整填写右边各项，均为必填项，便于我们将来随时方便合作互动。</p>
+        		</div>
+                <div class="registerLeft2">
+                    <img src="../images/re_icon.png">
+                    <p>谢谢您的注册，您将会即时收到一份注册验证的激活邮件，请查收下您注册的邮件，通过收到的验证邮件里的方式激活帐号，就可以在我们的真我办公平台开启全新的商务之旅。<br/>
+                    如果迟迟未收到验证邮件，请留意下是否在您垃圾邮箱里，或与我们联络，我们将会第一时间帮您解决问题。</p><br/><br/>
+                    <ul>
+                        <li><span>与我们联络方式：</span><em>400 0000 000</em></li>
+                        <li><span>电话：</span><em>1352222222</em></li>
+                        <li><span>邮箱：</span><em>suntech@qq.com</em></li>
+                    </ul>
+                    <div class="code"></div>
+                </div>
+        		<div class="registerRight">
+        			<form action="__SELF__" id="reg">
+	        			<ul>
+	                        <li>
+	                            <p>手机号<em style="color: #e20c0c;"> * </em></p>
+	                            <input type="text" name="mobile">
+	                        </li>
+	                        <li class="code">
+	                            <p>验证码<em style="color: #e20c0c;"> * </em></p>
+	                            <input type="text" name="code">
+	                            <button id="sendSms" ajax-url='{:U("User/sendSms")}'>发送信息</button>
+	                        </li> 
+	                         
+	                        <li>
+	                            <p>Email<em style="color: #e20c0c;"> </em></p>
+	                            <input type="text" name="email">
+	                        </li> 
+	                        <li>
+	                            <p>密码<em style="color: #e20c0c;"> * </em></p>
+	                            <input type="password" name="password">
+	                        </li> 
+        
+	                    </ul>
+	                    
+	                    <input  id="agree" name="" label="同意注册协议" checked="checked" type="checkbox">
+	                    <input name="agree" type="hidden" value="1"/>
+	                    <p class="agree_error"></p>
+	                    <div class="btns" style="margin-top: 15px;">
+	                        <button type="submit" class="btn1">注册</button>
+	                        <a class="btn2" href="{:U('User/login')}">登录</a>
+	                    </div>
+                    </form>
+        		</div>
+        	</div>
+        </div>
+</block>
+<block name="script">
+    <script>
+        $(function(){
+            $("#reg").validate({
+                focusInvalid: true,
+                rules:{
+                	mobile:{
+                		required:true,
+                		checkMobile:true,
+                		remote : {
+				               type:"POST",
+				               url:'{:U("User/checkMobile")}',
+				               data:{
+				                   mobile:function(){return $("input[name='mobile']") .val();}
+				               } 
+				            } 
+                	},
+                	code:{
+                		required:true,
+                		digits:true,
+                		rangelength:[4,4]
+                	},
+                	email:{
+                		email:true
+                	},
+                	agree:{
+                		required: true
+                	},
+                	username:{required:true},
+                	password:{required:true},
+                },
+                messages:{
+                	mobile:{
+                		required:'手机号不能为空！',
+                		checkMobile:'您手机号码错误',
+                		remote:'手机号码已经存在'
+                	},
+                	code:{
+                		required:'短信验证码不能为空!',
+                		digits:'短信验证码必须短信!',
+                		rangelength:'请输入4位验证码'
+                	},
+                	email:{
+                		required:'请输入邮箱!',
+                		email:'请输入正确的邮箱格式!'
+                	},
+                	agree:{
+                		required:'必须同意注册协议!',
+                	},
+                    password:{
+                    	required:'密码不得为空!'
+                    },                    
+                },
+                errorPlacement: function(error, element) { //错误信息位置设置方法
+                	if(element.attr('name') == 'agree'){
+                		error.appendTo('.agree_error');
+                		return false;
+                	}
+                    error.appendTo( element.prev() ); //这里的element是录入数据的对象
+                },
+                submitHandler: function(form) {
+
+                    var self = $("#reg");
+                    $.post(self.attr("action"), self.serialize(), success, "json");
+                    return false;
+
+                    function success(data){
+                        if (data.status == 1) {
+                            alert('注册成功');
+                            window.location.href = data.url;
+                        }else{
+                        	if(data.info == '验证码输入错误'){
+                        		$("input[name = 'code']").prev().append('<label for="password" class="error">验证码输入错误!</label>');
+                        	}
+                        }
+                    }
+
+                },
+            })
+            //判断手机号码
+			jQuery.validator.addMethod( "checkMobile",function(value,element){       
+	            var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/; 
+	            if(!myreg.test(value)) 
+	            { 
+	                return false; 
+	            }else{
+	                 return true;
+	             }
+	        } ,  "您手机号码错误");
+            $('#sendSms').click(function(){
+            	var sendCode = {$Think.session.send_code};
+            	var ajaxUrl = $(this).attr('ajax-url');
+            	$.post(ajaxUrl, {mobile:jQuery.trim($("input[name='mobile']").val()),send_code:sendCode}, success, "json");
+                return false;
+
+                function success(data){
+                    if (data.status == 1) {
+                        RemainTime()
+                    }else{
+                    	if(data.info == '手机号码已经存在'){
+                    		$("input[name = 'mobile']").prev().append('<label for="password" class="error">手机号码已经存在!</label>');
+                    		return false;
+                    	}
+                    	alert(data.info);
+                    }
+                }
+            })
+        })
+        
+        //短信倒计时        
+        var iTime = 3;
+		var Account;
+		function RemainTime(){
+			document.getElementById('sendSms').disabled = true;
+			var iSecond,sSecond="",sTime="";
+			if (iTime >= 0){
+				iSecond = parseInt(iTime%60);
+				iMinute = parseInt(iTime/60)
+				if (iSecond >= 0){
+					if(iMinute>0){
+						sSecond = iMinute + "分" + iSecond + "秒";
+					}else{
+						sSecond = iSecond + "秒";
+					}
+				}
+				sTime=sSecond;
+				if(iTime==0){
+					clearTimeout(Account);
+					sTime='发送短信';
+					iTime = 59;
+					document.getElementById('sendSms').disabled = false;
+				}else{
+					Account = setTimeout("RemainTime()",1000);
+					iTime=iTime-1;
+				}
+			}else{
+				sTime='没有倒计时';
+			}
+			document.getElementById('sendSms').innerHTML = sTime;
+		}
+    </script>
+</block>

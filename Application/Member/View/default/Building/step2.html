@@ -1,0 +1,52 @@
+<script>
+	$(function(){
+		$('.typeTitle').omoCheckbox();
+		
+	})
+</script>
+<div class="type">
+	<div class="serve">
+		
+		    <div class="titleTig">
+		    	<input class="typeTitle" type="checkbox" <empty name="typeinfo">checked="checked"</empty> <notempty name="type1">checked="checked"</notempty> value="1" name="type[]" label='服务式办公' />
+		    </div>
+
+	</div>
+	<div class="serve">
+		
+		<div class="titleTig">
+	    	<input class="typeTitle" type="checkbox" <notempty name="type2">checked="checked"</notempty> value="2" name="type[]" label='联合办公' />
+	   </div>
+
+	</div>
+	<div class="serve">
+		
+		<div class="titleTig">
+	    	<input class="typeTitle" type="checkbox" <notempty name="type3">checked="checked"</notempty> value="3" name="type[]" label='传统办公' />
+	   </div>
+		
+	</div>
+	<div class="serve">
+		
+			<div class="titleTig">
+		    	<input class="typeTitle" type="checkbox" <notempty name="type4">checked="checked"</notempty> value="4" name="type[]" label='会议室（会场）' />
+		    </div>
+		
+	</div>
+	<div class="serve">
+		
+		    <div class="titleTig">
+		    	<input class="typeTitle" type="checkbox" <notempty name="type5">checked="checked"</notempty> value="5" name="type[]" label='门面店铺类' />
+		    </div>
+		
+	</div>
+	<div class="serve">
+		
+		<div class="titleTig">
+		    	<input class="typeTitle" type="checkbox" <notempty name="type6">checked="checked"</notempty> value="6" name="type[]" label='分享闲置办公位' />
+		</div>
+		
+	</div>
+	<input type="hidden" name="id" id="id" value="{:I('get.id')}">
+	<button type="submit" ajax-url="{:U('Building/step',array('s' =>2))}" class="next">保存并下一步</button>
+</div>

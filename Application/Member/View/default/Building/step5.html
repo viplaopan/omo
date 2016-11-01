@@ -1,0 +1,512 @@
+<script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+<link rel="stylesheet" type="text/css" href="__CSS__/uploadify.css">
+<script type="text/javascript">
+	$(function(){
+
+		$("#step5").submit(function(){
+			return false;
+		})
+		$("#contactsForm").submit(function(){
+
+			return false;
+		})
+		//step1
+		$("#step5").validate({
+			rules: {
+				company: {
+					required: true,
+				},
+				website: {
+					required: true,
+				},
+				contacts_count: {
+					min: 1,
+				},
+				agree: {
+					required: true,
+				},
+			},
+			messages: {
+				company: {
+					required: "必填!",
+				},
+				website: {
+					required: "必填!",
+				},
+				contacts_count: {
+					min: "必须添加联系人！",
+				},
+				agree: {
+					required: "必须用意真我办公的合作协议",
+				},
+			},
+			errorPlacement: function(error, element) { //错误信息位置设置方法
+				var name = element.attr('name');
+				error.appendTo($('#error_' + name));
+			},
+			debug: false,
+			submitHandler: function(form) {
+				
+				var ajaxUrl = $('#step5').attr('action');
+				$.post(ajaxUrl, $('#step5').serialize(), function(data) {
+					if (data.status == 1) {
+						window.location.href = data.url;
+					}
+				}, 'json');
+			}
+		});
+		$("#contactsForm").validate({
+			rules: {
+				chinese_name: {
+					required: true,
+				},
+				english_name: {
+					required: true,
+				},
+				sex: {
+					required: true,
+				},
+				email: {
+					required: true,
+					checkEmail:true,
+				},
+				mobile: {
+					required: true,
+					checkMobile:true,
+				},
+				tel: {
+					required: true,
+				},
+			},
+			messages: {
+				chinese_name: {
+					required: "中文名必须填写!",
+				},
+				english_name: {
+					required: "英文名必须填写!",
+				},
+				sex: {
+					required: "必须选择性别!",
+				},
+				email: {
+					required: "邮箱必须填写!",
+					checkEmail:"请填写正确的邮箱地址!",
+				},
+				mobile: {
+					required: "手机必须填写!",
+					checkMobile:"请填写正确的手机号！"
+				},
+				tel: {
+					required: "座机号必须填写!",
+				},
+			},
+			errorPlacement: function(error, element) { //错误信息位置设置方法
+				$('#contacts_error').html('')
+				error.appendTo($('#contacts_error'));
+			},
+			debug: false,
+			submitHandler: function(form) {
+	
+				$obj = $('#contactsForm');
+				var ajaxUrl = $obj.attr('action');
+
+				$.post(ajaxUrl, $obj.serialize(), function(data) {
+					alert(data)
+					if (data.status == 1) {
+						$('#contentForm').hide()
+						$("#contentList").show()
+						if(data.isEdit == 1){
+							var cnum = $("input[name='contacts_count']").val();
+							$("input[name='contacts_count']").val(cnum + 1)
+							var chinese_name = $("input[name='chinese_name']").val();
+							var english_name = $("input[name='english_name']").val();
+							var email = $("input[name='email']").val();
+							var mobile = $("input[name='mobile']").val();
+							$("#contentList ul #rlist" + data.id).html('')
+							$("#contentList ul #rlist" + data.id).prepend(
+	                   		'<div class="check "><input class="agree" data-id="10247" type="checkbox" value="" name="agree" label="潘" style="display: none;"><label for="checkboxFiveInput"></label><span>' +chinese_name+ '</span></div>'  + 
+		    				'<span>' + english_name + '</span>' + 
+		    				'<em>' + mobile + '</em>' + 
+		    				'<strong>' +email+ '</strong>' + 
+		    				'<div class="icons clearfix">' + 
+			        				'<button type="button" class="icon-compile btn-primary contentEdit" data-id="10247"></button>' + 
+			        				'<a href="javascript:;" data-id="" class="icon-delete"></a>' + 
+			        			'</div>');
+						}else{
+							var cnum = $("input[name='contacts_count']").val();
+							$("input[name='contacts_count']").val(cnum + 1)
+							var chinese_name = $("input[name='chinese_name']").val();
+							var english_name = $("input[name='english_name']").val();
+							var email = $("input[name='email']").val();
+							var mobile = $("input[name='mobile']").val();
+							$("#contentList ul").prepend('<li>' + 
+	                   		'<div class="check "><input class="agree" data-id="10247" type="checkbox" value="" name="agree" label="潘" style="display: none;"><label for="checkboxFiveInput"></label><span>' +chinese_name+ '</span></div>'  + 
+		    				'<span>' + english_name + '</span>' + 
+		    				'<em>' + mobile + '</em>' + 
+		    				'<strong>' +email+ '</strong>' + 
+		    				'<div class="icons clearfix">' + 
+			        				'<button type="button" class="icon-compile btn-primary contentEdit" data-id="10247"></button>' + 
+			        				'<a href="javascript:;" data-id="" class="icon-delete"></a>' + 
+			        			'</div>' + 
+	                        '</li>');
+						}
+					}
+				}, 'json');
+			}
+		});
+		//判断手机号码
+		 jQuery.validator.addMethod( "checkMobile",function(value,element){       
+            var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/; 
+            if(!myreg.test(value)) 
+            { 
+                return false; 
+            }else{
+                 return true;
+             }
+        } ,  "您手机号码错误"); 
+		//判断邮箱
+		 jQuery.validator.addMethod( "checkEmail",function(value,element){       
+            var myreg = /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/; 
+            if(!myreg.test(value)) 
+            { 
+                return false; 
+            }else{
+                 return true;
+             }
+        } ,  "您手机号码错误"); 
+		
+		//性别选择
+		$("#sex ul li").click(function(){
+			var val = $(this).attr('value');
+			$("input[name='sex']").val(val);
+		})
+		//打开联系人模态框
+    	$("#myModal").on('shown.bs.modal', function (e) {
+    		var dt = $(e.relatedTarget).attr('data-type');
+			$("#contentList input[name='type']").val(dt);
+			$('#contentForm').hide()
+			$("#contentList").show()
+		})
+		//删除事件
+		$(document).on("click",".icon-delete",function(){
+			var id = $(this).attr('data-id');
+			$.post("{:U('delContacts')}", {id:id})
+			$(this).parent().parent().fadeOut(350);
+		})
+		//编辑事件
+		$(document).on("click",".edit-btn",function(){
+			//判断联系人类型
+			var dt = $(this).attr('data-type');
+			$("input[name='type']").val(dt);
+			var id = $(this).attr('data-id');
+			$.post("{:U('editContacts')}", {id:id,type:dt}, function(data) {
+				
+				$("input[name='chinese_name']").val(data.chinese_name);
+				$("input[name='english_name']").val(data.english_name);
+				var sexes = new Array();
+				    sexes[1] = '男';
+				    sexes[0] = '女';
+				$("#sexLabel").html(sexes[data.sex]);
+				$("input[name='sex']").val(data.sex);
+				$("input[name='cid']").val(data.id);
+				$("input[name='email']").val(data.email);
+				$("input[name='mobile']").val(data.mobile);
+				$("input[name='tel']").val(data.tel);
+				$("input[name='type']").val(data.type);
+				//赋值头像
+				if(data.head){
+					src = '__ROOT__/Uploads/Head/' + data.head;
+			    	$("input[name='head']").val(data.head)
+			        $('#headimageDiv img').attr('src',src);
+				}else{
+					var defaultHead = '__IMG__/uploading_img.jpg';
+					$("input[name='head']").val('')
+					$('#headimageDiv img').attr('src',defaultHead);
+				}
+				
+			})
+			
+		})
+		//编辑事件
+		$(document).on("click",".contentEdit",function(){
+			$('#contentForm').show()
+			$("#contentList").hide()
+			//判断联系人类型
+			var id = $(this).attr('data-id');
+		
+			$.post("{:U('editContacts')}", {id:id}, function(data) {
+				
+				$("input[name='chinese_name']").val(data.chinese_name);
+				$("input[name='english_name']").val(data.english_name);
+				var sexes = new Array();
+				    sexes[1] = '男';
+				    sexes[0] = '女';
+				$("#sexLabel").html(sexes[data.sex]);
+				$("input[name='sex']").val(data.sex);
+				$("#contentForm input[name='id']").val(data.id);
+				$("input[name='email']").val(data.email);
+				$("input[name='mobile']").val(data.mobile);
+				$("input[name='tel']").val(data.tel);
+				$("input[name='type']").val(data.type);
+				//赋值头像
+				if(data.head){
+					src = '__ROOT__/Uploads/Head/' + data.head;
+			    	$("input[name='head']").val(data.head)
+			        $('#headimageDiv img').attr('src',src);
+				}else{
+					var defaultHead = '__IMG__/uploading_img.jpg';
+					$("input[name='head']").val('')
+					$('#headimageDiv img').attr('src',defaultHead);
+				}
+				
+			})
+			
+		})
+		//删除头像
+		$(document).on("click","#delHead",function(){
+			var defaultHead = '__IMG__/uploading_img.jpg';
+			$("input[name='head']").val('')
+			$('#headimageDiv img').attr('src',defaultHead);
+		})
+	})
+</script>
+<script type="text/javascript">
+	$(function(){
+		$('.agree').omoCheckbox();
+	})
+</script>
+<form action="{:U('step',array('s'=>5))}" method="post" id="step5">
+	<div class="inContact">
+		<div class="redact">
+			<p id="error_company">您公司名<em>*</em></p>
+			<input type="text" name="company" value="{$resources.company}">
+		</div>
+		<div class="redact">
+			<p id="error_website">网址<em>*</em></p>
+			<input type="text" name="website" value="{$resources.website}">
+		</div>
+		<div class="linkman">
+			<p id="error_contacts_count">首选商务销售联系人<em>*</em></p>
+			<span>对接客户</span>
+			<button type="button" class="icon-compile btn-primary contacts" data-backdrop='static' data-toggle="modal" data-target="#myModal" data-type='1'>+增加联系人</button>
+			<div style="height: 0px; overflow: hidden;position: relative;">
+				<input type="text" width="0" height="0" style="width: 0px; height: 0px;" value="{:sizeof($carr[1])}" name="contacts_count" />
+			</div>
+			<div id="conDiv1">
+				<volist name="carr[1]" id="vo">
+					<div class="inLinkman" id="con_{$vo.id}">
+						<input type="text" placeholder="{$vo.chinese_name}" readonly="readonly">
+						<div class="icons clearfix">
+							<!--<button type="button" class="icon-compile btn-primary edit-btn" data-backdrop="static" data-type="1" data-id="{$vo.id}" data-toggle="modal" data-target="#myModal"></button>-->
+							<a href="javascript:;" class="icon-delete" data-id="{$vo.rcid}"></a>
+						</div>
+					</div>
+				</volist>
+			</div>
+		</div>
+		<div class="linkman">
+			<p>备选商务销售联系人<em>*</em></p>
+			<button type="button" class="icon-compile btn-primary contacts" data-backdrop='static' data-toggle="modal" data-target="#myModal" data-type='2'>+增加联系人</button>
+			<div id="conDiv2">
+				<volist name="carr[2]" id="vo">
+					<div class="inLinkman" id="con_{$vo.id}">
+						<input type="text" placeholder="{$vo.chinese_name}" readonly="readonly">
+						<div class="icons clearfix">
+							<!--<button type="button" class="icon-compile btn-primary edit-btn" data-backdrop="static" data-type="1" data-id="{$vo.id}" data-toggle="modal" data-target="#myModal"></button>-->
+							<a href="javascript:;" class="icon-delete" data-id="{$vo.rcid}"></a>
+						</div>
+					</div>
+				</volist>
+			</div>
+		</div>
+		<div class="linkman">
+			<p>费用结算联系人<em>*</em></p>
+			<span>发票等财务工作</span>
+			<button type="button" class="icon-compile btn-primary contacts" data-backdrop='static' data-toggle="modal" data-target="#myModal" data-type='3'>+增加联系人</button>
+			<div id="conDiv3">
+				<volist name="carr[3]" id="vo">
+					<div class="inLinkman" id="con_{$vo.id}">
+						<input type="text" placeholder="{$vo.chinese_name}" readonly="readonly">
+						<div class="icons clearfix">
+							<!--<button type="button" class="icon-compile btn-primary edit-btn" data-backdrop="static" data-type="1" data-id="{$vo.id}" data-toggle="modal" data-target="#myModal"></button>-->
+							<a href="javascript:;" class="icon-delete" data-id="{$vo.rcid}"></a>
+						</div>
+					</div>
+				</volist>
+			</div>
+		</div>
+		<div class="linkman">
+			<p>营销推广联系人<em>*</em></p>
+			<span>市场营销推广，准备文案图文等工作</span>
+			<button type="button" class="icon-compile btn-primary contacts" data-backdrop='static' data-toggle="modal" data-target="#myModal" data-type='4'>+增加联系人</button>
+			<div id="conDiv4">
+				<volist name="carr[4]" id="vo">
+					<div class="inLinkman" id="con_{$vo.id}">
+						<input type="text" placeholder="{$vo.chinese_name}" readonly="readonly">
+						<div class="icons clearfix">
+							<!--<button type="button" class="icon-compile btn-primary edit-btn" data-backdrop="static" data-type="1" data-id="{$vo.id}" data-toggle="modal" data-target="#myModal"></button>-->
+							<a href="javascript:;" class="icon-delete" data-id="{$vo.rcid}"></a>
+						</div>
+					</div>
+				</volist>
+			</div>
+		</div>
+		<div class="linkbottom">
+			<input class="agree" type="checkbox" value="" name="agree" label='我阅读并同意真我办公的<a href="javascript:;">合作协议</a>' />
+		</div>
+		<div id="error_agree"></div>
+		<input type="hidden" name="id" value="{:I('get.id')}">
+		<button type="submit" class="sub">提交</button>
+		<strong>您提交后，我们预计在一个工作日内给予审核结果。</strong>
+	</div>
+</form>
+<div class="modal fade contacts" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" id="contentList">
+    	<form action="{:U('addContentTores')}" id="addContentTores">
+        <div class="modal-header">
+            <button type="button" data-dismiss="modal" aria-label="Close"><span  aria-hidden="true"><img src="__IMG__/shareModal_icon02.png"></span></button>
+            <h3>选择联系人</h3>
+        </div>
+        <div class="modal-body">
+           <ul>
+           	<volist name="resConts" id="vo">
+	                   	<li id="rlist{$vo.id}">
+	                   		<input class="agree" data-id="{$vo.id}" type="checkbox" value="{$vo.id}" name="agree[]" label='{$vo.chinese_name}' />
+		    				<span>{$vo.english_name}</span>
+		    				<em>{$vo.mobile}</em>
+		    				<strong>{$vo.email}</strong>
+		    				<div class="icons clearfix">
+			        				<button type="button" class="icon-compile btn-primary contentEdit" data-id="{$vo.id}"></button>
+			        				<a href="javascript:;" data-id="" class="icon-delete"></a>
+			        			</div>
+	                   	</li>
+	                   	
+	        </volist>
+           </ul>
+	            </div>
+	            <div class="modal-foot clearfix">
+       		<button class="btn1" id="selectContent">选择</button>
+       		<button class="btn2" id="addContent">新建</button>
+       		<input type="hidden" value="{$resources.id}" name="rid" />
+       		<input type="hidden" value="" name="type" />
+       		<button class="btn3" data-dismiss="modal" aria-label="Close">关闭</button>
+       </div>
+       </form>
+	</div>
+			
+		<div class="modal-content" style="display:none;" id="contentForm">
+        	<form action="{:U('doContacts')}" id="contactsForm" method="post">
+	            <div class="modal-header">
+	                <button type="button" data-dismiss="modal" aria-label="Close"><span  aria-hidden="true"><img src="__IMG__/shareModal_icon02.png"></span></button>
+	                <h3>联系人信息</h3>
+	            </div>
+	            <div class="modal-body clearfix">
+	                <div class="sort">
+	                    <span>中&nbsp;&nbsp;文&nbsp;&nbsp;名</span>
+	                    <input type="text" name="chinese_name">
+	                </div>
+	                <div class="sort  m-left">
+	                    <span>英&nbsp;&nbsp;文&nbsp;&nbsp;名</span>
+	                    <input type="text" name="english_name">
+	                </div>
+	                <div class="mf clearfix" id="sex">
+	                    <div class="drop clearfix">
+	                        <em>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</em>
+	                        <div class="dropdown clearfix">
+	                            <span class="caret"></span>
+	                            <button id="sexLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+	                            <ul class="dropdown-menu" aria-labelledby="sexLabel">
+	                                <li value="1">男</li>
+	                                <li value="0">女</li>
+	                            </ul>
+	                            <input type="hidden" value="" name="sex" />
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="mailbox">
+	                    <span>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</span>
+	                    <input type="text" name="email">
+	                </div>
+	                <div class="sort">
+	                    <span>移动电话</span>
+	                    <input type="text" name="mobile">
+	                </div>
+	                <div class="sort m-left">
+	                    <span>座&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机</span>
+	                    <input type="text" name="tel">
+	                </div>
+	                <div class="uploading">
+	                    <div class="headBtn clearfix">
+	                    	<span class="headLabel">上传头像</span>
+		                    <input type="file" id="headimage">
+		                    <em>头像尺寸为500×500</em>
+	                    </div>
+	                    <div class="in-uploading" id="headimageDiv">
+	                        <img src="__IMG__/uploading_img.jpg">
+	                        <input type="hidden" name="head" id="" value="" />
+	                        <a href="javascript:;" id="delHead">删除</a>
+	                    </div>
+	                </div>
+	                <script type="text/javascript">
+					    $(function(){
+					    	//上传图片
+						    /* 初始化上传插件 */
+						    $("#headimage").uploadify({
+						        "height"          : 35,
+						        "swf"             : "__STATIC__/uploadify/uploadify.swf",
+						        "fileObjName"     : "download",
+						        "buttonText"      : "+上传图片",
+						        "uploader"        : "{:U('File/uploadHead',array('session_id'=>session_id()))}",
+						        "width"           : 130,
+						        'removeTimeout'	  : 1,
+						        'fileTypeExts'	  : '*.jpg; *.png; *.gif;',
+						        "onUploadSuccess" : uploadHeader,
+							    'onFallback' : function() {
+							        alert('未检测到兼容版本的Flash.');
+							    }
+						    });
+						    function uploadHeader(file, data){
+						    	var jsonData = $.parseJSON(data);
+						    	src = jsonData.url || '__ROOT__/Uploads/Head/' + jsonData.savepath + jsonData.savename;
+						    	$("input[name='head']").val(jsonData.savepath + jsonData.savename)
+						        $('#headimageDiv img').attr('src',src);
+						    }
+				
+					    })
+					</script>
+	            </div>
+	            <div id="contacts_error"></div>
+	            <div class="modal-foot clearfix">
+	            	<input type="hidden" value="" name="id" />
+	                <button type="submit" class="btn1">提交</button>
+	                <button type="button" class="btn2" data-dismiss="modal">关闭</button>
+	            </div>
+
+            </form>
+        </div>	
+  </div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		$("#addContent").click(function(){
+			$('#contentForm').show()
+			$("#contentList").hide()
+	
+			return false;
+		})
+		$("#selectContent").click(function(){
+			var self = $("#addContentTores");
+			$.post(self.attr('action'),self.serialize(),success,'json');
+			return false;
+			function success(data){
+				if(data.status){
+					location.href=''
+				}else{
+					alert('请选择数据');
+				}
+			}
+			
+		})
+	})
+</script>

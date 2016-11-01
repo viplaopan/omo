@@ -1,0 +1,40 @@
+<header>
+	<div class="inHeader main clearfix">
+		<h1>
+			<a href="javascript:;"><img src="__IMG__/logo.png" height="63" width="182"></a>
+		</h1>
+	</div>
+</header>
+<nav>
+
+		<ul <in name="ACTION_NAME" value="login,register">style="display:none;"</in> class="clearfix main">
+			<li class="current"><a href="{:U('Building/lists')}">总览</a></li>
+			<li><a href="article.html">楼宇讯息</a></li>
+			<li><a href="javascript:;">房源信息</a></li>
+			<li><a href="javascript:;">实时&促销</a></li>
+			<li><a href="javascript:;">专员与客服</a></li>
+			<div class="in-nav-r">
+				<span>消息</span><a class="unread" href="javascript:;">[ 2条未读 ]</a>|
+				<a href="javascript:;" class="logout" data-url="{:U('Buseness/User/logout')}">退出</a>
+			</div>
+		</ul>
+
+</nav>
+<script type="text/javascript">
+	$(function(){
+		$(".logout").click(function(){
+			var self = $(this);
+			$.post(self.attr('data-url'),self.serialize(), success , "json");
+			return false;
+
+			function success(data){
+                if(data.status == 1){
+                	location.href="{:U('Buseness/User/login')}";  
+                }else{
+                	alert('未知错误');
+                }
+			}
+			
+		})
+	})
+</script>

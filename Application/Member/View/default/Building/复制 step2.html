@@ -1,0 +1,234 @@
+<script>
+	$(function(){
+		
+		<volist name='typeinfo' id='vo'>
+		    var inserve{$vo.type} = $('#in-serve-' + {$vo.type});//表单
+			$.each(titleArray[{$vo.type}], function(i,item) {
+				inserve{$vo.type}.find('.' + i).html(item);
+			});
+		</volist>
+		$('.typeTitle').omoCheckbox();
+		$('.typeTitle').change(function(){
+			var self = $(this);
+			var typeDiv = $('#type_' + self.val());
+			if (self.attr('checked') == 'checked') {
+				typeDiv.show()
+			}else{
+				typeDiv.hide()
+			};
+		})
+	})
+</script>
+<div class="type">
+	<div class="serve">
+		<form id="sub1">
+		    <div class="titleTig">
+		    	<input class="typeTitle" type="checkbox" <empty name="typeinfo">checked="checked"</empty> <notempty name="type1">checked="checked"</notempty> value="1" name="type" label='服务式办公' />
+		    </div>
+			<div class="serve-down" <notempty name="type1">style="display:block;"</notempty> <empty name="typeinfo">style="display:block;"</empty> id="type_1">
+				<div class="redact clearfix">
+					<p>空间大小<em>*</em></p>
+					<div class="drop clearfix">
+						<div class="dropdown clearfix in-serve-space" ref='1'>
+							<span class="caret"></span>
+							<button id="dLabel1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><eq name="type1.space" value="2">按面积<else/>按工位</eq></button>
+							<ul class="dropdown-menu" aria-labelledby="dLabel1">
+								<li value="1" class="li1">按工位</li>
+								<li value="2" class="li2">按面积</li>
+							</ul>
+							<input type="hidden" name="space" value="{$type1.space}">
+						</div>
+					</div>
+				</div>
+				<div class="in-serve station clearfix" id="in-serve-1">
+					<div class="redact short">
+						<p class="in_serve_all">总共<em>*</em></p>
+						<input value="{$type1.all}" name="all" type="text">
+					</div>
+					<input type="hidden" name="tid" value="{$type1.id}">
+					<div class="redact long">
+						<p class="in_serve_low_price">每工位最低月单价（元）<em class="err">*</em></p>
+						<input value="{$type1.low_price}" name="low_price" type="text">
+					</div>
+					<div class="redact short">
+						<p class="in_serve_small">最小房间<em>*</em></p>
+						<input value="{$type1.small}" name="small" type="text">
+					</div>
+					<div class="redact long">
+						<p class="in_serve_height_price">每工位最高单价（元）<em>*</em></p>
+						<input value="{$type1.height_price}" name="height_price" type="text">
+					</div>
+					<div class="redact short">
+						<p class="in_serve_big">最大房间<em>*</em></p>
+						<input value="{$type1.big}" name="big" type="text">
+					</div>
+				</div>
+				
+			</div>
+		</form>
+	</div>
+	<div class="serve">
+		<form id="sub2">
+		<div class="titleTig">
+	    	<input class="typeTitle" type="checkbox" <notempty name="type2">checked="checked"</notempty> value="2" name="type" label='联合办公' />
+	   </div>
+		<div class="serve-down" id="type_2" <notempty name="type2">style="display:block;"</notempty>>
+			<div class="redact clearfix">
+				<p>空间大小<em>*</em></p>
+				<div class="drop clearfix">
+					<div class="dropdown clearfix in-serve-space"  ref='2'>
+						<span class="caret"></span>
+						<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><eq name="type2.space" value="2">按面积<else/>按工位</eq></button>
+						<ul class="dropdown-menu" aria-labelledby="dLabel">
+							<li value="1" class="li1">按工位</li>
+							<li value="2" class="li2">按面积</li>
+						</ul>
+						<input type="hidden" name="space" value="{$type2.space}">
+					</div>
+				</div>
+			</div>
+			<div class="in-serve station clearfix" id="in-serve-2">
+				<div class="redact short">
+					<p class="in_serve_all">总共<em>*</em></p>
+					<input value="{$type2.all}" name="all" type="text">
+				</div>
+				<input type="hidden" name="tid" value="{$type2.id}">
+				<div class="redact long">
+					<p class="in_serve_low_price">每工位最低月单价（元）<em class="err">*</em></p>
+					<input value="{$type2.low_price}" name="low_price" type="text">
+				</div>
+				<div class="redact short">
+					<p class="in_serve_small">最小房间<em>*</em></p>
+					<input value="{$type2.small}" name="small" type="text">
+				</div>
+				<div class="redact long">
+					<p class="in_serve_height_price">每工位最高单价（元）<em>*</em></p>
+					<input value="{$type2.height_price}" name="height_price" type="text">
+				</div>
+				<div class="redact short">
+					<p class="in_serve_big">最大房间<em>*</em></p>
+					<input value="{$type2.big}" name="big" type="text">
+				</div>
+			</div>
+
+		</div>
+		</form>
+	</div>
+	<div class="serve">
+		<form id="sub3">
+		<div class="titleTig">
+	    	<input class="typeTitle" type="checkbox" <notempty name="type3">checked="checked"</notempty> value="3" name="type" label='传统办公' />
+	   </div>
+		<div class="serve-down" id="type_3" <notempty name="type3">style="display:block;"</notempty>>
+			<div class="redact clearfix">
+				<p>空间大小<em>*</em></p>
+				<div class="drop clearfix">
+					<div class="dropdown clearfix in-serve-space"  ref='3'>
+						<span class="caret"></span>
+						<button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><eq name="$type3.space" value="2">按面积<else/>按工位</eq></button>
+						<ul class="dropdown-menu" aria-labelledby="dLabel">
+							<li value="1" class="li1">按工位</li>
+							<li value="2" class="li2">按面积</li>
+						</ul>
+						<input type="hidden" name="space" value="{$type3.space}">
+					</div>
+				</div>
+			</div>
+			<div class="in-serve station clearfix" id="in-serve-3">
+				<div class="redact short">
+					<p class="in_serve_all">总共<em>*</em></p>
+					<input value="{$type3.all}" name="all" type="text">
+				</div>
+				<input type="hidden" name="tid" value="{$type3.id}">
+				<div class="redact long">
+					<p class="in_serve_low_price">每工位最低月单价（元）<em class="err">*</em></p>
+					<input value="{$type3.low_price}" name="low_price" type="text">
+				</div>
+				<div class="redact short">
+					<p class="in_serve_small">最小房间<em>*</em></p>
+					<input value="{$type3.small}" name="small" type="text">
+				</div>
+				<div class="redact long">
+					<p class="in_serve_height_price">每工位最高单价（元）<em>*</em></p>
+					<input value="{$type3.height_price}" name="height_price" type="text">
+				</div>
+				<div class="redact short">
+					<p class="in_serve_big">最大房间<em>*</em></p>
+					<input value="{$type3.big}" name="big" type="text">
+				</div>
+			</div>
+
+		</div>
+		</form>
+	</div>
+	<div class="serve">
+		<form id="sub4">
+			<div class="titleTig">
+		    	<input class="typeTitle" type="checkbox" <notempty name="type4">checked="checked"</notempty> value="4" name="type" label='会议室（会场）' />
+		    </div>
+		<div class="serve-down" id="type_4" <notempty name="type4">style="display:block;"</notempty>>
+			<div class="in-serve clearfix">
+				<div class="redact long fl">
+					<p>最大人数<em>*</em></p>
+					<input value="{$type4.meeting_most}" name="meeting_most" type="text">
+				</div>
+				<input type="hidden" name="tid" value="{$type4.id}">
+				<div class="redact long fl">
+					<p>参考单价（元/小时）<em>*</em></p>
+					<input value="{$type4.meeting_price}" name="meeting_price" type="text">
+				</div>
+			</div>
+		</div>
+		</form>
+	</div>
+	<div class="serve">
+		<form id="sub5">
+		    <div class="titleTig">
+		    	<input class="typeTitle" type="checkbox" <notempty name="type5">checked="checked"</notempty> value="5" name="type" label='门面店铺类' />
+		    </div>
+		<div class="serve-down" id="type_5" <notempty name="type5">style="display:block;"</notempty>>
+			<div class="in-serve clearfix">
+				<div class="redact long fl">
+					<p>面积（平方米）<em>*</em></p>
+					<input value="{$type5.shopfront}" name="shopfront" type="text">
+				</div>
+				<input type="hidden" name="tid" value="{$type5.id}">
+				<div class="redact long fl">
+					<p>租金（元／月）<em>*</em></p>
+					<input value="{$type5.store_price}" name="store_price" type="text">
+				</div>
+			</div>
+		</div>
+		</form>
+	</div>
+	<div class="serve">
+		<form id="sub6">
+		<div class="titleTig">
+		    	<input class="typeTitle" type="checkbox" <notempty name="type6">checked="checked"</notempty> value="6" name="type" label='分享闲置办公位' />
+		</div>
+		<div class="serve-down" id="type_6" <notempty name="type6">style="display:block;"</notempty>>
+			<div class="in-serve in-noborder clearfix">
+				<div class="redact long fl">
+					<p>最大工位<em>*</em></p>
+					<input name="biggest" value="{$type6.biggest}" type="text">
+				</div>
+				<div class="redact long fl">
+					<p>单价（元／工位）<em>*</em></p>
+					<input value="{$type6.share_price}" name="share_price" type="text">
+				</div>
+				<input type="hidden" name="tid" value="{$type6.id}">
+				<div class="redact long fl">
+					<p>意向入驻公司<em>*</em></p>
+					<input value="{$type6.share_purpose}" name="share_purpose" type="text">
+				</div>
+				<div class="redact wh fl">
+					<p>自我描述（至多300字）<em>*</em></p>
+					<textarea  name="share_desc">{$type6.share_desc}</textarea>
+				</div>
+			</div>
+		</div>
+		</form>
+	</div>
+	<input type="hidden" name="id" id="id" value="{:I('get.id')}">
+	<button type="submit" id="step2" ajax-url="{:U('Building/step',array('s' =>2))}" class="next">保存并下一步</button>
+</div>

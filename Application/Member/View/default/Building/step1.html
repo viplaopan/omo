@@ -1,0 +1,82 @@
+<script type="text/javascript" src="__JS__/jquery.actual.js"></script>
+<script type="text/javascript" src="__JS__/jquery.cityselect.js"></script>
+
+<script type="text/javascript">
+	//城市验证
+	$(function() {
+		var cityjson = jQuery.parseJSON('{$city}');
+		var areajson = jQuery.parseJSON('{$area}');
+		var tradingjson = jQuery.parseJSON('{$trading}');
+
+		$("#address").citySelect({
+			city_json: cityjson,
+			area_json: areajson,
+			trading_json: tradingjson,
+		});
+	})
+</script>
+<script>
+	
+</script>
+<div class="address">
+	<div class="redact">
+		<p>国&nbsp;&nbsp;&nbsp;&nbsp;家<em>*</em></p>
+		<span>暂时未开通其它国家</span>
+		<i>中国</i>
+	</div>
+	<div class="redact clearfix" id="address">
+		<p>城&nbsp;&nbsp;&nbsp;&nbsp;市<em id="errmsg">*</em></p>
+
+		<div class="drop clearfix" id="city">
+			<div class="dropdown clearfix">
+				<span class="caret"></span>
+				<button id="dLabel" type="button" data-toggle="dropdown">
+                                    	<b class="labeli"></b>市
+                                    </button>
+				<input type="text" name="city" value="{$info.city}" />
+				<ul class="dropdown-menu" aria-labelledby="dLabel">
+
+				</ul>
+			</div>
+		</div>
+		<div class="drop clearfix" id="area">
+			<div class="dropdown clearfix">
+				<span class="caret"></span>
+				<button id="areaLabel" type="button" data-toggle="dropdown">
+                                    	区
+                                    </button>
+				<input type="text" name="area" value="{$info.area}" />
+				<div class="district dropdown-menu">
+		                              	<div class="inDistrict">
+						<ul class="dropdown-menu-ul" aria-labelledby="areaLabel">
+							<li value="0">请选择</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="drop clearfix" id="trading">
+			<div class="dropdown clearfix">
+				<span class="caret"></span>
+				<button id="tradingLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">商圈</button>
+				<input type="hidden" name="trading_area" value="{$info.trading_area}" />
+				<ul class="dropdown-menu" aria-labelledby="tradingLabel">
+
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="redact">
+		<p>地&nbsp;&nbsp;&nbsp;&nbsp;址（例：XX路XX号）<em id="huang">*</em></p>
+		<input name="address" value="{$info.address}" type="text">
+	</div>
+	<div class="redact">
+		<p>楼宇名称<em id="hao">*</em></p>
+		<input name="title" value="{$info.title}" type="text">
+	</div>
+	<div class="redact zip">
+		<p>邮&nbsp;&nbsp;&nbsp;&nbsp;编</p>
+		<input name="postcode" value="{$info.postcode}" type="text">
+	</div>
+	<button type="submit" class="next">保存并下一步</button>
+</div>

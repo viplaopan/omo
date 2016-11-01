@@ -1,0 +1,217 @@
+<extend name="Base/common"/>
+
+
+<block name="style">
+    <link rel="stylesheet" type="text/css" href="__CSS__/pandect.css">
+</block>
+<block name="body">
+<div class="pandect main clearfix">
+    <ul class="clearfix">
+        <li class="first">
+            <a href="javascript:;">
+                <em></em>
+                <b style="font-size: 18px;">暂无</b>
+                <p>楼宇信息</p>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <em></em>
+                <b style="font-size: 18px;">暂无</b>
+                <p>登记房源</p>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <em></em>
+                <b style="font-size: 18px;">暂无</b>
+                <p>实时房源</p>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <em></em>
+                <b style="font-size: 18px;">暂无</b>
+                <p>促销活动</p>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <em></em>
+                <b style="font-size: 18px;">暂无</b>
+                <p>本月意向
+</p>
+            </a>
+        </li>
+        <li class="first">
+            <a href="javascript:;">
+                <em></em>
+                <b style="font-size: 18px;">暂无</b>
+                <p>楼宇信息</p>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <em></em>
+                <b style="font-size: 18px;">暂无</b>
+                <p>客户跟踪</p>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <em></em>
+                <p>申请升级高级应用</p>
+            </a>
+        </li>
+    </ul>
+    <div class="inPandect">
+        <h3>您已发布{$count}个楼宇（中心）</h3>
+        <a href="{:U('Building/index',array('step'=>1))}" ><button class="add">新增楼宇</button></a>
+        <ol>
+            <volist name="lists" id="vo">
+                <li id="item_{$vo.id}">
+                    <img src="{$vo.id|cover}">
+                    <div class="pan-li-cen">
+                        <dl class="clearfix">
+                            <dt><span>编号：</span><em>{$vo.id}</em></dt>
+                            <dd>{$vo.status_info}</dd>
+                            <dd>{$vo.city|get_region}</dd>
+                            <dd>{$vo.area|get_region}</dd>
+                            <dd>{$vo.title}</dd>
+                        </dl>
+                        <dl class="clearfix in-pan-li">
+                            <dd><span>会议室</span><em>{$vo.id|count_office_type='5'}</em></dd>
+                            <dd><span>登记工位</span><em>{$vo.id|count_all_office}</em></dd>
+                            <dd><span>闲置工位</span><em>{$vo.id|count_all_office='1'}</em></dd>
+                            <dd><span>促销工位</span><em>{$vo.id|count_all_office='2'}</em></dd>
+                        </dl>
+                    </div>
+                    <div class="btns">
+                        <a href="#"><button class="btn1"></button></a>
+                        <a href="{:U('Buseness/Building/index',array('step'=>1,id=>$vo['id']))}"><button class="btn2"></button></a>
+                        <button onclick="javascript:del({$vo.id}, this)" class="btn3"></button>
+                    </div>
+                    <eq name="vo.step" value="5">
+                    	<a href="{:U('position',array('rid'=>$vo['id']))}" class="btn4">添加工位</a>
+                    <else/>
+                    	<p>未完成楼宇信息</p>
+                    </eq>
+                </li>
+            </volist>
+        </ol>
+    </div>
+    <button class="all">浏览所有</button>
+</div>
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" data-dismiss="modal" aria-label="Close"><span  aria-hidden="true"><img src="__IMG__/shareModal_icon02.png"></span></button>
+            <h3>选择联系人</h3>
+        </div>
+        <div class="modal-body">
+           <ul>
+                           <li>
+                               <div class="check  selected">
+                                <label></label>
+                                <input type="text">
+                                <span>Tom</span>
+                            </div>
+                            <span>Suntech</span>
+                            <em>021-64888888</em>
+                            <strong>Tom@suntech.cc</strong>
+                           </li>
+                           <li>
+                               <div class="check  selected">
+                                <label></label>
+                                <input type="text">
+                                <span>Tom</span>
+                            </div>
+                            <span>Suntech</span>
+                            <em>021-64888888</em>
+                            <strong>Tom@suntech.cc</strong>
+                           </li>
+           </ul>
+                </div>
+                <div class="modal-foot clearfix">
+               <button class="btn1">选择</button>
+               <button class="btn2">新建</button>
+               <button class="btn3">关闭</button>
+       </div>
+            </div>
+  </div>
+</div> -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" data-dismiss="modal" aria-label="Close"><span  aria-hidden="true"><img src="__IMG__/shareModal_icon02.png"></span></button>
+                <h3>联系人信息</h3>
+            </div>
+            <div class="modal-body clearfix">
+                <div class="sort">
+                    <span>中&nbsp;&nbsp;文&nbsp;&nbsp;名</span>
+                    <input type="text">
+                </div>
+                <div class="sort  m-left">
+                    <span>英&nbsp;&nbsp;文&nbsp;&nbsp;名</span>
+                    <input type="text">
+                </div>
+                <div class="mf clearfix">
+                    <div class="drop clearfix">
+                        <em>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</em>
+                        <div class="dropdown clearfix">
+                            <span class="caret"></span>
+                            <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                            <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                <li>男</li>
+                                <li>女</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="mailbox">
+                    <span>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</span>
+                    <input type="text">
+                </div>
+                <div class="sort">
+                    <span>移动电话</span>
+                    <input type="text">
+                </div>
+                <div class="sort m-left">
+                    <span>座&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机</span>
+                    <input type="text">
+                </div>
+                <div class="uploading">
+                    <span>上传头像</span>
+                    <button>+上传图片</button>
+                    <em>头像尺寸为500×500</em>
+                    <div class="in-uploading">
+                        <img src="__IMG__/uploading_img.jpg">
+                        <a href="javascript:;">删除</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-foot clearfix">
+                <button class="btn1">提交</button>
+                <button class="btn2">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+</block>
+<block name="script">
+    <script>
+        function del(id) {
+            if (confirm('你确定要删除吗?')) {
+                $.post("{:U('Building/lists')}",{id:id},function(data){
+                    if (data == 1) {
+                        $('#item_'+id).remove();
+                    }
+                },'json');
+            }
+        }
+    </script>
+</block>

@@ -1,0 +1,135 @@
+<extend name="Base/common" />
+
+<block name="style">
+    <link rel="stylesheet" type="text/css" href="__CSS__/landing.css">
+	<script type="text/javascript" src="__JS__/jquery.validate.js"></script>
+	<script type="text/javascript" src="__JS__/jquery.checkbox.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#remember').omoCheckbox();
+		})
+	</script>
+</block>
+<block name="body">
+	<div class="lading main">
+		<h2>欢迎加入真我办公（OhMyOffice.COM）</h2>
+		<h3>您与我们的合作将会打开一个全新的市场领域！</h3>
+		<div class="inLading">
+			<div class="ladingLeft">
+				<form action="{:U('User/login')}" method="post">
+					<h4>登陆</h4>
+					<div class="name">
+						<p>手机号 Mobile:<em style="color: #e20c0c;"></em> </p>
+						<input name="username" type="text">
+
+					</div>
+					<div class="password">
+						<p>密码 Password: <em style="color: #e20c0c;"></em></p>
+						<input name="password" id="inputEmail" type="password">
+
+					</div>
+					<div class="remember clearfix">
+						<input  id="remember" name="" label="同意注册协议" checked="checked" type="checkbox">
+						<em>忘记密码？</em>
+					</div>
+					<p class="error"></p>
+					<button type="submit">登 陆</button>
+				</form>
+			</div>
+			<div class="ladingRight">
+				<h4>注册</h4>
+				<dl>
+					<dt>为什么与我们合作？</dt>
+					<dd>全球同步推广和全线推送为您带来更高品质的客户</dd>
+					<dd>全新的智能技术应用与体验设计跟上时代趋势</dd>
+					<dd>与客户直接对接保障主动权并有利提高销售效率</dd>
+					<dd>与客户成功签单才收取服务费</dd>
+					<dd>加入我们，你会发现更多… …</dd>
+				</dl>
+				<a href="{:U('User/register')}"><button>立即注册</button></a>
+			</div>
+		</div>
+	</div>
+</block>
+
+<block name="side"> </block>
+<block name="script">
+	<script type="text/javascript">
+
+    	$(document)
+	    	.ajaxStart(function(){
+	    		$("button:submit").addClass("log-in").attr("disabled", true);
+	    	})
+	    	.ajaxStop(function(){
+	    		$("button:submit").removeClass("log-in").attr("disabled", false);
+	    	});
+		$(function(){
+			$("form").validate({
+				focusInvalid: true,
+
+				rules:{
+					username:{
+						required:true,
+						minlength:5,
+						maxlength:16,
+					},
+					password:{
+						required:true,
+					},
+
+				},
+				messages:{
+					username:{
+						required:"请输入正确的手机号!",
+						minlength:"用户名不得低于6位!",
+						maxlength:"用户名不得高于16位!",
+					},
+					password:{
+						required:"请输入登录密码!",
+					}
+				},
+				errorPlacement: function(error, element) { //错误信息位置设置方法
+					error.appendTo( element.prev() ); //这里的element是录入数据的对象
+
+				},
+				debug: false,
+				submitHandler: function(form) {
+					var self = $("form");
+					$.post(self.attr("action"), self.serialize(), success, "json");
+					return false;
+
+					function success(data){
+						if (data.status == 1) {
+							window.location.href = data.url;
+						} else if(data.info=='密码错误！'){
+							$('.password p em').text(data.info);
+						} else if(data.info == '用户不存在或被禁用！') {
+							$('.name p em').text(data.info);
+						}
+					}
+
+				},
+			});
+
+		});
+
+
+		$(function(){
+			var verifyimg = $(".verifyimg").attr("src");
+            $(".reloadverify").click(function(){
+                if( verifyimg.indexOf('?')>0){
+                    $(".verifyimg").attr("src", verifyimg+'&random='+Math.random());
+                }else{
+                    $(".verifyimg").attr("src", verifyimg.replace(/\?.*$/,'')+'?'+Math.random());
+                }
+            });
+		});
+		$(".check").click(function(){
+			if ($(this).hasClass('selected')) {
+				$('input[name="remember"]').val(0);
+			} else {
+				$('input[name="remember"]').val(1);
+			}
+		})
+	</script>
+</block>
