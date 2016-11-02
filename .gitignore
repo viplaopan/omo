@@ -1,3 +1,4 @@
-/Application/Common/Conf/
-/Application/User/Conf/
+/Application/Common/Conf/config.php
+/Application/User/Conf/config.php
 /Runtime/
+/Uploads/
